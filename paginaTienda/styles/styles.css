@@ -1,0 +1,9 @@
+section {
+    height: 1000px;
+    border: 1px solid black;
+}
+
+.vr {
+    display: flex;
+    flex-direction: column;
+}
