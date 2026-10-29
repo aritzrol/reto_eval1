@@ -1,9 +1,48 @@
-section {
+.content {
     height: 1000px;
-    border: 1px solid black;
 }
 
-.vr {
+body {
+    margin: 0;
+    background-color: rgb(237, 237, 237);
+}
+
+.top-bar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #2B2423;
+    color: lightgrey;
+
+    height: 35px;
+    font-size: 14px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 80px;
+
+    background-color: #C85A53;
+    color: #2B2423;
+
+    padding-left: 75px;
+    padding-right: 75px;
+
+    input {
+        width: 20vw;
+        height: 35px;
+    }
+}
+
+a {
+    text-decoration: none;
 }
