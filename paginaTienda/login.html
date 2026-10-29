@@ -1,23 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Register</title>
+  </head>
+  <body>
+
     <header></header>
+
     <main>
-        <section class="card">
+      <section class="Customer Area">
+        <article>
+          <p>Customer Area</p>
+          <h1>My account</h1>
+          <p>
+            Log in or create an account to manage your orders.
+          </p>
+        </article>
+      </section>
+      <section class="card">
+        <article class="top-form">
+          <div class="toggle loggin_active">
+            <button id="button_login">Login</button>
+            <button id="button_create">Create Acount</button>
+          </div>
+        </article>
+        <article class="forms">
+          <form class="form login">
+            <h2>Welcome back!</h2>
 
-            <article class="toggle loggin_active">
-                
+            <label>Email</label>
+            <input type="text" id="email" name="email" />
 
-            </article>
+            <label>Password</label>
+            <input type="password" id="password" name="password" />
 
+            <input type="submit" value="Login" />
+          </form>
+          <form class="form register">
+            <h2>Start your journey</h2>
 
-        </section>
+            <label>Name</label>
+            <input type="text" id="Name" name="Name" />
+
+            <label>Email</label>
+            <input type="text" id="email" name="email" />
+
+            <label>Password</label>
+            <input type="password" id="password" name="password" />
+
+            <input type="submit" value="Sign Up" />
+          </form>
+        </article>
+        <p>By using this software...</p>
+      </section>
     </main>
-    
-</body>
+  </body>
 </html>
