@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/loginStyles.css" />
     <title>Login | Register</title>
   </head>
   <body>
@@ -21,9 +22,9 @@
       </section>
       <section class="card">
         <article class="top-form">
-          <div class="toggle loggin_active">
-            <button id="button_login">Login</button>
-            <button id="button_create">Create Acount</button>
+          <div class="toggle login_active">
+            <button id="button_login"><span>Login</span></button>
+            <button id="button_create"><span>Create Account</span></button>
           </div>
         </article>
         <article class="forms">
@@ -36,7 +37,7 @@
             <label>Password</label>
             <input type="password" id="password" name="password" />
 
-            <input type="submit" value="Login" />
+            <input type="submit" value="Login" id="loginButton"/>
           </form>
           <form class="form register">
             <h2>Start your journey</h2>
@@ -50,11 +51,12 @@
             <label>Password</label>
             <input type="password" id="password" name="password" />
 
-            <input type="submit" value="Sign Up" />
+            <input type="submit" value="Sign Up" id="registerButton"/>
           </form>
         </article>
         <p>By using this software...</p>
       </section>
     </main>
+    <script src="js/login.js"></script>
   </body>
 </html>

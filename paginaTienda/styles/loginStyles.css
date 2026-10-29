@@ -1,6 +1,164 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-box: border-box;
+
+/*MOBILE FIRST STYLE*/
+body{
+    background-color: pink;
+    color: black    ;
+    
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #ffffff;
+    border-radius: 32px;
+    padding: 10px 0 34px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-form{
+    position: relative;
+    height: 190px;
+    width: 94%;
+    border-radius: 22px;
+    background-color: #8276dd; /*aqui va una foto*/
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.toggle{
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    display: flex;
+    width: 100%;
+}
+
+.toggle::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: calc(50% - 6px);
+    height: 100%;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    pointer-events: none;
+    translate: 100% 0;
+    transition: 0.3s;
+    z-index: 0;
+}
+
+.login_active::after{
+    translate: 0;
+}
+
+.toggle button{
+    height: 36px;
+    min-height: 36px;
+    width: calc(50% - 9px);
+    padding: 0;
+    background: transparent;
+    border-radius: 32px;
+    transition: 0.3s;
+}
+
+.toggle button:hover{
+    background: rgb(255, 255, 255 / 12%);
+}
+
+.toggle button:first-child{
+    margin-left: 6px;
+    margin-right: 3px;
+}
+
+.toggle button:last-child{
+    margin-left: 3px;
+    margin-right: 6px;
+}
+
+.toggle button span{
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.toggle.login_active button:first-child{
+    color: #8276dd;
+}
+
+.toggle.login_active button:last-child{
+    color: #f9f9f9;
+}
+
+.toggle button:last-child{
+    color: #8276dd;
+}
+
+.forms{
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    padding: 28px 24px 0;
+    margin: 0 0 20px;
+    transition: 0.5s;
+    opacity: 0.6;
+}
+
+.register{
+    display: none;
+}
+
+.login{
+  
+}
+
+.active{
+    translate: 0;
+    opacity: 1;
+}
+
+p{
+    margin: 32px 24px 0;
+    color: #afb0c5;
+}
+
+input{
+    width: 80%;
+}
+
+#loginButton, #registerButton{
+    width: 60%;
+    height: 36px;
+    border-radius: 32px;
+    background-color: #8276dd;
+    color: #f9f9f9;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 12%;
+}
+
+
 
