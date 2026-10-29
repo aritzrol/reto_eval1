@@ -1,48 +1,139 @@
+/*GLOBAL VARIABLES*/
+:root {
+    --primary-color: #C85A53;
+    --secondary-color: #D99382;
+    --tertiary-color: #9E473F;
+    --neutral-color: #2B2423;
+}
+
 .content {
     height: 1000px;
 }
-
+/*BODY*/
 body {
     margin: 0;
     background-color: rgb(237, 237, 237);
 }
 
+/*BLACK BAR AT THE TOP*/
 .top-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    background-color: #2B2423;
+    background-color: var(--neutral-color);
     color: lightgrey;
 
     height: 35px;
     font-size: 14px;
 
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
+/*NAVBAR*/
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
     align-items: center;
 
     height: 80px;
 
-    background-color: #C85A53;
-    color: #2B2423;
+    background-color: var(--tertiary-color);
+    color: var(--neutral-color);
 
     padding-left: 75px;
     padding-right: 75px;
 
+    /*LOGO AND BOOKSTORE NAME*/
+    div:first-child {
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        /*LOGO*/
+        img {
+            height: 75px;
+        }
+
+        /*BOOKSTORE NAME*/
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            /*NAME*/
+            span {
+                font-weight: bold;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 30px;
+                line-height: 0.9;
+            }
+
+            /*TAG*/
+            span:last-child {
+                font-weight: normal;
+                font-size: 15px;
+            }
+        }
+    }
+    
+    /*SEARCHBAR*/
     input {
-        width: 20vw;
+        grid-column-start: 2;
+        grid-column-end: 6;
+
         height: 35px;
+
+        border-radius: 0px;
+        border: 1px solid var(--neutral-color);
+    }
+
+    /*BUTTONS*/
+    .nav-buttons {
+        grid-column-start: 7;
+        grid-column-start: 12;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        a {
+            margin-left: 5px;
+            margin-right: 5px
+        }
+
+        a:last-child {
+            margin-right: 0px;
+        }
+
+        a:hover {
+        font-weight: bold;
+
+        text-decoration: underline;
+        text-decoration-color: white;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 5px;
+        }
+
+        div:nth-child(2) {
+            height: 30px;
+            width: 1px;
+
+            background-color: var(--neutral-color);
+        }
     }
 }
 
+/*LINKS (UNDECORATED)*/
 a {
     text-decoration: none;
+    color: var(--neutral-color);
 }
