@@ -1,0 +1,20 @@
+/*GLOBAL VARIABLES*/
+:root {
+    --primary-color: #C85A53;
+    --secondary-color: #D99382;
+    --tertiary-color: #9E473F;
+    --neutral-color: #2B2423;
+}
+
+.content {
+    input, select {
+        height: 35px;
+        width: 275px;
+
+        border-radius: 0px;
+        border: 1px solid grey;
+        box-sizing: border-box;
+
+        background-color: white;
+    }
+}

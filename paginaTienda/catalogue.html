@@ -2,50 +2,110 @@
 
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Catalogue | MANGA ANCHA</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="styles/catalogueStyle.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
 
+        <!--BLACK SECTION AT THE TOP-->
+        <section class="top-bar">
+            <span>Free shipping for orders over €35</span>
+            <span>New products every week</span>
+        </section>
+
         <!--NAVBAR-->
         <nav>
-
-            <!--BLACK SECTION AT THE TOP-->
-            <header>
-                <span>Free shipping for orders over €35</span>
-                <span>New products every week</span>
-            </header>
-
             <!--LOGO AND STORE NAME-->
-            <div>
-                <img src="IMG/icons/logo.png" alt="store logo"/>
-                <span>MANGA ANCHA</span>
-                <span>SPECIALIZED LIBRARY</span>
-            </div>
-            
-            <!--SEARCH BAR-->
-            <input type="text" for="title" name="title" placeholder="Search by title"/>
-            
-            <!--LINK BUTTONS-->
-            <div>
-                <a href="index.html">Home</a>
-                <a href="catalogue.html">Catalogue</a>
-            </div>
+            <a href="index.html">
+                <div>
+                    <img src="IMG/icons/logo1.png" alt="store logo"/>
+                    <div>
+                        <span>MANGA ANCHA</span>
+                        <span>SPECIALIZED BOOKSTORE</span>
+                    </div>    
+                </div>
+            </a>
 
-            <!--ICON BUTTONS-->
-            <div>
-                <a href="cart.html"><img src="IMG/icons/cart.png" alt="cart button"/></a>
-                <a href="login.html"><img src="IMG/icons/user.png" alt="user button"/></a>
-                <a href=""><img src="IMG/icons/darkMode.png" alt="dark mode button"/></a>
+            <!--SEARCH BAR-->
+            <input type="text" for="title" name="title" placeholder="🔍 Search by title"/>
+
+            <!--NAV BUTTONS-->
+            <div class="nav-buttons">
+                <!--LINK BUTTONS-->
+                <div>
+                    <a href="index.html" title="Home">Home</a>
+                    <a href="catalogue.html" title="Catalogue">Catalogue</a>
+                </div>
+
+                <!--VERTICAL LINE-->
+                <div></div>
+
+                <!--ICON BUTTONS-->
+                <div>
+                    <a href="cart.html"><img src="IMG/icons/bag_icon.png" alt="cart button"/></a>
+                    <a href="login.html"><img src="IMG/icons/user_icon.png" alt="user button"/></a>
+                    <a href=""><img src="IMG/icons/darkMode_icon.png" alt="dark mode button"/></a>
+                </div>
             </div>
         </nav>
 
         <!--CONTENT-->
-        <section>         
+        <section class="content">
+            <section class="info">
+                <section>
+                    <h2>MANGA CATALOGUE</h2>
+                    <p>Applied filters:</p>
+                    <section class="filters"></section>
+                </section>
+                <section>
+                    <input type="text" for="title" name="title" placeholder="🔍 Search by title"/>
+                    <select>
+                        <option value="new" selected>Order: newest volumes first</option>
+                        <option value="old">Order: oldest volumes first</option>
+                        <option value="cheap">Order: cheapest volumes first</option>
+                    </select>
+                </section>
+            </section>     
         </section>
+
+        <!--FOOTER-->
+        <footer>
+
+            <section>
+                <header>
+                    MANGA ANCHA
+                </header>
+                <p>
+                    Online bookstore specialized in imported manga. Official distribution authorized.
+                </p>
+            </section>
+
+            <section>
+                <header>
+                    EXPLORE OUR CATALOGUE
+                </header>
+                    <a href="catalogue.html?genre=shonen">Shōnen</a>
+                    <a href="catalogue.html?genero=shojo">Shōjo</a>
+                    <a href="catalogue.html?genero=seinen">Seinen</a>
+                    <a href="catalogue.html?genero=yuri">Yuri</a>
+            </section>
+
+            <section>
+                <header>
+                    ABOUT US
+                </header>
+                    <a href="#">Shipping conditions</a>
+                    <a href="#">Refund policy</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact</a>
+            </section>
+        </footer>
+
+
         <script src="js/script.js" type="text/javascript"></script>
     </body>
     
