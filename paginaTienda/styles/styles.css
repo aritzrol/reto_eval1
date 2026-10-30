@@ -6,13 +6,11 @@
     --neutral-color: #2B2423;
 }
 
-.content {
-    height: 1000px;
-}
 /*BODY*/
 body {
     margin: 0;
     background-color: rgb(237, 237, 237);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*BLACK BAR AT THE TOP*/
@@ -34,13 +32,16 @@ body {
 
 /*NAVBAR*/
 nav {
+    position: sticky;
+    top: 0;
+
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
     align-items: center;
 
     height: 80px;
 
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     color: var(--neutral-color);
 
     padding-left: 75px;
@@ -69,7 +70,6 @@ nav {
             /*NAME*/
             span {
                 font-weight: bold;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 font-size: 30px;
                 line-height: 0.9;
             }
@@ -102,32 +102,56 @@ nav {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+        /*ALL LINKS*/
         a {
-            margin-left: 5px;
-            margin-right: 5px
+            margin-left: 10px;
+            margin-right: 10px
         }
 
+        /*LAST LINK*/
         a:last-child {
             margin-right: 0px;
         }
 
+        /*LINKS WHEN HOVERING*/
         a:hover {
-        font-weight: bold;
+            font-weight: bold;
 
-        text-decoration: underline;
-        text-decoration-color: white;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 5px;
+            text-decoration: underline;
+            text-decoration-color: white;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 5px;
         }
 
+        /*COPY OF LINKS BEFORE HOVERING, BOLD BUT HIDDEN, TO KEEPING THE LINE FROM SHIFTING WHEN HOVERING OVER A LINK*/
+        a::before {
+            display: block;
+            content: attr(title);
+            font-weight: bold;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        /*SEPARATOR*/
         div:nth-child(2) {
             height: 30px;
             width: 1px;
 
             background-color: var(--neutral-color);
+        }
+
+        /*ICON BUTTONS*/
+        div:last-child {
+            a {
+                float:left;
+            }
+        }
+
+        /*ICONS*/
+        img {
+            height: 20px;
         }
     }
 }
@@ -136,4 +160,64 @@ nav {
 a {
     text-decoration: none;
     color: var(--neutral-color);
+}
+
+/*FOOTER*/
+footer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+        
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: start;
+
+    padding-top: 25px;
+    
+    height: 150px;
+    width: 100%;
+
+    background-color: var(--neutral-color);
+
+    padding-left: 100px;
+    padding-right: 100px;
+
+    /*TEXT COLUMNS*/
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+
+        width: 200px;
+
+        line-height: 1.2;
+        font-size: 14px;
+
+        /*SECTION TITLE*/
+        header {
+            margin-bottom: 10px;
+        
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+        }
+
+        /*LINKS*/
+        a {
+            color: lightgrey;
+
+            margin-bottom: 5px;
+
+            font-weight: normal;
+        }
+
+        /*TEXT*/
+        p {
+            color: lightgrey;
+
+            margin: 0px;
+        }
+    }
 }
