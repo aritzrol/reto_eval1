@@ -33,9 +33,7 @@ CREATE TABLE producto (
     id_serie INT NOT NULL,
     numero INT NOT NULL,
     precio DECIMAL(6,2) NOT NULL,
-    stock INT NOT NULL DEFAULT 0,
     isbn VARCHAR(13) UNIQUE,
-    portada VARCHAR(200),
     FOREIGN KEY (id_serie) REFERENCES serie(id_serie)
 );
 
@@ -48,11 +46,11 @@ CREATE TABLE pedido (
 );
 
 CREATE TABLE linea_pedido (
+    id_linea_pedido INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT NOT NULL,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL,
     precio_unitario DECIMAL(6,2) NOT NULL,
-    PRIMARY KEY (id_pedido, id_producto),
     FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido),
     FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 );
@@ -69,10 +67,10 @@ INSERT INTO serie (nombre, sinopsis, genero, autor, editorial) VALUES
 ('One Piece', 'Un joven pirata busca el tesoro definitivo.', 'Shonen', 'Eiichiro Oda', 'Planeta Comic'),
 ('Nana', 'Dos mujeres llamadas Nana comparten piso en Tokio.', 'Josei', 'Ai Yazawa', 'Panini');
 
-INSERT INTO producto (id_serie, numero, precio, stock, isbn) VALUES
-(1, 1, 8.00, 10, '9788468471525'),
-(1, 2, 8.00, 0, '9788468471532'),
-(2, 1, 8.50, 5, '9788411011111');
+INSERT INTO producto (id_serie, numero, precio, isbn) VALUES
+(1, 1, 8.00, '9788468471525'),
+(1, 2, 8.00, '9788468471532'),
+(2, 1, 8.50, '9788411011111');
 
 INSERT INTO pedido (id_usuario, precio_total) VALUES (2, 16.50);
 

@@ -55,21 +55,70 @@
 
         <!--CONTENT-->
         <section class="content">
+
+            <!--SEARCH INFORMATION-->
             <section class="info">
                 <section>
                     <h2>MANGA CATALOGUE</h2>
-                    <p>Applied filters:</p>
-                    <section class="filters"></section>
                 </section>
-                <section>
-                    <input type="text" for="title" name="title" placeholder="🔍 Search by title"/>
-                    <select>
-                        <option value="new" selected>Order: newest volumes first</option>
-                        <option value="old">Order: oldest volumes first</option>
-                        <option value="cheap">Order: cheapest volumes first</option>
-                    </select>
+
+                <input type="text" for="title" name="title" placeholder="🔍 Search by title"/>
+                <select>
+                    <option value="new" selected>Order: newest volumes first</option>
+                    <option value="old">Order: oldest volumes first</option>
+                    <option value="cheap">Order: cheapest volumes first</option>
+                </select>
+                <p>Applied filters:</p>
+                <section class="appliedFilters"></section>
+            </section>
+            
+            <!--PRODUCT GRID-->
+            <section>
+                <form class="filters">
+                    <header>FILTERS</header>
+
+                    <header>GENRE</header>
+                    <input type="checkbox" id="shonen" name="shonen" value="shonen">
+                    <label for="shonen">Shōnen</label><br>
+                    <input type="checkbox" id="shojo" name="shojo" value="shojo">
+                    <label for="shojo">Shōjo</label><br>
+                    <input type="checkbox" id="seinen" name="seinen" value="seinen">
+                    <label for="seinen">Seinen</label><br>
+                    <input type="checkbox" id="josei" name="josei" value="josei">
+                    <label for="josei">Josei</label><br>
+                    <input type="checkbox" id="yaoi" name="yaoi" value="yaoi">
+                    <label for="yaoi">Yaoi</label><br>
+                    <input type="checkbox" id="yuri" name="yuri" value="yuri">
+                    <label for="yuri">Yuri</label><br>
+                    <input type="checkbox" id="horror" name="horror" value="horror">
+                    <label for="horror">Horror</label><br>
+                    <input type="checkbox" id="comedy" name="comedy" value="comedy">
+                    <label for="comedy">Comedy</label><br>
+
+                    <header>PRICE RANGE</header>
+                    <input type="checkbox" id="8" name="8" value="8">
+                    <label for="8">Under €8.00</label><br>
+                    <input type="checkbox" id="8-12" name="8-12" value="8-12">
+                    <label for="8-12">€8.01 - €12.00</label><br>
+                    <input type="checkbox" id="12-16" name="12-16" value="12-16">
+                    <label for="12-16">€12.01 - €16.00</label><br>
+                    <input type="checkbox" id="16" name="16" value="16">
+                    <label for="16">Over €16.00</label><br>
+
+                    <header>PUBLISHER</header>
+                    <input type="checkbox" id="norma" name="norma" value="norma">
+                    <label for="norma">Norma Editorial</label><br>
+                    <input type="checkbox" id="ivrea" name="ivrea" value="ivrea">
+                    <label for="ivrea">Ivrea</label><br>
+                    <input type="checkbox" id="panini" name="panini" value="panini">
+                    <label for="panini">Panini</label><br>
+                    <input type="checkbox" id="milky-way" name="milky-way" value="milky-way">
+                    <label for="milky-way">Milky Way Ediciones</label><br>
+                </form>
+                <section class="products">
+
                 </section>
-            </section>     
+            </section>
         </section>
 
         <!--FOOTER-->
@@ -104,7 +153,6 @@
                     <a href="#">Contact</a>
             </section>
         </footer>
-
 
         <script src="js/script.js" type="text/javascript"></script>
     </body>
