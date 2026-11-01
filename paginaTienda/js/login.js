@@ -1,19 +1,22 @@
 //login js
 
-const loginForm = document.querySelector(".login");
-const registerForm = document.querySelector(".register");
-const toggle = document.querySelector(".toggle");
 
-const toggleView = (next) => {
+//elemtos del HTML
+const buttonLogin = document.getElementById("button_login");
+const buttonRegister = document.getElementById("button_create");
+const coverImage = document.querySelector(".cover-image");
 
-    //toggle indicator
-    toggle.classList.toggle("login_active", next === "login");
 
-    //reset forms
-    [(loginForm, registerForm)].forEach((element) => element.classList.remove("active"),);
+//LISTENERS
+buttonRegister.addEventListener("click", function(){
 
-    //toggle active class
-    loginForm.classList.toggle("active", next === "login");
-    registerForm.classList.toggle("active", next === "register");
+    console.log("click en register");
+    coverImage.classList.add("cover-left");
 
-};
+});
+
+buttonLogin.addEventListener("click", function(){
+
+    coverImage.classList.remove("cover-left");
+    
+});
