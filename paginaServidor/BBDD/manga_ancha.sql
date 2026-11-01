@@ -46,7 +46,7 @@ CREATE TABLE pedido (
 );
 
 CREATE TABLE linea_pedido (
-    id_linea_pedido INT AUTO_INCREMENT PRIMARY KEY,
+	 id_linea_pedido INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT NOT NULL,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL,
