@@ -164,9 +164,8 @@ a {
 
 /*FOOTER*/
 footer {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
+    position: static;
+    bottom: 0;
         
     display: flex;
     flex-direction: row;
@@ -176,7 +175,6 @@ footer {
     padding-top: 25px;
     
     height: 150px;
-    width: 100%;
 
     background-color: var(--neutral-color);
 
