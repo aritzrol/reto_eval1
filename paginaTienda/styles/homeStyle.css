@@ -1,350 +1,315 @@
-/* Estilos de la portada */
+/* Estilos principales de la página de inicio */
 body {
-            background: var(--color-background);
-            color: var(--color-text);
-            font-family: var(--font-family-base);
-            font-size: var(--font-size-base)
-        }
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+}
 
-        .top-bar {
-            height: 30px;
-            padding: 0 4%;
-            font-size: var(--font-size-xs)
-        }
+.top-bar {
+    height: 30px;
+    padding: 0 4%;
+    font-size: var(--font-size-xs);
+}
 
-        nav {
-            z-index: 10;
-            background: white;
-            border-bottom: 1px solid var(--color-border);
-            padding: 0 4%;
-            height: 70px;
-            grid-template-columns: 1.2fr 2fr 3fr
-        }
+/* Bloque principal de bienvenida */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 48px 5%;
+    background: #fcfaf9;
+}
 
-        nav>a>div:first-child img {
-            height: 46px
-        }
+.eyebrow {
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+}
 
-        nav>a>div:first-child span:first-child {
-            font-size: 20px
-        }
+.hero h1 {
+    margin: 10px 0;
+    font-size: 38px;
+    line-height: 1.1;
+}
 
-        nav>a>div:first-child span:last-child {
-            font-size: 10px
-        }
+.hero p,
+.muted {
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+}
 
-        nav input {
-            grid-column: auto;
-            width: 100%;
-            box-sizing: border-box;
-            border: 1px solid var(--color-border);
-            padding: 10px;
-            background: #fff
-        }
+.actions {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-        nav .nav-buttons {
-            grid-column: auto;
-            justify-content: flex-end;
-            gap: 12px;
-            font-size: var(--font-size-sm)
-        }
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    color: white;
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+}
 
-        nav .nav-buttons div:nth-child(2) {
-            background: var(--color-border)
-        }
+.button.secondary {
+    color: var(--color-text);
+    background: white;
+    border: 1px solid var(--color-border-strong);
+}
 
-        nav .nav-buttons a {
-            margin: 0 7px
-        }
+/* Libros destacados: se desplaza con la barra horizontal */
+.featured {
+    min-width: 0;
+    padding: 18px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--color-border);
+}
 
-        nav .nav-buttons img {
-            height: 18px
-        }
+.featured-head,
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            align-items: center;
-            padding: 48px max(5%, calc((100% - 1200px)/2));
-            background: #fcfaf9
-        }
+.featured-books {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+    margin-top: 14px;
+    padding: 4px 4px 12px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
 
-        .eyebrow {
-            color: var(--color-primary);
-            font-size: var(--font-size-xs);
-            font-weight: 700;
-            letter-spacing: .08em
-        }
+.featured-book {
+    flex: 0 0 190px;
+    width: 190px;
+    min-width: 190px;
+    padding: 8px;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease;
+}
 
-        .hero h1 {
-            font-size: clamp(28px, 4vw, 42px);
-            line-height: 1.05;
-            margin: 10px 0
-        }
+.featured-book:hover {
+    transform: translateY(-4px);
+}
 
-        .hero p,
-        .muted {
-            color: var(--color-text-secondary);
-            line-height: 1.55
-        }
+.featured-book img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+}
 
-        .actions {
-            display: flex;
-            gap: 10px;
-            margin: 20px 0
-        }
+.assurances {
+    display: flex;
+    gap: 35px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border);
+    font-size: var(--font-size-xs);
+}
 
-        .button {
-            display: inline-block;
-            padding: 10px 16px;
-            background: var(--color-primary);
-            color: white;
-            border-radius: var(--radius-sm)
-        }
+.assurances strong {
+    display: block;
+}
 
-        .button.secondary {
-            background: white;
-            border: 1px solid var(--color-border-strong);
-            color: var(--color-text)
-        }
+/* Secciones de novedades, géneros y recomendaciones */
+.section {
+    padding: 30px 5%;
+    border-bottom: 1px solid var(--color-border);
+}
 
-        .featured {
-            border: 1px solid var(--color-border);
-            padding: 18px;
-            background: white
-        }
+.section-head {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+}
 
-        .featured-head,
-        .section-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
+.section h2 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+}
 
-        .featured-books {
-            display: flex;
-            gap: 14px;
-            margin-top: 14px
-        }
+.section-head p {
+    margin: 4px 0 0;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
 
-        .featured-books img {
-            width: 31%;
-            height: 205px;
-            object-fit: contain;
-            background: #f6f4f3
-        }
+.text-link {
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+}
 
-        .assurances {
-            display: flex;
-            gap: 35px;
-            border-top: 1px solid var(--color-border);
-            padding-top: 15px;
-            font-size: var(--font-size-xs)
-        }
+.products {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
 
-        .assurances strong {
-            display: block
-        }
+.product,
+.genre,
+.editorial {
+    padding: 10px;
+    background: white;
+    border: 1px solid var(--color-border);
+}
 
-        .section {
-            padding: 30px max(5%, calc((100% - 1200px)/2));
-            border-bottom: 1px solid var(--color-border)
-        }
+.product img {
+    width: 100%;
+    height: 175px;
+    object-fit: contain;
+    background: #f7f6f5;
+}
 
-        .section-head {
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: 12px;
-            margin-bottom: 16px
-        }
+.product small {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 10px;
+}
 
-        .section h2 {
-            font-size: var(--font-size-lg);
-            margin: 0
-        }
+.product h3,
+.genre h3 {
+    margin: 5px 0;
+    font-size: var(--font-size-sm);
+}
 
-        .section-head p {
-            margin: 4px 0 0;
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-sm)
-        }
+.price {
+    font-weight: bold;
+}
 
-        .text-link {
-            color: var(--color-primary);
-            font-size: var(--font-size-xs)
-        }
+.genres {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(6, minmax(0, 1fr));
-            gap: 12px
-        }
+.bestsellers {
+    grid-template-columns: repeat(4, 1fr);
+}
 
-        .product,
-        .genre,
-        .editorial {
-            border: 1px solid var(--color-border);
-            padding: 10px;
-            background: white
-        }
+.bestsellers img {
+    height: 250px;
+}
 
-        .product img {
-            width: 100%;
-            height: 175px;
-            object-fit: contain;
-            background: #f7f6f5
-        }
+.editorials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
 
-        .product small {
-            display: block;
-            color: var(--color-text-secondary);
-            font-size: 10px
-        }
+.editorial {
+    display: flex;
+    gap: 14px;
+}
 
-        .product h3 {
-            font-size: var(--font-size-sm);
-            margin: 5px 0
-        }
+.editorial img {
+    width: 110px;
+    object-fit: contain;
+}
 
-        .price {
-            font-weight: 700
-        }
+/* Formulario del boletín y pie */
+.newsletter {
+    padding: 32px 15px;
+    text-align: center;
+}
 
-        .genres {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 10px
-        }
+.newsletter input {
+    padding: 10px;
+    border: 1px solid var(--color-border);
+}
 
-        .genre h3 {
-            font-size: var(--font-size-sm);
-            margin: 5px 0
-        }
+footer {
+    height: auto;
+    padding: 25px 5%;
+    justify-content: space-between;
+    gap: 20px;
+    background: white;
+    border-top: 1px solid var(--color-border);
+}
 
-        .bestsellers {
-            grid-template-columns: repeat(4, 1fr)
-        }
+footer section {
+    font-size: var(--font-size-xs);
+    line-height: 1.6;
+}
 
-        .bestsellers img {
-            height: 250px
-        }
+footer section header {
+    color: var(--color-text);
+    font-size: var(--font-size-xs);
+}
 
-        .editorials {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px
-        }
+footer section p,
+footer section a {
+    color: var(--color-text-secondary);
+}
 
-        .editorial {
-            display: flex;
-            gap: 14px
-        }
+/* Ajustes para pantallas medianas */
+@media (max-width: 800px) {
+    nav {
+        height: auto;
+        min-height: 65px;
+        padding: 8px 4%;
+        grid-template-columns: 1fr auto;
+    }
 
-        .editorial img {
-            width: 110px;
-            object-fit: contain
-        }
+    nav input {
+        display: none;
+    }
 
-        .newsletter {
-            text-align: center;
-            padding: 32px 15px
-        }
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 28px 5%;
+    }
 
-        .newsletter input {
-            padding: 10px;
-            border: 1px solid var(--color-border)
-        }
+    .products,
+    .genres {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-        footer {
-            background: white;
-            border-top: 1px solid var(--color-border);
-            height: auto;
-            padding: 25px 5%;
-            justify-content: space-between;
-            gap: 20px
-        }
+    footer {
+        flex-wrap: wrap;
+    }
 
-        footer section {
-            font-size: var(--font-size-xs);
-            line-height: 1.6
-        }
+    .assurances {
+        gap: 15px;
+    }
+}
 
-        footer section header {
-            color: var(--color-text);
-            font-size: var(--font-size-xs)
-        }
+/* Ajustes para móviles */
+@media (max-width: 480px) {
 
-        footer section p,
-        footer section a {
-            color: var(--color-text-secondary)
-        }
+    .products,
+    .genres,
+    .bestsellers {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        @media(max-width:800px) {
-            nav {
-                height: auto;
-                min-height: 65px;
-                padding: 8px 4%;
-                grid-template-columns: 1fr auto
-            }
+    .editorials {
+        grid-template-columns: 1fr;
+    }
 
-            nav input {
-                display: none
-            }
+    .featured-book {
+        flex-basis: 150px;
+        width: 150px;
+        min-width: 150px;
+    }
 
-            nav .nav-buttons {
-                grid-column: 2
-            }
+    .featured-book img {
+        height: 150px;
+    }
 
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 28px 5%
-            }
-
-            .products {
-                grid-template-columns: repeat(3, 1fr)
-            }
-
-            .genres {
-                grid-template-columns: repeat(3, 1fr)
-            }
-
-            footer {
-                flex-wrap: wrap
-            }
-
-            .assurances {
-                gap: 15px
-            }
-        }
-
-        @media(max-width:480px) {
-            .products {
-                grid-template-columns: repeat(2, 1fr)
-            }
-
-            .bestsellers {
-                grid-template-columns: repeat(2, 1fr)
-            }
-
-            .genres {
-                grid-template-columns: repeat(2, 1fr)
-            }
-
-            .editorials {
-                grid-template-columns: 1fr
-            }
-
-            .featured-books img {
-                height: 150px
-            }
-
-            .top-bar {
-                padding: 0 3%;
-                font-size: 9px
-            }
-        }
-
-/* Carrusel sencillo para los títulos destacados */
-.featured-books { display:flex; gap:12px; margin-top:14px; overflow-x:auto; padding-bottom:8px; }
-.featured-book { flex:0 0 30%; min-width:110px; border:1px solid var(--color-border); padding:8px; background:white; box-sizing:border-box; }
-.featured-book img { display:block; width:100%; height:190px; object-fit:contain; }
+    .top-bar {
+        padding: 0 3%;
+        font-size: 9px;
+    }
+}
