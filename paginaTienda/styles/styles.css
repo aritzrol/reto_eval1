@@ -33,6 +33,7 @@ body {
 nav {
     position: sticky;
     top: 0;
+    z-index: 1;
 
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;

@@ -1,4 +1,105 @@
 {
+  "usuarios": [
+    {
+      "id_usuario": 1,
+      "name": "admin",
+      "email": "admin@example.com",
+      "password": "admin123"
+    },
+    {
+      "id_usuario": 2,
+      "name": "fernando",
+      "email": "fernando@example.com",
+      "password": "fernando123"
+    },
+    {
+      "id_usuario": 3,
+      "name": "aritz",
+      "email": "aritz@example.com",
+      "password": "aritz123"
+    },
+    {
+      "id_usuario": 4,
+      "name": "gaizka",
+      "email": "gaizka@example.com",
+      "password": "gaizka123"
+    }
+  ],
+  
+  "pedidos": [
+    {
+      "id_pedido": 1,
+      "id_usuario": 1,
+      "fecha": "2024-06-01",
+      "total": 25.99,
+      "estado": "Enviado"
+    },
+    {
+      "id_pedido": 2,
+      "id_usuario": 2,
+      "fecha": "2024-06-02",
+      "total": 15.49,
+      "estado": "Pendiente"
+    },
+    {
+      "id_pedido": 3,
+      "id_usuario": 3,
+      "fecha": "2024-06-03",
+      "total": 30.00,
+      "estado": "Entregado"
+    },
+    {
+      "id_pedido": 4,
+      "id_usuario": 4,
+      "fecha": "2024-06-04",
+      "total": 12.75,
+      "estado": "Cancelado"
+    },
+    {
+      "id_pedido": 5,
+      "id_usuario": 1,
+      "fecha": "2024-06-05",
+      "total": 18.99,
+      "estado": "Enviado"
+    },
+    {
+      "id_pedido": 6,
+      "id_usuario": 2,
+      "fecha": "2024-06-06",
+      "total": 22.50,
+      "estado": "Pendiente"
+    },
+    {
+      "id_pedido": 7,
+      "id_usuario": 3,
+      "fecha": "2024-06-07",
+      "total": 40.00,
+      "estado": "Entregado"
+    },
+    {
+      "id_pedido": 8,
+      "id_usuario": 4,
+      "fecha": "2024-06-08",
+      "total": 10.25,
+      "estado": "Cancelado"
+    },
+    {
+      "id_pedido": 9,
+      "id_usuario": 1,
+      "fecha": "2024-06-09",
+      "total": 35.99,
+      "estado": "Enviado"
+    },
+    {
+      "id_pedido": 10,
+      "id_usuario": 2,
+      "fecha": "2024-06-10",
+      "total": 28.49,
+      "estado": "Pendiente"
+    }
+
+  ],
+
   "series": [
     {
       "id": 0,

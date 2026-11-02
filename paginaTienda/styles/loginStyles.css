@@ -92,7 +92,30 @@ main{
     box-shadow: var(--shadow-md);
     padding: 1rem;
     width: 60%;
-    z-index: -1;
+
+}
+
+#logoutButton{
+    display: none;
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: 2px outset whitesmoke;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+#logoutButton:hover{
+    background: var(--color-primary-hover);
+    box-shadow:
+        0 0 10px rgb(255 255 255 / 70%),
+        0 0 25px var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.customer-area-loged{
+    min-height: 90vh;
 }
 
 /*contenedor de formularios*/
@@ -105,7 +128,6 @@ main{
     width: 60%;
     padding: 1rem;
     color: var(--color-text);
-    text-shadow: 0 1px 3px rgb(41 35 33 / 40%);
 
     p{
         align-self: center;
@@ -147,6 +169,7 @@ main{
     mask-composite: intersect;  
 }
 
+/*clase para la transicion a la izquierda*/
 .cover-left{
     left: 1rem;
 }
@@ -253,10 +276,10 @@ main{
 
 /*botones de arriba (cristal)*/
 #button_login, #button_create{
-    background: rgb(255 255 255 / 20%);
+    background: rgba(241, 114, 140, 10%);
     color: var(--color-text);
     border: 2px solid rgba(243, 132, 132, 90%);
-    border-radius: 999px;
+    border-radius: 5px;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
     transition: var(--transition-normal);
@@ -268,3 +291,27 @@ main{
         0 0 10px rgba(235, 129, 129, 0.8),
         0 0 24px rgb(255 255 255 / 40%);
 }
+
+
+/* LOGIN OK */
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.enviado    { background: #2196f3; }
+.pendiente  { background: #ff9800; }
+.entregado  { background: #4caf50; }
+.cancelado  { background: #f44336; }
+
