@@ -35,8 +35,6 @@
         border: 1px solid grey;
         box-sizing: border-box;
 
-        background-color: white;
-
         grid-row-start: 1;
         grid-row-end: 2;
 
@@ -77,13 +75,10 @@
     }
 }
 
-/*CONTENT OF THE PAGE*/
-.content {
-    /*PRODUCTS VIEW*/
-    section:nth-child(2) {
-        display: grid;
-        grid-template-columns: 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr;
-    }
+/*PRODUCTS VIEW*/
+.search-result {
+    display: grid;
+    grid-template-columns: 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr 16fr;
 }
 
 /*FILTERS*/
@@ -94,6 +89,8 @@
     border: 1px solid var(--primary-color);
 
     height: fit-content;
+
+    background-color: white;
 
     h3 {
         margin: 0px;
@@ -120,18 +117,18 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 
     padding-left: 20px;
-
-    border: 1px solid black;
 
     section {
         display: flex;
         flex-direction: column;
         align-items: center;
 
+        margin-bottom: 10px;
+        
         width: 225px;
         height: 500px;
 
@@ -143,6 +140,12 @@
 
         img {
             width: 200px;
+        }
+
+        section {
+            align-items: start;
+
+            border: none;
         }
     }
 }
