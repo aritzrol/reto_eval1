@@ -32,9 +32,11 @@ function displayVolume(v) {
 
     card.innerHTML = `
     <img src="${v.cover}" alt="${s.title} volume ${v.number}"/>
+    <section>
     <h4>${s.title} ${v.number}</h4>
     <p>${s.author}</p>
     <p>€${v.price}</p>
+    </section>
     `;
 
     document.querySelector(`.products`).appendChild(card);
