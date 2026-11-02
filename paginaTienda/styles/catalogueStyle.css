@@ -140,6 +140,8 @@
 
         img {
             width: 200px;
+
+            border: 2px solid var(--primary-color);
         }
 
         section {
