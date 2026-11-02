@@ -4,6 +4,9 @@
     --secondary-color: #D99382;
     --tertiary-color: #9E473F;
     --neutral-color: #2B2423;
+
+    --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --font-family-nav: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*BODY*/
@@ -101,6 +104,8 @@ nav {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        font-family: var(--font-family-nav);
 
         /*ALL LINKS*/
         a {

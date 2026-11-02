@@ -52,12 +52,17 @@ function displayVolume(v) {
     card.innerHTML = `
     <img src="${v.cover}" alt="${s.title} volume ${v.number}"/>
     <section>
-    <h4>${s.title} ${v.number}
-    <p>${s.author}</p>
-    <p>€${v.price}</p>
+    <h4>${s.title}</h4>
+    <p>Volume ${v.number}</p>
+    <p>By ${s.author}</p>
+    <p>${s.publisher}</p>
     <p>${v.isbn}</p>
+    <p>€${v.price}</p>
     </section>
     `;
+
+    card.className = `card`;
+    card.id = `card-${v.id}`;
 
     document.querySelector(`.products`).appendChild(card);
 }
