@@ -57,10 +57,8 @@
         <section class="content">
 
             <!--SEARCH INFORMATION-->
-            <section class="info">
-                <section>
-                    <h2>MANGA CATALOGUE</h2>
-                </section>
+            <section class="search">
+                <h2>MANGA CATALOGUE</h2>
 
                 <input type="text" for="title" name="title" placeholder="🔍 Search by title"/>
                 <select>
@@ -69,15 +67,15 @@
                     <option value="cheap">Order: cheapest volumes first</option>
                 </select>
                 <p>Applied filters:</p>
-                <section class="appliedFilters"></section>
+                <div class="appliedFilters"></div>
             </section>
             
-            <!--PRODUCT GRID-->
+            <!--PRODUCTS-->
             <section>
                 <form class="filters">
-                    <header>FILTERS</header>
+                    <h3>FILTERS</h3>
 
-                    <header>GENRE</header>
+                    <h3>GENRE</h3>
                     <input type="checkbox" id="shonen" name="shonen" value="shonen">
                     <label for="shonen">Shōnen</label><br>
                     <input type="checkbox" id="shojo" name="shojo" value="shojo">
@@ -95,7 +93,7 @@
                     <input type="checkbox" id="comedy" name="comedy" value="comedy">
                     <label for="comedy">Comedy</label><br>
 
-                    <header>PRICE RANGE</header>
+                    <h3>PRICE RANGE</h3>
                     <input type="checkbox" id="8" name="8" value="8">
                     <label for="8">Under €8.00</label><br>
                     <input type="checkbox" id="8-12" name="8-12" value="8-12">
@@ -105,7 +103,7 @@
                     <input type="checkbox" id="16" name="16" value="16">
                     <label for="16">Over €16.00</label><br>
 
-                    <header>PUBLISHER</header>
+                    <h3>PUBLISHER</h3>
                     <input type="checkbox" id="norma" name="norma" value="norma">
                     <label for="norma">Norma</label><br>
                     <input type="checkbox" id="ivrea" name="ivrea" value="ivrea">
@@ -128,6 +126,7 @@
         <!--FOOTER-->
         <footer>
 
+            <!--STORE INFORMATION-->
             <section>
                 <header>
                     MANGA ANCHA
@@ -137,6 +136,7 @@
                 </p>
             </section>
 
+            <!--LINKS TO CATEGORIES-->
             <section>
                 <header>
                     EXPLORE OUR CATALOGUE
@@ -144,9 +144,10 @@
                     <a href="catalogue.html?genre=shonen">Shōnen</a>
                     <a href="catalogue.html?genero=shojo">Shōjo</a>
                     <a href="catalogue.html?genero=seinen">Seinen</a>
-                    <a href="catalogue.html?genero=yuri">Yuri</a>
+                    <a href="catalogue.html?genero=seinen">Josei</a>
             </section>
 
+            <!--CUSTOMER SUPPORT LINKS-->
             <section>
                 <header>
                     ABOUT US
@@ -159,6 +160,7 @@
         </footer>
 
         <script src="js/script.js" type="text/javascript"></script>
+        <script src="js/catalogue.js" type="text/javascript"></script>
     </body>
     
 </html>
