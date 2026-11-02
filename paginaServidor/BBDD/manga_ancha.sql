@@ -42,6 +42,7 @@ CREATE TABLE pedido (
     id_usuario INT NOT NULL,
     fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     precio_total DECIMAL(8,2) NOT NULL,
+    estado_pedido ENUM('pendiente', 'pagado', 'enviado') NOT NULL DEFAULT 'pendiente',
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
@@ -55,25 +56,25 @@ CREATE TABLE linea_pedido (
     FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 );
 
-INSERT INTO usuario (nombre, email, password, rol) VALUES
-('Admin', 'admin@mangaancha.test', 'CAMBIAR_POR_HASH', 'admin'),
-('Cliente', 'cliente@mangaancha.test', 'CAMBIAR_POR_HASH', 'cliente');
+/*INSERT DE PRUEBA*/
+USE manga_ancha;
 
-INSERT INTO perfil (id_usuario, apellidos, telefono, direccion) VALUES
-(1, 'Administrador', '600000001', 'Calle Ejemplo 1'),
-(2, 'Prueba', '600000002', 'Calle Ejemplo 2');
+-- 1. Series (primero, porque producto depende de ellas)
+INSERT INTO serie (id_serie, nombre, sinopsis, genero, autor, editorial) VALUES
+(1, 'Naruto', 'Un joven ninja sueña con ser el líder de su aldea.', 'Shonen', 'Masashi Kishimoto', 'Planeta Cómic'),
+(2, 'One Piece', 'Un chico de goma navega en busca del tesoro definitivo.', 'Aventura', 'Eiichiro Oda', 'Planeta Cómic'),
+(3, 'Dragon Ball', 'Las aventuras de Goku buscando las bolas de dragón.', 'Shonen', 'Akira Toriyama', 'Planeta Cómic'),
+(4, 'Death Note', 'Un estudiante encuentra un cuaderno que mata a quien se escribe en él.', 'Thriller', 'Tsugumi Ohba', 'Norma Editorial');
 
-INSERT INTO serie (nombre, sinopsis, genero, autor, editorial) VALUES
-('One Piece', 'Un joven pirata busca el tesoro definitivo.', 'Shonen', 'Eiichiro Oda', 'Planeta Comic'),
-('Nana', 'Dos mujeres llamadas Nana comparten piso en Tokio.', 'Josei', 'Ai Yazawa', 'Panini');
-
+-- 2. Productos (10 tomos)
 INSERT INTO producto (id_serie, numero, precio, isbn) VALUES
-(1, 1, 8.00, '9788468471525'),
-(1, 2, 8.00, '9788468471532'),
-(2, 1, 8.50, '9788411011111');
-
-INSERT INTO pedido (id_usuario, precio_total) VALUES (2, 16.50);
-
-INSERT INTO linea_pedido (id_pedido, id_producto, cantidad, precio_unitario) VALUES
-(1, 1, 1, 8.00),
-(1, 3, 1, 8.50);
+(1, 1, 7.95, '9780000000011'),
+(1, 2, 7.95, '9780000000028'),
+(1, 3, 7.95, '9780000000035'),
+(2, 1, 8.50, '9780000000042'),
+(2, 2, 8.50, '9780000000059'),
+(2, 3, 8.50, '9780000000066'),
+(3, 1, 8.95, '9780000000073'),
+(3, 2, 8.95, '9780000000080'),
+(4, 1, 9.50, '9780000000097'),
+(4, 2, 9.50, '9780000000103');
