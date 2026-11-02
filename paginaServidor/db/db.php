@@ -1,5 +1,5 @@
 <?php
-    class DB{
+    class Db{
         public static function getConexion(){
             //echo 'Conectar::conexion() Abriendo conexion<br>';
             $conexion=new mysqli("localhost", "root", "", "manga_ancha");

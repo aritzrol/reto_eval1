@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../db/db.php';
+require_once __DIR__ . '/../db/Db.php';
 
 class Login {
     private $con;

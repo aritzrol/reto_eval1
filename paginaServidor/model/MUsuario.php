@@ -4,7 +4,7 @@ class MUsuario {
 
     public function __construct()
     {
-        $this->conexion = Db::conexion();
+        $this->conexion = Db::getConexion();
     }
 
     public function getById($id) {
