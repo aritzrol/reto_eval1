@@ -11,7 +11,7 @@ class MProducto
     public function __construct()
     {
 
-        $this->db = Db::conexion();
+        $this->db = Db::getConexion();
         $this->productos = array();
     }
 
