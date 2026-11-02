@@ -1,0 +1,350 @@
+/* Estilos de la portada */
+body {
+            background: var(--color-background);
+            color: var(--color-text);
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-base)
+        }
+
+        .top-bar {
+            height: 30px;
+            padding: 0 4%;
+            font-size: var(--font-size-xs)
+        }
+
+        nav {
+            z-index: 10;
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            padding: 0 4%;
+            height: 70px;
+            grid-template-columns: 1.2fr 2fr 3fr
+        }
+
+        nav>a>div:first-child img {
+            height: 46px
+        }
+
+        nav>a>div:first-child span:first-child {
+            font-size: 20px
+        }
+
+        nav>a>div:first-child span:last-child {
+            font-size: 10px
+        }
+
+        nav input {
+            grid-column: auto;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid var(--color-border);
+            padding: 10px;
+            background: #fff
+        }
+
+        nav .nav-buttons {
+            grid-column: auto;
+            justify-content: flex-end;
+            gap: 12px;
+            font-size: var(--font-size-sm)
+        }
+
+        nav .nav-buttons div:nth-child(2) {
+            background: var(--color-border)
+        }
+
+        nav .nav-buttons a {
+            margin: 0 7px
+        }
+
+        nav .nav-buttons img {
+            height: 18px
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+            padding: 48px max(5%, calc((100% - 1200px)/2));
+            background: #fcfaf9
+        }
+
+        .eyebrow {
+            color: var(--color-primary);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            letter-spacing: .08em
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            line-height: 1.05;
+            margin: 10px 0
+        }
+
+        .hero p,
+        .muted {
+            color: var(--color-text-secondary);
+            line-height: 1.55
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 16px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-sm)
+        }
+
+        .button.secondary {
+            background: white;
+            border: 1px solid var(--color-border-strong);
+            color: var(--color-text)
+        }
+
+        .featured {
+            border: 1px solid var(--color-border);
+            padding: 18px;
+            background: white
+        }
+
+        .featured-head,
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .featured-books {
+            display: flex;
+            gap: 14px;
+            margin-top: 14px
+        }
+
+        .featured-books img {
+            width: 31%;
+            height: 205px;
+            object-fit: contain;
+            background: #f6f4f3
+        }
+
+        .assurances {
+            display: flex;
+            gap: 35px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 15px;
+            font-size: var(--font-size-xs)
+        }
+
+        .assurances strong {
+            display: block
+        }
+
+        .section {
+            padding: 30px max(5%, calc((100% - 1200px)/2));
+            border-bottom: 1px solid var(--color-border)
+        }
+
+        .section-head {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 12px;
+            margin-bottom: 16px
+        }
+
+        .section h2 {
+            font-size: var(--font-size-lg);
+            margin: 0
+        }
+
+        .section-head p {
+            margin: 4px 0 0;
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm)
+        }
+
+        .text-link {
+            color: var(--color-primary);
+            font-size: var(--font-size-xs)
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 12px
+        }
+
+        .product,
+        .genre,
+        .editorial {
+            border: 1px solid var(--color-border);
+            padding: 10px;
+            background: white
+        }
+
+        .product img {
+            width: 100%;
+            height: 175px;
+            object-fit: contain;
+            background: #f7f6f5
+        }
+
+        .product small {
+            display: block;
+            color: var(--color-text-secondary);
+            font-size: 10px
+        }
+
+        .product h3 {
+            font-size: var(--font-size-sm);
+            margin: 5px 0
+        }
+
+        .price {
+            font-weight: 700
+        }
+
+        .genres {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px
+        }
+
+        .genre h3 {
+            font-size: var(--font-size-sm);
+            margin: 5px 0
+        }
+
+        .bestsellers {
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .bestsellers img {
+            height: 250px
+        }
+
+        .editorials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        .editorial {
+            display: flex;
+            gap: 14px
+        }
+
+        .editorial img {
+            width: 110px;
+            object-fit: contain
+        }
+
+        .newsletter {
+            text-align: center;
+            padding: 32px 15px
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: 1px solid var(--color-border)
+        }
+
+        footer {
+            background: white;
+            border-top: 1px solid var(--color-border);
+            height: auto;
+            padding: 25px 5%;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        footer section {
+            font-size: var(--font-size-xs);
+            line-height: 1.6
+        }
+
+        footer section header {
+            color: var(--color-text);
+            font-size: var(--font-size-xs)
+        }
+
+        footer section p,
+        footer section a {
+            color: var(--color-text-secondary)
+        }
+
+        @media(max-width:800px) {
+            nav {
+                height: auto;
+                min-height: 65px;
+                padding: 8px 4%;
+                grid-template-columns: 1fr auto
+            }
+
+            nav input {
+                display: none
+            }
+
+            nav .nav-buttons {
+                grid-column: 2
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 28px 5%
+            }
+
+            .products {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .genres {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            footer {
+                flex-wrap: wrap
+            }
+
+            .assurances {
+                gap: 15px
+            }
+        }
+
+        @media(max-width:480px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .bestsellers {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .genres {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .editorials {
+                grid-template-columns: 1fr
+            }
+
+            .featured-books img {
+                height: 150px
+            }
+
+            .top-bar {
+                padding: 0 3%;
+                font-size: 9px
+            }
+        }
+
+/* Carrusel sencillo para los títulos destacados */
+.featured-books { display:flex; gap:12px; margin-top:14px; overflow-x:auto; padding-bottom:8px; }
+.featured-book { flex:0 0 30%; min-width:110px; border:1px solid var(--color-border); padding:8px; background:white; box-sizing:border-box; }
+.featured-book img { display:block; width:100%; height:190px; object-fit:contain; }
