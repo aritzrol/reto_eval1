@@ -234,6 +234,9 @@ loginButton.addEventListener("click", function(event){
         cleanLoginForm(); // Clear the login form after successful login
     }else{
         console.log("Login failed");
+        
+        text = "Login failed!!!";
+        newAlert(text);
     }
     
     console.log(orders);

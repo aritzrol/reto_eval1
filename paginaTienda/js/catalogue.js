@@ -90,6 +90,59 @@ function displayVolume(v) {
     const btn = document.createElement(`button`);
     btn.type = `button`;
     btn.textContent = `Add to cart`;
+    btn.classList.add("add-to-cart-button");
+
+    //button add to cart event
+    btn.addEventListener(`click`, (event) => {
+
+        event.stopPropagation(); // esto evita que se abra la tarjeta de los detalles
+        //console.log(" botón Add to cart de: ", v.number, s.title);
+        
+        //LOCALSTORAGE
+        const mangaName = s.title;
+        const mangaNumber = v.number;
+        const mangaPrice = v.price;
+        const mangaCover = v.cover;
+
+        //console.log(mangaName, mangaNumber, mangaPrice);
+
+        //lee el array del carrito desde localStorage o lo crea vacio
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        let repetido = cart.find((product) => product.name === mangaName && product.number === mangaNumber);
+
+        //si ya existe solo aumenta quantity
+        if(repetido){
+
+            cart.forEach((product) =>{
+                if(product.name === mangaName && product.number === mangaNumber){
+                    product.quantity = product.quantity + 1;
+                }
+            });
+            
+        }else{
+
+            const product = {
+                id: cart.length > 0 ? cart[cart.length - 1].id + 1 : 1,
+                name: mangaName,
+                number: mangaNumber,
+                price: mangaPrice,
+                quantity: 1,
+                cover: mangaCover
+            }
+
+            cart.push(product);
+
+        }
+
+        //guardar en localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        console.log("Producto añadido al carrito:", product);
+        alert("¡Manga añadido al carrito!");
+
+    });
+
     card.querySelector(`section`).appendChild(btn);
 
     card.addEventListener(`click`, (e) => {
@@ -129,3 +182,12 @@ function searchVolumes(t) {
         }
     });
 }
+
+const addToCart = document.querySelectorAll("add-to-cart-button");
+
+addToCart.forEach((button) => {
+    addToCart.addEventListener("click", function(){
+    
+        console.log("has pulsado el boton ADD TO CART");    
+    })
+})

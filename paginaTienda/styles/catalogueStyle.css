@@ -187,6 +187,8 @@ body {
     border: 1px solid var(--primary-color);
 
     background-color: white;
+
+    overflow: hidden;
 }
 .card:hover {
     cursor: pointer;
@@ -230,7 +232,7 @@ body {
     bottom: 0;
 }
 
-.card>section>button {
+.add-to-cart-button {
     height: 30px;
     width: 100%;
 
@@ -242,4 +244,14 @@ body {
     color: white;
 
     background-color: var(--tertiary-color);
+
+}
+
+.add-to-cart-button:hover{
+
+    box-shadow:
+        0 0 10px rgba(235, 129, 129, 0.8),
+        0 0 24px rgb(255 255 255 / 40%);
+    transform: scale(1.1);
+
 }
