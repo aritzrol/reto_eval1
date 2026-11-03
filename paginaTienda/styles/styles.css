@@ -6,17 +6,20 @@
     --neutral-color: #2B2423;
 
     --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    --font-family-nav: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --font-family-btn: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*BODY*/
 body {
     margin: 0;
     font-family: var(--font-family-base);
+    background-color: #F8E8E5;
 }
 
 /*BLACK BAR AT THE TOP*/
 .top-bar {
+    z-index: 2;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,6 +37,8 @@ body {
 
 /*NAVBAR*/
 nav {
+    z-index: 2;
+    
     position: sticky;
     top: 0;
 
@@ -105,7 +110,7 @@ nav {
         justify-content: space-between;
         align-items: center;
 
-        font-family: var(--font-family-nav);
+        font-family: var(--font-family-btn);
 
         /*ALL LINKS*/
         a {
