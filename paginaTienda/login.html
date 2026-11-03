@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="referencia.css" rel="stylesheet">
+    <link href="referencia.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/loginStyles.css" />
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
     <title>Login | Register</title>
@@ -64,6 +64,9 @@
 
     <!-- CONTENT -->
     <main>
+      <!-- ALERTS -->
+      <div id="alert"></div>
+
       <section class="customer-area">
         <article>
           <h1>My account</h1>
@@ -75,9 +78,7 @@
       <section class="card">
         <article class="top-card">
           <button type="button" id="button_login"><span>Login</span></button>
-          <button type="button" id="button_create">
-            <span>Create Account</span>
-          </button>
+          <button type="button" id="button_create"><span>Create Account</span></button>
         </article>
 
         <article class="forms">
@@ -105,13 +106,16 @@
             <label for="register-password">Password</label>
             <input type="password" id="register-password" name="password" />
 
-            <input type="submit" value="Sign Up" id="registerButton" />
+            <input type="submit" value="SignUp" id="registerButton" />
           </form>
 
           <img class="cover-image" src="IMG/icons/imagen-login.png" alt="" />
         </article>
 
-        <p>By using this software, you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</p>
+        <p>
+          By using this software, you agree to our Terms of Service, Privacy
+          Policy, and Cookie Policy.
+        </p>
       </section>
     </main>
 
