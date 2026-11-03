@@ -1,8 +1,28 @@
+document.querySelector(`.series-info`).querySelector(`button`).addEventListener(`click`, (e) => {
+    e.target.closest(`.series-info`).style.display = `none`;
+});
+
+document.querySelector(`.content`).querySelector(`input`).addEventListener(`keyup`, (e) => {
+    document.querySelector(`.products`).innerHTML = "";
+    searchVolumes(e.target);
+});
+
+document.querySelectorAll(`input[type="checkbox"]`).forEach(c => {
+    c.addEventListener(`change`, (e) => {
+        if (e.target.checked) {
+            
+        }
+    });
+})
+
 const SERIES_URL = `http://localhost:3000/series`;
 const VOLUMES_URL = `http://localhost:3000/volumes`;
 
 let series;
 let volumes;
+
+getSeries();
+getVolumes();
 
 async function getSeries() {
     try {
@@ -41,7 +61,6 @@ async function getVolumes() {
 function displayVolume(v) {
     let s;
 
-    console.log(v);
     const card = document.createElement(`section`);
     series.forEach(se => {
         if (se.id == v.id_series) {
@@ -51,21 +70,62 @@ function displayVolume(v) {
 
     card.innerHTML = `
     <img src="${v.cover}" alt="${s.title} volume ${v.number}"/>
-    <section>
-    <h4>${s.title}</h4>
-    <p>Volume ${v.number}</p>
-    <p>By ${s.author}</p>
+    <h3>${s.title}</h3>
+    <h4>Volume ${v.number}</h4>
+    <p>${s.author}</p>
     <p>${s.publisher}</p>
     <p>${v.isbn}</p>
-    <p>€${v.price}</p>
+    <hr>
+    <section>
+    <h4>€${v.price.toFixed(2)}</h4>
     </section>
     `;
 
     card.className = `card`;
     card.id = `card-${v.id}`;
-
+    
     document.querySelector(`.products`).appendChild(card);
+    
+
+    const btn = document.createElement(`button`);
+    btn.type = `button`;
+    btn.textContent = `Add to cart`;
+    card.querySelector(`section`).appendChild(btn);
+
+    card.addEventListener(`click`, (e) => {
+        displaySeries(e.target);
+    })
 }
 
-getSeries();
-getVolumes();
+function displaySeries(t) {
+    if (t.className != `card`) {
+        t = t.closest(`.card`);
+    }
+
+    const card = document.querySelector(`.series-info`);
+    const id = t.id.split(`-`)[1];
+    const s = series[volumes[id].id_series];
+    const cover = volumes.find((volume) => volume.id_series == s.id).cover;
+
+    card.querySelector(`img`).src = cover;
+    card.querySelector(`h2`).innerHTML = s.title;
+    card.querySelector(`p`).innerHTML = s.author;
+    card.querySelector(`span`).innerHTML = s.synopsis;
+    
+    card.style.display = `block`;
+}
+
+function searchVolumes(t) {
+    let searchValue = t.value.toLowerCase();
+
+    let search = [];
+
+    volumes.forEach(v => {
+        let title = series[v.id_series].title.toLowerCase();
+        console.log(v);
+        if (title.includes(searchValue)) {
+            search.push(v);
+            displayVolume(v);
+        }
+    });
+}

@@ -4,6 +4,12 @@
     --secondary-color: #D99382;
     --tertiary-color: #9E473F;
     --neutral-color: #2B2423;
+
+    --font-family-btn: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: grid;
 }
 
 /*PRODUCTS VIEW*/
@@ -14,6 +20,49 @@
 
     margin: 20px;
 }
+
+.series-info {
+    display: none;
+    align-self: center;
+    justify-self: center;
+
+    z-index: 3;
+    position: fixed;
+    inset: 0px;
+
+    width: 642px;
+    height: 450px;
+
+    border: 1px solid var(--primary-color);
+
+    background-color: white;
+}
+
+.series-info>button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 25px;
+    height: 25px;
+
+    border: none;
+    border-radius: 0;
+    background-color: var(--tertiary-color);
+    color: white;
+
+    font-size: large;
+}
+
+.series-info>button:hover {
+    cursor: pointer;
+}
+
+.series-info>img {
+    width: 50%;
+    height: 100%;
+}
+
 
 /*PAGE TITLE*/
 .content>h2 {
@@ -50,6 +99,8 @@
 .content>select {
     grid-column-start: 17;
     grid-column-end: 20;
+
+    cursor: pointer;
 }
 
 /*APPLIED FILTERS LABEL*/
@@ -122,20 +173,23 @@
 }
 
 .card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     margin-bottom: 10px;
 
-    width: 200px;
-    height: 500px;
+    width: fit-content;
+    height: 550px;
 
     border: 1px solid var(--primary-color);
 
-    background-color: var(--secondary-color);
-
-    padding: 15px;
+    background-color: white;
+}
+.card:hover {
+    cursor: pointer;
 }
 
 .products:has(.card:hover)
@@ -143,26 +197,49 @@
     opacity: 80%;
     filter: saturate(80%);
     filter: blur(3px);
-
-    z-index: -1;
 }
 
 .card>img {
-    width: 200px;
-    height: 278px;
+    width: 250px;
+    height: 352px;
 
-    border: 2px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+
+    margin-bottom: 5px;
+}
+
+.card>h3, .card>h4, .card>p, .card>section>h4 {
+    align-self: self-start;
+
+    margin: 0px;
+    padding-left: 15px;
+}
+
+.card>hr {
+    align-self: center;
+    width: 80%;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .card>section {
-    align-self: self-start;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
 }
 
-.card>section>h4 {
-    margin-bottom: 0px;
-}
+.card>section>button {
+    height: 30px;
+    width: 100%;
 
-.card>section>p {
-    color: var(--primary-color);
-    margin: 0px;
+    margin-top: 10px;
+
+    border: none;
+
+    font-family: var(--font-family-btn);
+    color: white;
+
+    background-color: var(--tertiary-color);
 }
