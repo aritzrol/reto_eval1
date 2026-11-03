@@ -66,7 +66,7 @@
     },
     {
       "id": 8,
-      "title": "The Guy She Was Interested In Wasn't a Guy at All",
+      "title": "The Guy She Was Interested In<br>Wasn't a Guy at All",
       "synopsis": "The black-clad boy that Aya Oosawa likes is perfect: he is effortlessly nonchalant, has a sharp sense of style, and listens to the best music. Ever since the trendy Aya stumbled upon a small CD store to enjoy the rock classics her friends are not familiar with, the mysterious employee behind the counter has been on her mind. Meanwhile, the quiet and aloof Mitsuki Koga listens to her popular classmate Aya rave about her crush, tormented by a nagging thought: how to tell Aya that the guy she is interested in is not a guy at all!<br>In reality, when Mitsuki sheds her plain high school uniform, she is the one manning the counter at her uncle Joe's CD shop. She wrestles with how to reveal her identity, but flirting with the stunning and clueless Aya is just too tempting. As music becomes their shared passion, it seems that Aya's feelings will remain unchanged—even when Mitsuki's secret comes to light.",
       "genre": "Yuri",
       "author": "Sumiko Arai",
@@ -74,7 +74,7 @@
     },
     {
       "id": 9,
-      "title": "Elden Ring: The Road to the Erdtree",
+      "title": "Elden Ring:<br>The Road to the Erdtree",
       "synopsis": "The Lands Between is a domain where demigods once waged war against each other to claim the shards of the Elden Ring, a set of runes containing immense power. In the present, an exiled man named Aseo emerges from a graveyard in LIMG/coversrave with almost nothing to his name and no recollection of how he ended up there. Immediately encountering the cruel land and its inhabitants, Aseo has little hope for survival—until he crosses paths with Melina, a mysterious maiden who makes him a dangerous offer.<br>With little choice in the matter, Aseo accepts the request from Melina. However, in exchange for providing some much needed aid in his travels, he must take Melina with him, following a guiding light down an arduous road to the Erdtree. Armed with nothing but a loincloth, a club, and his trusty steed Torrent, Aseo must brave the many dangers and face off against the quirky inhabitants of the Lands Between.",
       "genre": "Comedy",
       "author": "Nikiichi Tobita",
@@ -677,7 +677,7 @@
     },
     {
       "id": 65,
-      "id_series": 7,
+      "id_series": 8,
       "cover": "IMG/covers/notAGuy/notAGuy_2.jpg",
       "number": 2,
       "price": 12.3,
@@ -685,7 +685,7 @@
     },
     {
       "id": 66,
-      "id_series": 7,
+      "id_series": 8,
       "cover": "IMG/covers/notAGuy/notAGuy_3.jpg",
       "number": 3,
       "price": 12.3,
