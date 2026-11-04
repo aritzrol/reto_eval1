@@ -1,59 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="referencia.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/loginStyles.css" />
-    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
-    <title>Login | Register</title>
-  </head>
-  <body>
-    <!--BLACK SECTION AT THE TOP-->
-    <section class="top-bar">
-      <span>Free shipping for orders over €35</span>
-      <span>New products every week</span>
-    </section>
 
-    <!--NAVBAR-->
-    <nav>
-      <!--LOGO AND STORE NAME-->
-      <a href="index.html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="referencia.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/loginStyles.css" />
+  <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+  <title>Login | Register</title>
+</head>
+
+<body>
+  <!--BLACK SECTION AT THE TOP-->
+  <section class="top-bar">
+    <span>Free shipping for orders over €35</span>
+    <span>New products every week</span>
+  </section>
+
+  <!--NAVBAR-->
+  <nav>
+    <!--LOGO AND STORE NAME-->
+    <a href="index.html">
+      <div>
+        <img src="IMG/icons/logo1.png" alt="store logo" />
         <div>
-          <img src="IMG/icons/logo1.png" alt="store logo" />
-          <div>
-            <span>MANGA ANCHA</span>
-            <span>SPECIALIZED BOOKSTORE</span>
-          </div>
+          <span>MANGA ANCHA</span>
+          <span>SPECIALIZED BOOKSTORE</span>
         </div>
-      </a>
+      </div>
+    </a>
 
-      <!--SEARCH BAR-->
-      <input
-        type="text"
-        for="title"
-        name="title"
-        placeholder="🔍 Search by title"
-      />
+    <!--SEARCH BAR-->
+    <input type="text" for="title" name="title" placeholder="🔍 Search by title" />
 
-      <!--NAV BUTTONS-->
-      <div class="nav-buttons">
-        <!--LINK BUTTONS-->
-        <div>
-          <a href="index.html" title="Home">Home</a>
-          <a href="catalogue.html" title="Catalogue">Catalogue</a>
-        </div>
+    <!--NAV BUTTONS-->
+    <div class="nav-buttons">
+      <!--LINK BUTTONS-->
+      <div>
+        <a href="index.html" title="Home">Home</a>
+        <a href="catalogue.html" title="Catalogue">Catalogue</a>
+      </div>
 
-        <!--VERTICAL LINE-->
-        <div></div>
+      <!--VERTICAL LINE-->
+      <div></div>
 
         <!--ICON BUTTONS-->
         <div>
           <a href="cart.html"
-            ><img src="IMG/icons/bag_icon.png" alt="cart button"
+            ><img src="IMG/icons/bag_icon.png" alt="cart button" id="cart-icon"
           /></a>
           <a href="login.html"
-            ><img src="IMG/icons/user_icon.png" alt="user button"
+            ><img src="IMG/icons/user_icon.png" alt="user button" id="user-icon"
           /></a>
           <a href=""
             ><img src="IMG/icons/darkMode_icon.png" alt="dark mode button"
@@ -62,93 +59,94 @@
       </div>
     </nav>
 
-    <!-- CONTENT -->
-    <main>
-      <!-- ALERTS -->
-      <div id="alert"></div>
+  <!-- CONTENT -->
+  <main>
+    <!-- ALERTS -->
+    <div id="alert"></div>
 
-      <section class="customer-area">
-        <article>
-          <h1>My account</h1>
-          <p>Log in or create an account to manage your orders.</p>
-          <button type="button" id="logoutButton">LOG OUT</button>
-        </article>
-      </section>
+    <section class="customer-area">
+      <article>
+        <h1>My account</h1>
+        <p>Log in or create an account to manage your orders.</p>
+        <button type="button" id="logoutButton">LOG OUT</button>
+      </article>
+    </section>
 
-      <section class="card">
-        <article class="top-card">
-          <button type="button" id="button_login"><span>Login</span></button>
-          <button type="button" id="button_create"><span>Create Account</span></button>
-        </article>
+    <section class="card">
+      <article class="top-card">
+        <button type="button" id="button_login"><span>Login</span></button>
+        <button type="button" id="button_create"><span>Create Account</span></button>
+      </article>
 
-        <article class="forms">
-          <form class="form-login">
-            <h2>Welcome back!</h2>
+      <article class="forms">
+        <form class="form-login">
+          <h2>Welcome back!</h2>
 
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" name="email" />
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" />
 
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" name="password" />
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" />
 
-            <input type="submit" value="Login" id="loginButton" />
-          </form>
+          <input type="submit" value="Login" id="loginButton" />
+        </form>
 
-          <form class="form-register">
-            <h2>Start your journey</h2>
+        <form class="form-register">
+          <h2>Start your journey</h2>
 
-            <label for="register-name">Name</label>
-            <input type="text" id="register-name" name="name" />
+          <label for="register-name">Name</label>
+          <input type="text" id="register-name" name="name" />
 
-            <label for="register-email">Email</label>
-            <input type="email" id="register-email" name="email" />
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" name="email" />
 
-            <label for="register-password">Password</label>
-            <input type="password" id="register-password" name="password" />
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" name="password" />
 
-            <input type="submit" value="SignUp" id="registerButton" />
-          </form>
+          <input type="submit" value="SignUp" id="registerButton" />
+        </form>
 
-          <img class="cover-image" src="IMG/icons/imagen-login.png" alt="" />
-        </article>
+        <img class="cover-image" src="IMG/icons/imagen-login.png" alt="" />
+      </article>
 
-        <p>
-          By using this software, you agree to our Terms of Service, Privacy
-          Policy, and Cookie Policy.
-        </p>
-      </section>
-    </main>
+      <p>
+        By using this software, you agree to our Terms of Service, Privacy
+        Policy, and Cookie Policy.
+      </p>
+    </section>
+  </main>
 
-    <!--FOOTER-->
-    <footer>
-      <!--STORE INFORMATION-->
-      <section>
-        <header>MANGA ANCHA</header>
-        <p>
-          Online bookstore specialized in imported manga. Official distribution
-          authorized.
-        </p>
-      </section>
+  <!--FOOTER-->
+  <footer>
+    <!--STORE INFORMATION-->
+    <section>
+      <header>MANGA ANCHA</header>
+      <p>
+        Online bookstore specialized in imported manga. Official distribution
+        authorized.
+      </p>
+    </section>
 
-      <!--LINKS TO CATEGORIES-->
-      <section>
-        <header>EXPLORE OUR CATALOGUE</header>
-        <a href="catalogue.html?genre=shonen">Shōnen</a>
-        <a href="catalogue.html?genero=shojo">Shōjo</a>
-        <a href="catalogue.html?genero=seinen">Seinen</a>
-        <a href="catalogue.html?genero=seinen">Josei</a>
-      </section>
+    <!--LINKS TO CATEGORIES-->
+    <section>
+      <header>EXPLORE OUR CATALOGUE</header>
+      <a href="catalogue.html?genre=shonen">Shōnen</a>
+      <a href="catalogue.html?genero=shojo">Shōjo</a>
+      <a href="catalogue.html?genero=seinen">Seinen</a>
+      <a href="catalogue.html?genero=seinen">Josei</a>
+    </section>
 
-      <!--CUSTOMER SUPPORT LINKS-->
-      <section>
-        <header>ABOUT US</header>
-        <a href="#">Shipping conditions</a>
-        <a href="#">Refund policy</a>
-        <a href="#">FAQ</a>
-        <a href="#">Contact</a>
-      </section>
-    </footer>
+    <!--CUSTOMER SUPPORT LINKS-->
+    <section>
+      <header>ABOUT US</header>
+      <a href="#">Shipping conditions</a>
+      <a href="#">Refund policy</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </section>
+  </footer>
 
-    <script src="js/login.js"></script>
-  </body>
+  <script src="js/login.js"></script>
+</body>
+
 </html>

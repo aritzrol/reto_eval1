@@ -23,6 +23,12 @@
       "name": "gaizka",
       "email": "gaizka@example.com",
       "password": "gaizka123"
+    },
+    {
+      "id": 5,
+      "name": "dfgdfg",
+      "email": "dfgdfg",
+      "password": "dfgdf"
     }
   ],
   "pedidos": [

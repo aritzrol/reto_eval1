@@ -36,6 +36,13 @@ body {
 }
 
 /*NAVBAR*/
+.nav-buttons a.nav-icon {
+    border-bottom: 3px solid transparent;
+}
+
+.nav-buttons a.nav-icon:hover {
+    border-bottom-color: white;
+}
 nav {
     z-index: 2;
     
@@ -150,8 +157,10 @@ nav {
         img {
             height: 20px;
         }
+        
     }
 }
+
 
 /*LINKS (UNDECORATED)*/
 a {

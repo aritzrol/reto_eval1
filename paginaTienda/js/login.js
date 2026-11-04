@@ -41,7 +41,20 @@ const registerButton = document.getElementById("registerButton");
 const registerName = document.getElementById("register-name");
 const registerEmail = document.getElementById("register-email");
 const registerPassword = document.getElementById("register-password");
+const userIcon = document.getElementById("user-icon");
+const cartIcon = document.getElementById("cart-icon");
 
+//Check localStorage if any products exists
+let cart = JSON.parse(localStorage.getItem("cart"));
+
+
+
+if(cart.length === 0){
+    cartIcon.classList.add("cart-icon");
+    console.log(cart);
+}else{
+    cartIcon.classList.remove("cart-icon");
+}
 
 //FUNCTIONS
 async function fetchUsers(){
@@ -145,7 +158,7 @@ function cleanLoginForm(){
 }
 
 //function to create the alert message
-function newAlert(text){
+function newAlert(text, icon){
 
     alertBox.innerHTML = "";
 
@@ -153,7 +166,8 @@ function newAlert(text){
     box.classList.add("textAlert");
 
     box.innerHTML = `
-        <p>ALERT:<br> ${text}</p>
+        <span>${icon}</span>
+        <p>ALERT : ${text}</p>
     `;
 
     alertBox.appendChild(box);
@@ -193,16 +207,16 @@ loginButton.addEventListener("click", function(event){
     //alerts for empty fields
     if(email.trim() === ""){
         
-        text = "Put your LOGIN EMAIL!!!";
-        newAlert(text);
+        text = "Check EMAIL!";
+        newAlert(text, "!");
 
         return;
     }
 
     if(password.trim() === ""){
         
-        text = "Put your PASSWORD!!!";
-        newAlert(text);
+        text = "Check PASSWORD!";
+        newAlert(text, "!");
 
         return;
     }
@@ -229,14 +243,19 @@ loginButton.addEventListener("click", function(event){
         console.log("User ID:", user.id);
         showOrders(user.id);
 
-        logoutButton.style.display = "block"; // Show the logout button
+        // Show the logout button
+        logoutButton.style.display = "block"; 
 
-        cleanLoginForm(); // Clear the login form after successful login
+        //Change the user icon to LOG IN (green)
+        userIcon.classList.add("user-icon");
+
+        // Clear the login form after successful login
+        cleanLoginForm(); 
     }else{
         console.log("Login failed");
         
         text = "Login failed!!!";
-        newAlert(text);
+        newAlert(text, "X");
     }
     
     console.log(orders);
@@ -256,7 +275,11 @@ logoutButton.addEventListener("click", function(event){
     // Hide the customer area and show the login form
     customerArea.classList.remove("customer-area-loged");
     forms.style.display = "block";
-    logoutButton.style.display = "none"; // Hide the logout button
+    // Hide the logout button
+    logoutButton.style.display = "none"; 
+
+    //change user icon color to none
+    userIcon.classList.remove("user-icon");
 
 });
 
@@ -285,17 +308,17 @@ registerButton.addEventListener("click", function(event){
     //alerts for empty fields
     if(newName.trim() === ""){
 
-        text = "Put your NAME!!!";
+        text = "Check NAME!!!";
 
-        newAlert(text);
+        newAlert(text, "!");
         
         return;
     }
 
     if(newEmail.trim() === ""){
         
-        text = "Put an EMAIL!!!";
-        newAlert(text);
+        text = "Check EMAIL!!!";
+        newAlert(text, "!");
 
         return;
     }
@@ -303,7 +326,7 @@ registerButton.addEventListener("click", function(event){
     if(newPassword.trim() === ""){
         
         text = "Put a PASSWORD!!!";
-        newAlert(text);
+        newAlert(text, "!");
 
         return;
     }
@@ -312,8 +335,8 @@ registerButton.addEventListener("click", function(event){
     const userRegistered = users.find((user) => user.email === newEmail); //pa luego
 
     if(userRegistered){
-        text = "THAT EMAIL ALREADY EXISTS!!!";
-        newAlert(text);
+        text = "THAT EMAIL ALREADY EXISTS!";
+        newAlert(text, "X");
 
         return;
     }
