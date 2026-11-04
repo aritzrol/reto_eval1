@@ -1,6 +1,6 @@
 //When clicking on the x button, it closes the displayed info card, setting the display to none
 document.querySelector(`.series-info`).querySelector(`button`).addEventListener(`click`, (e) => {
-    e.target.closest(`.series-info`).style.display = `none`;
+    e.target.closest(`.series-info`).classList.add(`hidden`);
 });
 
 //When typing on the search bar, all the volumes are cleared and replaced with those whose title contains the searched value
@@ -13,7 +13,7 @@ document.querySelector(`.content`).querySelector(`input`).addEventListener(`keyu
 document.querySelectorAll(`input[type="checkbox"]`).forEach(c => {
     c.addEventListener(`change`, (e) => {
         if (e.target.checked) {
-
+            filterVolumes(e.target.value);
         }
     });
 })
@@ -24,9 +24,8 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
     const option = e.target.value;
 
     if (option == `new`) {
-        sortById(0, volumes.length - 1);
-        
-        console.log(volumes);
+        sortById();
+        volumes.reverse();
 
         volumes.forEach(v => {
             displayVolume(v);
@@ -34,8 +33,8 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
     }
     else if (option == `old`) {
         document.querySelector(`.products`).innerHTML = "";
-        sortById(0, volumes.length - 1, option);
-
+        sortById();
+        
         volumes.forEach(v => {
             displayVolume(v);
         });
@@ -84,6 +83,8 @@ async function getVolumes() {
         }
 
         volumes = await answer.json();
+        sortById();
+        volumes.reverse();
 
         volumes.forEach(v => {
             displayVolume(v);
@@ -121,7 +122,7 @@ function displayVolume(v) {
     `;
 
     card.className = `card`;
-    card.id = `card-${v.id}`;
+    card.id = `card-${volumes.indexOf(v)}`;
 
     document.querySelector(`.products`).appendChild(card);
 
@@ -152,14 +153,14 @@ function displaySeries(t) {
     const card = document.querySelector(`.series-info`);
     const id = t.id.split(`-`)[1];
     const s = series[volumes[id].id_series];
-    const cover = volumes.find((volume) => volume.id_series == s.id).cover;
+    const cover = volumes.find((volume) => volume.number == 1 && volume.id_series == s.id).cover;
 
     card.querySelector(`img`).src = cover;
     card.querySelector(`h2`).innerHTML = s.title;
     card.querySelector(`p`).innerHTML = s.author;
     card.querySelector(`span`).innerHTML = s.synopsis;
 
-    card.style.display = `block`;
+    card.classList.remove(`hidden`);
 }
 
 //It adds the corresponding volume information to localStorage so it can be shown in the cart
@@ -219,39 +220,25 @@ function searchVolumes(t) {
     });
 }
 
-function swapVolumes(id1, id2) {
-    const temp = volumes[id1];
-    volumes[id1] = volumes[id2];
-    volumes[id2] = temp;
-}
+function sortById() {
+    const n = volumes.length;
+    
+    for (i = 1; i < n; ++i) {
+        const key = volumes[i];
+        let j = i - 1;
 
-function partition (low, high) {
-    const part = volumes[high];
-    let i = (low);
-
-    for (let j = low; j < high; j++) {
-        if (volumes[j].id <= part.id) {
-            swapVolumes(i, j);
-            i++;
+        while (j >= 0 && volumes[j].id > key.id) {
+            volumes[j + 1] = volumes[j];
+            j = j - 1;
         }
+        volumes[j + 1] = key;
     }
 
-    swapVolumes(i, high);
-    
-    return i;
+    console.log(volumes);
 }
 
-function sortById(low, high, option) {
-    if (volumes[high]!= null && volumes[low]!= null) {
-        if (volumes[low].id < volumes[high].id) {
-            const part = partition(low, high);
-        
-            sortById(low, part - 1);
-            sortById(part + 1, high);
-        }
-    };
+function filterVolumes(filter) {
 
-    console.log(option);
 }
 
 getSeries();
