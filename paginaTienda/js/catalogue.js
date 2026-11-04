@@ -183,11 +183,3 @@ function searchVolumes(t) {
     });
 }
 
-const addToCart = document.querySelectorAll("add-to-cart-button");
-
-addToCart.forEach((button) => {
-    addToCart.addEventListener("click", function(){
-    
-        console.log("has pulsado el boton ADD TO CART");    
-    })
-})
