@@ -20,31 +20,32 @@ document.querySelectorAll(`input[type="checkbox"]`).forEach(c => {
 
 //When changing the order selector, it reorders the volumes according to the option selected
 document.querySelector(`select`).addEventListener(`change`, (e) => {
-     switch (e.target.value) {
-        case `new`:
-            document.querySelector(`.products`).innerHTML = "";
-            sortById(0, volumes.length);
+    document.querySelector(`.products`).innerHTML = "";
+    const option = e.target.value;
 
-            volumes.forEach(v => {
-                displayVolume(v);
-            });
-            break;
-        case `old`:
-            document.querySelector(`.products`).innerHTML = "";
-            sortById(0, volumes.length);
-            volumes.reverse();
+    if (option == `new`) {
+        sortById(0, volumes.length - 1);
+        
+        console.log(volumes);
 
-            volumes.forEach(v => {
-                displayVolume(v);
-            });
-            break;
-        case `cheap`:
-            break;
-        case `expensive`:
-            break;
-        default:
-            break;
-     }
+        volumes.forEach(v => {
+            displayVolume(v);
+        });
+    }
+    else if (option == `old`) {
+        document.querySelector(`.products`).innerHTML = "";
+        sortById(0, volumes.length - 1, option);
+
+        volumes.forEach(v => {
+            displayVolume(v);
+        });
+    }
+    else if (option == `cheap`) {
+
+    }
+    else if (option == `expensive`) {
+
+    }
 });
 
 //URLs to the series and volumes in the json server
@@ -212,41 +213,45 @@ function searchVolumes(t) {
 
     volumes.forEach(v => {
         let title = series[v.id_series].title.toLowerCase();
-        console.log(v);
         if (title.includes(searchValue)) {
             displayVolume(v);
         }
     });
 }
 
-//Used for sorting
-//Swaps two volumes in the array
 function swapVolumes(id1, id2) {
-    const temp = volumes[parseInt(id1)];
-
-    console.log(parseInt(id1));
-    console.log(parseInt(id2));
-    volumes[parseInt(id1)] = volumes[parseInt(id2)];
-    volumes[parseInt(id2)] = temp;
+    const temp = volumes[id1];
+    volumes[id1] = volumes[id2];
+    volumes[id2] = temp;
 }
 
-//Calls to partition to get the middle value
-//Calls to itself recursively to reorder itself, placing lower values before the partition and higher values after it
-function sortById(low, high) {
-    let part = volumes[volumes.length - 1].id;
+function partition (low, high) {
+    const part = volumes[high];
+    let i = (low);
 
-    let temp = new Array(volumes.length);
-    let idx = 0;
-
-    for (i = 0; i < volumes.length; i++) {
-        if (volumes[i] <= part) temp[idx++] = volumes[i];
+    for (let j = low; j < high; j++) {
+        if (volumes[j].id <= part.id) {
+            swapVolumes(i, j);
+            i++;
+        }
     }
 
-    for (i = 0; i < volumes.length; i++) {
-        if (volumes[i] > part) temp[idx++] = volumes[i];
-    }
+    swapVolumes(i, high);
+    
+    return i;
+}
 
-    volumes = temp;
+function sortById(low, high, option) {
+    if (volumes[high]!= null && volumes[low]!= null) {
+        if (volumes[low].id < volumes[high].id) {
+            const part = partition(low, high);
+        
+            sortById(low, part - 1);
+            sortById(part + 1, high);
+        }
+    };
+
+    console.log(option);
 }
 
 getSeries();
