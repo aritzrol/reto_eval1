@@ -40,38 +40,36 @@ function showNewReleases() {
 
 // Muestra los ocho volúmenes con el precio más alto.
 function showBestSellers() {
-    const usedVolumes = [];
+    const sortedVolumes = [];
 
-    for (let i = 0; i < 8; i++) {
-        let mostExpensive = null;
+    // Copia los volúmenes para poder ordenarlos sin cambiar la lista original.
+    for (let i = 0; i < volumes.length; i++) {
+        sortedVolumes.push(volumes[i]);
+    }
 
-        for (let j = 0; j < volumes.length; j++) {
-            const volumen = volumes[j];
-            let alreadyUsed = false;
-
-            for (let k = 0; k < usedVolumes.length; k++) {
-                if (usedVolumes[k] === volumen.id) {
-                    alreadyUsed = true;
-                }
+    // Ordena los volúmenes desde el precio más alto al más bajo.
+    for (let i = 0; i < sortedVolumes.length; i++) {
+        for (let j = 0; j < sortedVolumes.length - 1; j++) {
+            if (Number(sortedVolumes[j].price) < Number(sortedVolumes[j + 1].price)) {
+                const temporaryVolume = sortedVolumes[j];
+                sortedVolumes[j] = sortedVolumes[j + 1];
+                sortedVolumes[j + 1] = temporaryVolume;
             }
+        }
+    }
 
-            if (!alreadyUsed && (mostExpensive === null || volumen.price > mostExpensive.price)) {
-                mostExpensive = volumen;
+    // Busca la serie correspondiente y muestra los primeros ocho volúmenes.
+    for (let i = 0; i < 8 && i < sortedVolumes.length; i++) {
+        let serieDelVolumen = null;
+
+        for (let j = 0; j < series.length; j++) {
+            if (series[j].id == sortedVolumes[i].id_series) {
+                serieDelVolumen = series[j];
             }
         }
 
-        if (mostExpensive !== null) {
-            let serieDelVolumen = null;
-            for (let j = 0; j < series.length; j++) {
-                if (series[j].id === mostExpensive.id_series) {
-                    serieDelVolumen = series[j];
-                }
-            }
-
-            if (serieDelVolumen !== null) {
-                displayVolume(serieDelVolumen, mostExpensive, "best-sellers", false);
-                usedVolumes.push(mostExpensive.id);
-            }
+        if (serieDelVolumen !== null) {
+            displayVolume(serieDelVolumen, sortedVolumes[i], "best-sellers", false);
         }
     }
 }
@@ -84,7 +82,7 @@ function showFeaturedBooks() {
         let serieDelVolumen = null;
 
         for (let j = 0; j < series.length; j++) {
-            if (series[j].id === volumes[i].id_series) {
+            if (series[j].id == volumes[i].id_series) {
                 serieDelVolumen = series[j];
             }
         }
@@ -115,6 +113,28 @@ function displayVolume(serie, volumen, sectionId, compact) {
     }
 
     document.getElementById(sectionId).appendChild(card);
+
+    card.addEventListener("click", function () {
+        showProductInfo(serie, volumen);
+    });
 }
+
+// Muestra la información en la ficha igual que en el catálogo.
+function showProductInfo(serie, volumen) {
+    const ficha = document.querySelector(".series-info");
+    ficha.querySelector("img").src = volumen.cover;
+    ficha.querySelector("img").alt = serie.title;
+    ficha.querySelector("h2").textContent = serie.title + " #" + volumen.number;
+    ficha.querySelector(".product-info-author").textContent = serie.author;
+    ficha.querySelector(".product-info-publisher").textContent = serie.publisher;
+    ficha.querySelector(".product-info-price").textContent = Number(volumen.price).toFixed(2) + " €";
+    ficha.querySelector("span").innerHTML = serie.synopsis;
+    ficha.style.display = "grid";
+}
+
+// Cierra la ficha al pulsar la X.
+document.querySelector(".series-info").querySelector("button").addEventListener("click", function () {
+    document.querySelector(".series-info").style.display = "none";
+});
 
 getSeries();
