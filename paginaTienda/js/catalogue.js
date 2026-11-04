@@ -138,9 +138,6 @@ function displayVolume(v) {
         //guardar en localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
 
-        console.log("Producto añadido al carrito:", product);
-        alert("¡Manga añadido al carrito!");
-
     });
 
     card.querySelector(`section`).appendChild(btn);
