@@ -44,17 +44,17 @@ const registerPassword = document.getElementById("register-password");
 const userIcon = document.getElementById("user-icon");
 const cartIcon = document.getElementById("cart-icon");
 
-//Check localStorage if any products exists
-let cart = JSON.parse(localStorage.getItem("cart"));
+// //Check localStorage if any products exists
+// let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
 
-if(cart.length === 0){
-    cartIcon.classList.add("cart-icon");
-    console.log(cart);
-}else{
-    cartIcon.classList.remove("cart-icon");
-}
+// if(cart.length === 0){
+//     cartIcon.classList.add("cart-icon");
+//     console.log(cart);
+// }else{
+//     cartIcon.classList.remove("cart-icon");
+// }
 
 //FUNCTIONS
 async function fetchUsers(){

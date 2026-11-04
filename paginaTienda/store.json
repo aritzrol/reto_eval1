@@ -1625,6 +1625,5 @@
       "price": 9,
       "isbn": 9791387831981
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

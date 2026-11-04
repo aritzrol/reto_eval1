@@ -101,7 +101,7 @@ a {
 
 .products-table-header {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 85px 90px 70px 70px;
+    grid-template-columns: minmax(0, 1fr) 85px 90px 70px 65px;
     align-items: center;
     gap: var(--spacing-sm);
     padding: 12px 0;
@@ -286,6 +286,37 @@ a {
     font-size: var(--font-size-xs);
 }
 
+/*PRODUCT CARD*/
+.product-card{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 100px 70px 60px 70px;
+    align-items: center;
+    margin-top: 1rem;;
+    background: rgb(255 255 255 / 50%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 70%);
+    border-radius: 0.2rem;
+    box-shadow: var(--shadow-md);
+
+}
+
+/*CARD BUTTON*/
+.delete-button{
+    background: rgba(241, 114, 140, 10%);
+    color: var(--color-text);
+    border: 2px solid rgba(243, 132, 132, 90%);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.delete-button:hover{
+    background: rgb(255 255 255 / 40%);
+    box-shadow:
+        0 0 10px rgba(235, 129, 129, 0.8),
+        0 0 24px rgb(255 255 255 / 40%);
+}
+
 /* TABLETS Y MÓVILES */
 
 @media (max-width: 1000px) {
@@ -356,15 +387,3 @@ a {
     }
 }
 
-.product-card{
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 100px 70px 60px 70px;
-    align-items: center;
-    margin-top: 1rem;;
-    background: rgb(255 255 255 / 50%);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgb(255 255 255 / 70%);
-    border-radius: 0.2rem;
-    box-shadow: var(--shadow-md);
-
-}
