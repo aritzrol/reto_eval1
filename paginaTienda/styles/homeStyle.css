@@ -6,12 +6,6 @@ body {
     font-size: var(--font-size-base);
 }
 
-.top-bar {
-    height: 30px;
-    padding: 0 4%;
-    font-size: var(--font-size-xs);
-}
-
 /* Bloque principal de bienvenida */
 .hero {
     display: grid;
@@ -310,10 +304,6 @@ footer section a {
         height: 150px;
     }
 
-    .top-bar {
-        padding: 0 3%;
-        font-size: 9px;
-    }
 }
 
 

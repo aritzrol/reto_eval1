@@ -1,6 +1,10 @@
 const SERIES_URL = "store.json";
 let series = [];
 let volumes = [];
+let serieSeleccionada;
+let volumenSeleccionado;
+
+
 
 // Descarga las series y los volúmenes del archivo JSON.
 async function getSeries() {
@@ -121,6 +125,8 @@ function displayVolume(serie, volumen, sectionId, compact) {
 
 // Muestra la información en la ficha igual que en el catálogo.
 function showProductInfo(serie, volumen) {
+    serieSeleccionada = serie;
+    volumenSeleccionado = volumen;
     const ficha = document.querySelector(".series-info");
     ficha.querySelector("img").src = volumen.cover;
     ficha.querySelector("img").alt = serie.title;
@@ -130,6 +136,45 @@ function showProductInfo(serie, volumen) {
     ficha.querySelector(".product-info-price").textContent = Number(volumen.price).toFixed(2) + " €";
     ficha.querySelector("span").innerHTML = serie.synopsis;
     ficha.style.display = "grid";
+}
+
+//Añadir al carrito
+document.querySelector(".product-info-cart").addEventListener("click", agregarAlCarro);
+function agregarAlCarro() {
+    const mangaName = serieSeleccionada.title;
+    const mangaNumber = volumenSeleccionado.number;
+    const mangaPrice = volumenSeleccionado.price;
+    const mangaCover = volumenSeleccionado.cover;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let repetido = cart.find((product) => product.name === mangaName && product.number === mangaNumber);
+
+    if (repetido) {
+
+        cart.forEach((product) => {
+            if (product.name === mangaName && product.number === mangaNumber) {
+                product.quantity = product.quantity + 1;
+            }
+        });
+
+    } else {
+
+        const product = {
+            id: cart.length > 0 ? cart[cart.length - 1].id + 1 : 1,
+            name: mangaName,
+            number: mangaNumber,
+            price: mangaPrice,
+            quantity: 1,
+            cover: mangaCover
+        }
+
+        cart.push(product);
+
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    document.querySelector(".series-info").style.display = "none";
 }
 
 // Cierra la ficha al pulsar la X.
