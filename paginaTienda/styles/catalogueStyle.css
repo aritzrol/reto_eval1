@@ -182,7 +182,7 @@ body {
     margin-bottom: 10px;
 
     width: fit-content;
-    height: 550px;
+    height: 535px;
 
     border: 1px solid var(--primary-color);
 
@@ -210,7 +210,7 @@ body {
     margin-bottom: 5px;
 }
 
-.card>h3, .card>h4, .card>p, .card>section>h4 {
+.card>h4, .card>p, .card>section>h4 {
     align-self: self-start;
 
     margin: 0px;
