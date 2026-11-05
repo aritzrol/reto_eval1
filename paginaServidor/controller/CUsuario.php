@@ -33,10 +33,10 @@ class CUsuario
     {
         //Crea la entidad y la guarda
         $data = [
-            "nombre" = $_POST["nombre"],
-            "email" = $_POST["email"],
-            "password" = $_POST["password"],
-            "rol" = $_POST["rol"]
+            "nombre" => $_POST["nombre"],
+            "email" => $_POST["email"],
+            "password" => $_POST["password"],
+            "rol" => $_POST["rol"]
         ];
 
         $id_usuario = $this->model->insert($data);
@@ -44,10 +44,10 @@ class CUsuario
         $this->perfil = new MPerfil();
 
         $data = [
-            "id_usuario" = "id_usuario",
-            "apellidos" = $_POST["apellidos"],
-            "telefono" = $_POST["telefono"],
-            "direccion" = $_POST["direccion"]
+            "id_usuario" => $id_usuario,
+            "apellidos" => $_POST["apellidos"],
+            "telefono" => $_POST["telefono"],
+            "direccion" => $_POST["direccion"]
         ];
 
         $this->perfil->insert($data);
@@ -77,19 +77,19 @@ class CUsuario
     {
         //Edita la entidad y la guarda
         $data = [
-            "nombre" = $_POST["nombre"],
-            "email" = $_POST["email"],
-            "password" = $_POST["password"],
-            "rol" = $_POST["rol"]
+            "nombre" => $_POST["nombre"],
+            "email" => $_POST["email"],
+            "password" => $_POST["password"],
+            "rol" => $_POST["rol"]
         ];
 
         $this->model->edit($id, $data);
 
         $data = [
-            "id_usuario" = "id_usuario",
-            "apellidos" = $_POST["apellidos"],
-            "telefono" = $_POST["telefono"],
-            "direccion" = $_POST["direccion"]
+            "id_usuario" => "id_usuario",
+            "apellidos" => $_POST["apellidos"],
+            "telefono"  => $_POST["telefono"],
+            "direccion" => $_POST["direccion"]
         ];
 
         $this->perfil = new MPerfil();

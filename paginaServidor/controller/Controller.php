@@ -54,8 +54,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CProducto();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'serie':
@@ -90,8 +90,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CSerie();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'perfil':
@@ -126,8 +126,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CPerfil();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'pedido':
@@ -162,8 +162,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CPedido();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'lineaPedido':
@@ -198,8 +198,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CLineaPedido();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     default:
