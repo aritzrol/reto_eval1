@@ -27,7 +27,7 @@ class MProducto
     function getAll(){
 
         //se accede a la base de datos
-        $consulta = $this->db->query("select * from producto");
+        $consulta = $this->db->query("SELECT producto.*, serie.nombre as nombre_serie FROM producto JOIN serie ON producto.id_serie = serie.id_serie");
 
         //se leen los datos
         while ($filas = $consulta->fetch_assoc()) {
