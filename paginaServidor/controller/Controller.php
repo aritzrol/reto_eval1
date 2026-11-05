@@ -3,10 +3,11 @@ require_once("db/Db.php");
 require_once("controller/CUsuario.php");
 require_once __DIR__ . '/CProducto.php';
 require_once __DIR__ . '/CSerie.php';
-require_once __DIR__ . '/CPerfil.php';
-require_once __DIR__ . '/CPedido.php';
-require_once __DIR__ . '/CLineaPedido.php';
+// require_once __DIR__ . '/CPerfil.php';
+// require_once __DIR__ . '/CPedido.php';
+// require_once __DIR__ . '/CLineaPedido.php';
 
+$id = isset($_GET['id']) ? $_GET['id'] : null;
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $entity = isset($_GET['entity']) ? $_GET['entity'] : 'usuario';
 
@@ -56,6 +57,7 @@ switch ($entity) {
                 $controller = new CProducto();
                 $controller->index();
         }
+        break;
     case 'serie':
         switch ($action) {
 
@@ -91,6 +93,7 @@ switch ($entity) {
                 $controller = new CSerie();
                 $controller->index();
         }
+        break;
     case 'perfil':
         switch ($action) {
 
@@ -126,6 +129,7 @@ switch ($entity) {
                 $controller = new CPerfil();
                 $controller->index();
         }
+        break;
     case 'pedido':
         switch ($action) {
 
@@ -161,6 +165,7 @@ switch ($entity) {
                 $controller = new CPedido();
                 $controller->index();
         }
+        break;
     case 'lineaPedido':
         switch ($action) {
 
@@ -196,6 +201,7 @@ switch ($entity) {
                 $controller = new CLineaPedido();
                 $controller->index();
         }
+        break;
     default:
         header("Location: index.php?entity=usuario&action=index");
         break;

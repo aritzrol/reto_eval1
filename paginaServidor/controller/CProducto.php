@@ -2,6 +2,7 @@
 
     require_once __DIR__ . '/../model/MProducto.php';
     require_once __DIR__ . '/../model/MSerie.php';
+    require_once __DIR__ . '/../view/VProductoShow.php';
 
     class CProducto{
 
