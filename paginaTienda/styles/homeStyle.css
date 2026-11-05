@@ -312,8 +312,23 @@ footer section a {
 
 
 /* Ficha emergente con portada e información del volumen */
+.home-modal-backdrop {
+    position: fixed;
+    z-index: 29;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+
+.home-modal-backdrop.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .series-info {
-    display: none;
+    display: grid;
     position: fixed;
     z-index: 30;
     top: 50%;
@@ -330,7 +345,6 @@ footer section a {
     gap: 8px 28px;
     background: white;
     border: 1px solid var(--color-border);
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
     transition: scale 0.2s, opacity 0.3s ease-in-out;
 
     opacity: 100%;
@@ -448,6 +462,7 @@ footer section a {
     background: var(--color-primary);
     border: 0;
     border-radius: var(--radius-sm);
+    transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 /* El botón de carrito va en el contenido; la X queda en la esquina */
@@ -458,4 +473,10 @@ footer section a {
     width: fit-content;
     height: auto;
     margin-top: 6px;
+}
+
+.series-info>.product-info-cart:active,
+.series-info>.product-info-cart.clicked {
+    background: var(--color-primary-hover);
+    transform: scale(0.96);
 }

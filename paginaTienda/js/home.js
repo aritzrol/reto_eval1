@@ -138,6 +138,7 @@ function showProductInfo(serie, volumen) {
     serieSeleccionada = serie;
     volumenSeleccionado = volumen;
     const ficha = document.querySelector(".series-info");
+    const fondo = document.querySelector(".home-modal-backdrop");
     ficha.querySelector("img").src = volumen.cover;
     ficha.querySelector("img").alt = serie.title;
     ficha.querySelector("h2").textContent = serie.title + " #" + volumen.number;
@@ -145,8 +146,8 @@ function showProductInfo(serie, volumen) {
     ficha.querySelector(".product-info-publisher").textContent = serie.publisher;
     ficha.querySelector(".product-info-price").textContent = Number(volumen.price).toFixed(2) + " €";
     ficha.querySelector("span").innerHTML = serie.synopsis;
-    ficha.style.display = "grid";
-    ficha.classList.remove('hidden');
+    ficha.classList.remove(`hidden`);
+    fondo.classList.remove(`hidden`);
 }
 
 //Añadir al carrito
@@ -185,12 +186,24 @@ function agregarAlCarro() {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    document.querySelector(".series-info").style.display = "none";
+
+    const ficha = document.querySelector(".series-info");
+    const fondo = document.querySelector(".home-modal-backdrop");
+    const boton = ficha.querySelector(".product-info-cart");
+
+    boton.classList.add("clicked");
+
+    setTimeout(function () {
+        ficha.classList.add(`hidden`);
+        fondo.classList.add(`hidden`);
+        boton.classList.remove("clicked");
+    }, 250);
 }
 
 // Cierra la ficha al pulsar la X.
 document.querySelector(".series-info").querySelector("button").addEventListener("click", function () {
-    document.querySelector(".series-info").style.display = "none";
+    document.querySelector(".series-info").classList.add(`hidden`);
+    document.querySelector(".home-modal-backdrop").classList.add(`hidden`);
 });
 
 getSeries();
