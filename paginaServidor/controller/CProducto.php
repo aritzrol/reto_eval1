@@ -36,11 +36,6 @@
             header('Location: index.php?entity=producto&action=index');
         }
 
-        public function edit(){
-            //ventana
-            require_once __DIR__ . '/../view/VProductoEditForm.php';
-        }
-
         public function edit($id){
             $this->model->edit($id);
             //ventana
