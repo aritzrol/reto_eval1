@@ -12,9 +12,7 @@ document.querySelector(`.content`).querySelector(`input`).addEventListener(`keyu
 //When clicking on any of the filters, they are applied
 document.querySelectorAll(`input[type="checkbox"]`).forEach(c => {
     c.addEventListener(`change`, (e) => {
-        if (e.target.checked) {
-            filterVolumes(e.target.value);
-        }
+        filterVolumes(e.target);
     });
 })
 
@@ -93,6 +91,7 @@ async function getVolumes() {
 
         volumes = await answer.json();
         sortVolumes(`id`);
+
         volumes.reverse();
 
         volumes.forEach(v => {
@@ -245,8 +244,8 @@ function sortVolumes(option) {
     }
 }
 
-function filterVolumes(filter) {
-
+function filterVolumes(target) {
+    
 }
 
 getSeries();
