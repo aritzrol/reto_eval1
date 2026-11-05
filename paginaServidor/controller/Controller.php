@@ -202,6 +202,39 @@ switch ($entity) {
                 $controller->index();
         }
         break;
+
+    case 'login':
+        
+        switch($action){
+
+            case 'index':
+
+                $controller = new CLogin();
+                $controller->index();
+
+            break;
+
+            case 'login':
+
+                $controller = new CLogin();
+                $controller->logIn($_POST);
+
+            break;    
+
+            case 'logOut':
+
+                $controller = new CLogin();
+                $controller->logOut();
+            
+            break;
+
+            default:
+                header('Location: index.php?entity=login&action=index');
+            break;
+        }
+
+    break;
+    
     default:
         header("Location: index.php?entity=usuario&action=index");
         break;
