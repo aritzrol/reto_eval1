@@ -103,8 +103,18 @@ function displayVolume(serie, volumen, sectionId, compact) {
     const card = document.createElement("article");
 
     if (compact) {
-        card.className = "featured-book";
-        card.innerHTML = `<img src="${volumen.cover}" alt="${serie.title}">`;
+        card.className = "carousel-item";
+        card.innerHTML = `
+            <img src="${volumen.cover}" alt="${serie.title} volumen ${volumen.number}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>${serie.title}</h5>
+                <p>Volumen ${volumen.number}</p>
+            </div>
+        `;
+
+        if (document.getElementById(sectionId).children.length === 0) {
+            card.classList.add("active");
+        }
     } else {
         card.className = "product";
         card.innerHTML = `

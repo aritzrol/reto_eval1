@@ -54,7 +54,7 @@ body {
     border: 1px solid var(--color-border-strong);
 }
 
-/* Libros destacados: se desplaza con la barra horizontal */
+/* Carrusel de novedades destacadas */
 .featured {
     min-width: 0;
     padding: 18px;
@@ -70,40 +70,50 @@ body {
     align-items: center;
 }
 
-.featured-books {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 12px;
-    width: 100%;
+.featured-carousel {
     margin-top: 14px;
-    padding: 4px 4px 12px;
-    box-sizing: border-box;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
 }
 
-.featured-book {
-    flex: 0 0 190px;
-    width: 190px;
-    min-width: 190px;
-    padding: 8px;
-    box-sizing: border-box;
-    background: white;
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s ease;
-}
-
-.featured-book:hover {
-    transform: translateY(-4px);
+#featured-books .carousel-item {
     cursor: pointer;
 }
 
-.featured-book img {
+#featured-books .carousel-item img {
     display: block;
     width: 100%;
-    height: 190px;
+    height: 270px;
     object-fit: contain;
+    background: #fcfaf9;
+}
+
+#featured-books .carousel-caption {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 8px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#featured-books .carousel-caption h5,
+#featured-books .carousel-caption p {
+    margin: 0;
+}
+
+#featured-books .carousel-caption h5 {
+    font-size: 16px;
+}
+
+#featured-books .carousel-caption p {
+    font-size: 14px;
+}
+
+#featuredCarousel .carousel-control-prev-icon,
+#featuredCarousel .carousel-control-next-icon {
+    padding: 18px;
+    background-color: var(--color-primary);
+    background-size: 55%;
+    border-radius: 50%;
 }
 
 .assurances {
@@ -294,14 +304,8 @@ footer section a {
         grid-template-columns: 1fr;
     }
 
-    .featured-book {
-        flex-basis: 150px;
-        width: 150px;
-        min-width: 150px;
-    }
-
-    .featured-book img {
-        height: 150px;
+    #featured-books .carousel-item img {
+        height: 190px;
     }
 
 }

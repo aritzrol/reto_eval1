@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | MANGA ANCHA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
     <link href="styles/styles.css" rel="stylesheet">
     <link href="referencia.css" rel="stylesheet">
     <link href="styles/homeStyle.css" rel="stylesheet">
@@ -24,9 +27,6 @@
                 </div>
             </div>
         </a>
-
-        <!--SEARCH BAR-->
-        <input type="text" for="title" name="title" placeholder="🔍 Search by title" />
 
         <!--NAV BUTTONS-->
         <div class="nav-buttons">
@@ -63,23 +63,43 @@
         <hr>
         <span>lorem ipsum swagever (like whatever but with swag)</span>
     </section>
-    <main>
+        <main>
+
         <section class="hero">
             <div><span class="eyebrow">LIBRERÍA DE CÓMIC Y MANGA INDEPENDIENTE</span>
                 <h1>Novedades editoriales y fondo de catálogo de manga</h1>
                 <p>Distribuimos de forma directa las publicaciones de Norma, Ivrea, Milky Way, Planeta Cómic, Panini y
                     editoriales independientes. Cuidamos cada envío con embalaje reforzado y marcapáginas de cortesía.
                 </p>
-                <div class="actions"><a class="button" href="catalogue.html">Ver catálogo completo</a><a
-                        class="button secondary" href="#novedades">Novedades de la semana</a></div>
-                <div class="assurances"><span><strong>+12.000</strong> Tomos en stock real</span><span><strong>24 / 48
-                            h</strong> Envío peninsular</span><span><strong>100% Oficial</strong> Edición española
-                        directa</span></div>
+                <div class="actions">
+                    <a class="button" href="catalogue.html">Ver catálogo completo</a>
+                    <a class="button secondary" href="#reference-point-novedades">Novedades de la semana</a>
+                </div>
+                <div class="assurances">
+                    <span><strong>+12.000</strong> Tomos en stock real</span>
+                    <span><strong>24 / 48 h</strong> Envío peninsular</span>
+                    <span id="reference-point-novedades"><strong>100% Oficial</strong> Edición española directa</span>
+                </div>
             </div>
             <article class="featured">
-                <div class="featured-head"><span>Novedades destacadas</span><small>Semana editorial</small></div>
-                <div class="featured-books" id="featured-books"></div><small class="muted">Descubre las
-                    últimas incorporaciones a nuestra librería.</small>
+                <div class="featured-head">
+                    <span>Novedades destacadas</span>
+                    <small>Semana editorial</small>
+                </div>
+                <div id="featuredCarousel" class="carousel slide featured-carousel">
+                    <div class="carousel-inner" id="featured-books"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+                <small class="muted">Descubre las últimas incorporaciones a nuestra librería.</small>
             </article>
         </section>
         <section class="section" id="novedades">
@@ -129,6 +149,9 @@
                 href="catalogue.html">Planeta Cómic</a>
         </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="js/home.js" defer></script>
 </body>
 
