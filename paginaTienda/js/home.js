@@ -146,6 +146,7 @@ function showProductInfo(serie, volumen) {
     ficha.querySelector(".product-info-price").textContent = Number(volumen.price).toFixed(2) + " €";
     ficha.querySelector("span").innerHTML = serie.synopsis;
     ficha.style.display = "grid";
+    ficha.classList.remove('hidden');
 }
 
 //Añadir al carrito
