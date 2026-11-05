@@ -7,6 +7,19 @@ class MUsuario {
         $this->conexion = Db::getConexion();
     }
 
+    public function getByEmail($email) {
+        $resultado = null;
+
+        $sentencia = $this->conexion->prepare("SELECT id_usuario FROM usuario WHERE email = ?;");
+        $sentencia->bind_param("s", $email);
+        $sentencia->execute();
+
+        $resultado = $sentencia->get_result();
+
+        $sentencia->close();
+        return $resultado->fetch_assoc();
+    }
+
     public function getById($id) {
         $resultado = null;
 
@@ -39,6 +52,9 @@ class MUsuario {
 
         $sentencia->execute();
         $sentencia->close();
+
+        $id = getByEmail($data["email"]);
+        return $id;
     }
 
     public function edit($id, $data) {

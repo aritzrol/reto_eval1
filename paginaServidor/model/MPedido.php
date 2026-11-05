@@ -16,7 +16,7 @@ class MPedido
     }
 
     //Crear un pedido
-    public function create($id_usuario, $fecha, $precio_total, $estado_pedido){
+    public function insert($id_usuario, $fecha, $precio_total, $estado_pedido){
 
         $consulta=$this->db->prepare("insert into pedido (id_usuario, fecha, precio_total, estado_pedido) values (?, ?, ?, ?)");
         $consulta->bind_param("isds", $id_usuario, $fecha, $precio_total, $estado_pedido);
@@ -38,7 +38,7 @@ class MPedido
     }
 
     //actualizar un pedido
-        public function update($id_pedido, $id_usuario, $fecha, $precio_total, $estado_pedido){
+    public function edit($id_pedido, $id_usuario, $fecha, $precio_total, $estado_pedido){
 
         $consulta=$this->db->prepare("update pedido set id_usuario=?, fecha=?, precio_total=?, estado_pedido=? where id_pedido=?");
         $consulta->bind_param("isdsi", $id_usuario, $fecha, $precio_total, $estado_pedido, $id_pedido);

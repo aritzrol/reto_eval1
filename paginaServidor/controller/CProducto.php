@@ -5,7 +5,7 @@
 
     class CProducto{
 
-        private Mproducto $model;
+        private MProducto $model;
 
         public function __construct()
         {
@@ -13,11 +13,45 @@
         }
 
         public function index(){
-            //modelo
             $data = $this->model->getAll();
             //ventana
-            require_once __DIR__ . '/../view/vista_producto.php';
+            require_once __DIR__ . '/../view/VProductoIndex.php';
         }
+
+        public function show($id){
+            $data = $this->model->getById($id);
+            //ventana
+            require_once __DIR__ . '/../view/VProductoShow.php';
+        }
+
+        public function create(){
+            //ventana
+            require_once __DIR__ . '/../view/VProductoCreateForm.php';
+        }
+
+        public function store(){
+            $this->model->insert($_POST);
+
+            header('Location: index.php?entity=producto&action=index');
+        }
+
+        public function edit(){
+            //ventana
+            require_once __DIR__ . '/../view/VProductoEditForm.php';
+        }
+
+        public function edit($id){
+            $this->model->edit($id);
+            //ventana
+            header('Location: index.php?entity=producto&action=index');
+        }
+
+        public function destroy($id){
+        //Elimina la entidad
+        $this->model->delete($id);
+
+        header('Location: index.php?entity=producto&action=index');
+    }
 
     }
 
