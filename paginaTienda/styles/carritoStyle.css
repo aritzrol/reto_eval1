@@ -208,7 +208,7 @@ a {
 
 .delivery-name,
 .delivery-price {
-    font-size: 11px;
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-bold);
 }
 
@@ -283,7 +283,7 @@ a {
 .gift-message p {
     margin: 0;
     color: var(--color-text-secondary);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-base);
 }
 
 /*PRODUCT CARD*/
@@ -366,6 +366,7 @@ a {
     .gift-message {
         margin: 2px -12px -12px;
     }
+
 }
 
 @media (max-width: 360px) {

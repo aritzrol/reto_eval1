@@ -6,6 +6,7 @@ console.log(cart);
 //variables html
 const cartBox = document.getElementById("cart-items");
 const deleteButtons = document.getElementsByClassName("delete-button");
+const selectedPrice = document
 
 
 //FUNCTIONS
