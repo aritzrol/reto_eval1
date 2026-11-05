@@ -6,8 +6,20 @@ console.log(cart);
 //variables html
 const cartBox = document.getElementById("cart-items");
 const deleteButtons = document.getElementsByClassName("delete-button");
-const selectedPrice = document
+const standardRadio = document.getElementById("standard-radio");
+const expressRadio = document.getElementById("express-radio");
+const totalPrice = document.getElementById("summary-total");
+const buyButton = document.getElementsByClassName("buy-manga-button")[0];
 
+//variables
+let standardShipping = true;
+let expressShipping = false;
+let standarPrice = 3.95;
+let expressPrice = 6.95;
+let total = 0;
+
+
+console.log(standardRadio.checked);
 
 //FUNCTIONS
 cart.forEach((product) => {
@@ -29,7 +41,30 @@ cart.forEach((product) => {
     cartBox.appendChild(productCard);
 });
 
+//PRICE CALCULATOR
+function priceCalculator(){
+
+    cart.forEach((product) => {
+
+        total = total + product.price;
+        
+    });
+
+    if(standardShipping){
+        total = total + standarPrice;
+    }else{
+        total = total + expressPrice;
+    }
+
+    console.log(total);
+
+}
+
 //LISTENERS
+
+buyButton.addEventListener("click", function(){
+    console.log("has pulsado en comprar");
+});
 
 for(let i=0; i < deleteButtons.length; i++){
 
@@ -55,3 +90,23 @@ for(let i=0; i < deleteButtons.length; i++){
     
     });
 }
+
+//RADIO BUTTONS
+standardRadio.addEventListener("change", function(){
+    // console.log("standard");
+    // console.log("estandard:",standardRadio.checked);
+    // console.log("express:",expressRadio.checked);
+    standardShipping = true;
+    expressShipping = false;
+});
+
+expressRadio.addEventListener("change", function(){
+    // console.log("Express");
+    // console.log("estandard:",standardRadio.checked);
+    // console.log("express:",expressRadio.checked);
+    expressShipping = true;
+    standardShipping = false;
+});
+
+
+

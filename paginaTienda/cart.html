@@ -122,11 +122,11 @@
                 <h2>Resumen del pedido</h2>
 
                 <!-- Método de entrega -->
-                <fieldset class="delivery-section">
+                <form class="delivery-section">
                     <legend>Método de entrega</legend>
 
                     <label class="delivery-option">
-                        <input type="radio" name="delivery" value="standard" checked>
+                        <input type="radio" id="standard-radio" name="delivery" value="standard" checked >
 
                         <span class="delivery-details">
                             <span class="delivery-name">
@@ -140,7 +140,7 @@
                     </label>
 
                     <label class="delivery-option">
-                        <input type="radio" name="delivery" value="express">
+                        <input type="radio" id="express-radio" name="delivery" value="express">
 
                         <span class="delivery-details">
                             <span class="delivery-name">
@@ -152,10 +152,10 @@
                             6.95€
                         </span>
                     </label>
-                </fieldset>
+                </form>
 
                 <!-- Total -->
-                <div class="summary-total">
+                <div class="buy-manga-button">
                     <span>TOTAL A PAGAR</span>
                     <span id="summary-total" class="total-price">0,00 €</span>
                 </div>
