@@ -36,14 +36,12 @@ body {
     border: 1px solid var(--primary-color);
 
     background-color: white;
+    opacity: 100%;
 
-    transition: width 0.2s, height 0.2s, opacity 0.3s ease-in-out;
+    transition: scale 0.2s, opacity 0.3s ease-in-out;
 }
 
 .series-info.hidden {
-    width: 0px;
-    height: 0px;
-
     opacity: 0;
 
     scale: 0;

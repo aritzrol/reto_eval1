@@ -16,7 +16,7 @@ class MLineaPedido
     }
 
     //Crear una linea de pedido
-    public function create($id_pedido, $id_producto, $cantidad, $precio_unitario){
+    public function insert($id_pedido, $id_producto, $cantidad, $precio_unitario){
 
         $consulta=$this->db->prepare("insert into linea_pedido (id_pedido, id_producto, cantidad, precio_unitario) values (?, ?, ?, ?)");
         $consulta->bind_param("iiid", $id_pedido, $id_producto, $cantidad, $precio_unitario);
@@ -38,7 +38,7 @@ class MLineaPedido
     }
 
     //actualizar un pedido
-        public function update($id_linea_pedido, $id_pedido, $id_producto, $cantidad, $precio_unitario){
+    public function edit($id_linea_pedido, $id_pedido, $id_producto, $cantidad, $precio_unitario){
 
         $consulta=$this->db->prepare("update linea_pedido set id_pedido=?, id_producto=?, cantidad=?, precio_unitario=? where id_linea_pedido=?");
         $consulta->bind_param("iiidi", $id_pedido, $id_producto, $cantidad, $precio_unitario, $id_linea_pedido);

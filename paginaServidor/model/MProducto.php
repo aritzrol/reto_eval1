@@ -16,7 +16,7 @@ class MProducto
     }
 
     //Crear un producto
-    public function create($id_serie, $numero, $precio, $isbn){
+    public function insert($id_serie, $numero, $precio, $isbn){
 
         $consulta=$this->db->prepare("insert into producto (id_serie, numero, precio, isbn) values (?, ?, ?, ?)");
         $consulta->bind_param("iids", $id_serie, $numero, $precio, $isbn);
@@ -38,7 +38,7 @@ class MProducto
     }
 
     //actualizar un producto
-        public function update($id_producto, $id_serie, $numero, $precio, $isbn){
+    public function edit($id_producto, $id_serie, $numero, $precio, $isbn){
 
         $consulta=$this->db->prepare("update caballero set id_serie=?, numero=?, precio=?, isbn=? where id_producto=?");
         $consulta->bind_param("iidsi", $id_serie, $numero, $precio, $isbn, $id_producto);
