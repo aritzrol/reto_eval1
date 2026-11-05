@@ -1,8 +1,8 @@
 <?php
 require_once("db/Db.php");
 require_once("controller/CUsuario.php");
-require_once __DIR__ . '/CProducto.php';
-require_once __DIR__ . '/CSerie.php';
+require_once ("controller/CProducto.php");
+require_once ("controller/CSerie.php");
 // require_once __DIR__ . '/CPerfil.php';
 // require_once __DIR__ . '/CPedido.php';
 // require_once __DIR__ . '/CLineaPedido.php';
