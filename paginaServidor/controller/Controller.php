@@ -200,6 +200,7 @@ switch ($entity) {
             default:
                 $controller = new CLineaPedido();
                 $controller->index();
+                break;
         }
         break;
     default:
