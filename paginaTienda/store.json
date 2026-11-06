@@ -36,78 +36,239 @@
       "id": 1,
       "id_usuario": 1,
       "fecha": "2024-06-01",
-      "total": 25.99,
-      "estado": "Enviado"
+      "total": 21.85,
+      "estado": "Enviado",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Berserk 1",
+          "price": 9.95,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Naruto 5",
+          "price": 7.95,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 2,
       "id_usuario": 2,
       "fecha": "2024-06-02",
-      "total": 15.49,
-      "estado": "Pendiente"
+      "total": 12.45,
+      "estado": "Pendiente",
+      "productos": [
+        {
+          "id": 3,
+          "name": "One Piece 10",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 3,
       "id_usuario": 3,
       "fecha": "2024-06-03",
-      "total": 30,
-      "estado": "Entregado"
+      "total": 40.45,
+      "estado": "Entregado",
+      "productos": [
+        {
+          "id": 6,
+          "name": "Akira 1",
+          "price": 12,
+          "quantity": 2
+        },
+        {
+          "id": 5,
+          "name": "Death Note 1",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 4,
       "id_usuario": 4,
       "fecha": "2024-06-04",
-      "total": 12.75,
-      "estado": "Cancelado"
+      "total": 11.45,
+      "estado": "Cancelado",
+      "productos": [
+        {
+          "id": 7,
+          "name": "Bleach 7",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 5,
       "id_usuario": 1,
       "fecha": "2024-06-05",
-      "total": 18.99,
-      "estado": "Enviado"
+      "total": 21.4,
+      "estado": "Enviado",
+      "productos": [
+        {
+          "id": 4,
+          "name": "Dragon Ball 3",
+          "price": 8.95,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "name": "One Piece 10",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 6,
       "id_usuario": 2,
       "fecha": "2024-06-06",
-      "total": 22.5,
-      "estado": "Pendiente"
+      "total": 19.85,
+      "estado": "Pendiente",
+      "productos": [
+        {
+          "id": 2,
+          "name": "Naruto 5",
+          "price": 7.95,
+          "quantity": 2
+        }
+      ]
     },
     {
       "id": 7,
       "id_usuario": 3,
       "fecha": "2024-06-07",
-      "total": 40,
-      "estado": "Entregado"
+      "total": 40.85,
+      "estado": "Entregado",
+      "productos": [
+        {
+          "id": 8,
+          "name": "Vagabond 2",
+          "price": 11.95,
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "name": "Akira 1",
+          "price": 12,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "name": "Berserk 1",
+          "price": 9.95,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 8,
       "id_usuario": 4,
       "fecha": "2024-06-08",
-      "total": 10.25,
-      "estado": "Cancelado"
+      "total": 13.45,
+      "estado": "Cancelado",
+      "productos": [
+        {
+          "id": 5,
+          "name": "Death Note 1",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 9,
       "id_usuario": 1,
       "fecha": "2024-06-09",
-      "total": 35.99,
-      "estado": "Enviado"
+      "total": 35.8,
+      "estado": "Enviado",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Berserk 1",
+          "price": 9.95,
+          "quantity": 2
+        },
+        {
+          "id": 8,
+          "name": "Vagabond 2",
+          "price": 11.95,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 10,
       "id_usuario": 2,
       "fecha": "2024-06-10",
-      "total": 28.49,
-      "estado": "Pendiente"
+      "total": 29.35,
+      "estado": "Pendiente",
+      "productos": [
+        {
+          "id": 4,
+          "name": "Dragon Ball 3",
+          "price": 8.95,
+          "quantity": 2
+        },
+        {
+          "id": 7,
+          "name": "Bleach 7",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 11,
       "id_usuario": 2,
       "fecha": "2024-06-08",
-      "total": 10.25,
-      "estado": "Cancelado"
+      "total": 22.4,
+      "estado": "Cancelado",
+      "productos": [
+        {
+          "id": 7,
+          "name": "Bleach 7",
+          "price": 7.5,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Naruto 5",
+          "price": 7.95,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id_usuario": 2,
+      "fecha": "2026-11-06",
+      "total": 21.45,
+      "estado": "pendiente de envio",
+      "producto": [
+        {
+          "id": 2,
+          "name": "Puella Magi Madoka Magica",
+          "number": 2,
+          "price": 8.5,
+          "quantity": 1,
+          "cover": "IMG/covers/madoka/madoka_2.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Witch Hat Atelier",
+          "number": 15,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_15.jpg"
+        }
+      ],
+      "id": 12
     }
   ],
   "series": [

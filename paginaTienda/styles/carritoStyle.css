@@ -302,8 +302,9 @@ a {
 
 /*CARD BUTTON*/
 .delete-button{
-    background: rgba(241, 114, 140, 10%);
-    color: var(--color-text);
+    background: rgba(238, 81, 113, 10%);
+    color: red;
+    font-size: 1.2rem;
     border: 2px solid rgba(243, 132, 132, 90%);
     border-radius: 0.2rem;
     cursor: pointer;
