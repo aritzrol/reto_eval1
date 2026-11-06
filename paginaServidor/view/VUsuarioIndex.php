@@ -18,15 +18,14 @@ if (!isset($_SESSION['id_usuario'])) {
 </head>
 <body>
 
-<!--
+
 <div class="container mt-5">
-    <a href="index.php?entity=caballero&action=index" class="btn btn-info">Caballeros</a>
-    <a href="index.php?entity=arma&action=index" class="btn btn-info">Armas</a>
-    <a href="index.php?entity=escudo&action=index" class="btn btn-info">Escudos</a>
+    <a href="index.php?entity=usuario&action=index" class="btn btn-info">Usuarios</a>
+    <a href="index.php?entity=pedido&action=index" class="btn btn-info">Pedidos</a>
+    <a href="index.php?entity=serie&action=index" class="btn btn-info">Productos</a>
     <br/>
     <a href="index.php?entity=login&action=logout" class="btn btn-danger">Cerrar sesión</a>
 </div>
--->
 
 <div class="container mt-5">
     <h1 class="text-center mb-4">Lista de Usuarios</h1>
