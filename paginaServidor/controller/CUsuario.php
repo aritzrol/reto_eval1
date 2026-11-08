@@ -20,13 +20,13 @@ class CUsuario
         $data = $this->model->getAll();
         array_merge($data, $this->perfil->getAll());
 
-        require __DIR__ . '/../view/VUsuarioIndex.php';
+        require __DIR__ . '/../view/VUsuarioShow.php';
     }
 
     public function create()
     {
         //Muestra la vista/formulario de crear
-        require __DIR__ . '/../view/VUsuarioCreateForm.php';
+        require __DIR__ . '/../view/VUsuarioCreate.php';
     }
 
     public function store()
@@ -70,7 +70,7 @@ class CUsuario
     {
         //Muestra la vista/formulario de editar
         $data = $this->model->getById($id); 
-        require __DIR__ . '/../view/VUsuarioEditForm.php';
+        require __DIR__ . '/../view/VUsuarioUpdate.php';
     }
 
     public function update($id)

@@ -626,11 +626,19 @@
       "genre": "Yaoi",
       "author": "Natsuki Kizu",
       "publisher": "Milky Way"
+    },
+    {
+      "id": 19,
+      "title": "Centuria",
+      "synopsis": "Julian is a young boy who, after killing the blacksmith his mother sold him to, flees as a stowaway in a slave ship. Once discovered, he becomes a slave himself but is welcomed into a close group of slaves who support each other, especially Mira, a pregnant woman who shares her food with him and takes him under her wing. The ship's captain has the slaves murdered at sea to commit insurance fraud, but this accidentally calls forward an eldritch sea entity who, for the blood of the 100 killed slaves, including Mira, gifts Julian with their combined strength and their 100 lives. Now empowered and indebted to the 100 slaves killed protecting him and Mira's newborn daughter, Diana, he sets off to a new country to raise her.",
+      "genre": "Shonen",
+      "author": "Tohru Kuramori",
+      "publisher": "Ivrea"
     }
   ],
   "volumes": [
     {
-      "id": 162,
+      "id": 0,
       "id_series": 0,
       "cover": "IMG/covers/madoka/madoka_1.jpg",
       "number": 1,
@@ -638,7 +646,7 @@
       "isbn": 9788415680253
     },
     {
-      "id": 165,
+      "id": 1,
       "id_series": 0,
       "cover": "IMG/covers/madoka/madoka_2.jpg",
       "number": 2,
@@ -646,7 +654,7 @@
       "isbn": 9788415680437
     },
     {
-      "id": 168,
+      "id": 2,
       "id_series": 0,
       "cover": "IMG/covers/madoka/madoka_3.jpg",
       "number": 3,
@@ -654,7 +662,7 @@
       "isbn": 9788415680505
     },
     {
-      "id": 128,
+      "id": 58,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_1.jpg",
       "number": 1,
@@ -662,7 +670,7 @@
       "isbn": 9788467963021
     },
     {
-      "id": 133,
+      "id": 70,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_2.jpg",
       "number": 2,
@@ -670,7 +678,7 @@
       "isbn": 9788467963038
     },
     {
-      "id": 137,
+      "id": 73,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_3.jpg",
       "number": 3,
@@ -678,7 +686,7 @@
       "isbn": 9788467939958
     },
     {
-      "id": 139,
+      "id": 76,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_4.jpg",
       "number": 4,
@@ -686,7 +694,7 @@
       "isbn": 9788467939965
     },
     {
-      "id": 143,
+      "id": 79,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_5.jpg",
       "number": 5,
@@ -694,7 +702,7 @@
       "isbn": 9788467939972
     },
     {
-      "id": 147,
+      "id": 81,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_6.jpg",
       "number": 6,
@@ -702,7 +710,7 @@
       "isbn": 9788415680505
     },
     {
-      "id": 151,
+      "id": 83,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_7.jpg",
       "number": 7,
@@ -710,7 +718,7 @@
       "isbn": 9788467939996
     },
     {
-      "id": 155,
+      "id": 85,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_8.jpg",
       "number": 8,
@@ -718,7 +726,7 @@
       "isbn": 9788467940008
     },
     {
-      "id": 158,
+      "id": 86,
       "id_series": 1,
       "cover": "IMG/covers/sakura/sakura_9.jpg",
       "number": 9,
@@ -726,7 +734,7 @@
       "isbn": 9788467940015
     },
     {
-      "id": 94,
+      "id": 130,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_1.jpg",
       "number": 1,
@@ -734,7 +742,7 @@
       "isbn": 9791388100871
     },
     {
-      "id": 99,
+      "id": 135,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_2.jpg",
       "number": 2,
@@ -742,7 +750,7 @@
       "isbn": 9788411619011
     },
     {
-      "id": 104,
+      "id": 142,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_3.jpg",
       "number": 3,
@@ -750,7 +758,7 @@
       "isbn": 9788410492578
     },
     {
-      "id": 110,
+      "id": 149,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_4.jpg",
       "number": 4,
@@ -758,7 +766,7 @@
       "isbn": 9791387780364
     },
     {
-      "id": 115,
+      "id": 155,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_5.jpg",
       "number": 5,
@@ -766,7 +774,7 @@
       "isbn": 9791387781521
     },
     {
-      "id": 120,
+      "id": 160,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_6.jpg",
       "number": 6,
@@ -774,7 +782,7 @@
       "isbn": 9791387918453
     },
     {
-      "id": 125,
+      "id": 169,
       "id_series": 2,
       "cover": "IMG/covers/nana/nana_7.jpg",
       "number": 7,
@@ -782,7 +790,7 @@
       "isbn": 9791387919474
     },
     {
-      "id": 2,
+      "id": 26,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_1.jpg",
       "number": 1,
@@ -790,7 +798,7 @@
       "isbn": 9788467928150
     },
     {
-      "id": 6,
+      "id": 27,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_2.jpg",
       "number": 2,
@@ -798,7 +806,7 @@
       "isbn": 9788467928167
     },
     {
-      "id": 10,
+      "id": 30,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_3.jpg",
       "number": 3,
@@ -806,7 +814,7 @@
       "isbn": 9788467929287
     },
     {
-      "id": 14,
+      "id": 32,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_4.jpg",
       "number": 4,
@@ -814,7 +822,7 @@
       "isbn": 9788467929836
     },
     {
-      "id": 18,
+      "id": 39,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_5.jpg",
       "number": 5,
@@ -822,7 +830,7 @@
       "isbn": 9788467929843
     },
     {
-      "id": 23,
+      "id": 45,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_6.jpg",
       "number": 6,
@@ -830,7 +838,7 @@
       "isbn": 9788467929850
     },
     {
-      "id": 28,
+      "id": 50,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_7.jpg",
       "number": 7,
@@ -838,7 +846,7 @@
       "isbn": 9788467934809
     },
     {
-      "id": 33,
+      "id": 54,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_8.jpg",
       "number": 8,
@@ -846,7 +854,7 @@
       "isbn": 9788467934816
     },
     {
-      "id": 37,
+      "id": 67,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_9.jpg",
       "number": 9,
@@ -854,7 +862,7 @@
       "isbn": 9788467934823
     },
     {
-      "id": 42,
+      "id": 74,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_10.jpg",
       "number": 10,
@@ -862,7 +870,7 @@
       "isbn": 9788467942682
     },
     {
-      "id": 47,
+      "id": 80,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_11.jpg",
       "number": 11,
@@ -870,7 +878,7 @@
       "isbn": 9788467943658
     },
     {
-      "id": 51,
+      "id": 84,
       "id_series": 3,
       "cover": "IMG/covers/fruitsBasket/fruitsBasket_12.jpg",
       "number": 12,
@@ -878,7 +886,7 @@
       "isbn": 9788467947656
     },
     {
-      "id": 41,
+      "id": 122,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_1.jpg",
       "number": 1,
@@ -886,7 +894,7 @@
       "isbn": 9788467941074
     },
     {
-      "id": 46,
+      "id": 123,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_2.jpg",
       "number": 2,
@@ -894,7 +902,7 @@
       "isbn": 9788467971156
     },
     {
-      "id": 50,
+      "id": 126,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_3.jpg",
       "number": 3,
@@ -902,7 +910,7 @@
       "isbn": 9788467971163
     },
     {
-      "id": 55,
+      "id": 131,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_4.jpg",
       "number": 4,
@@ -910,7 +918,7 @@
       "isbn": 9788467971170
     },
     {
-      "id": 59,
+      "id": 136,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_5.jpg",
       "number": 5,
@@ -918,7 +926,7 @@
       "isbn": 9788467971187
     },
     {
-      "id": 64,
+      "id": 143,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_6.jpg",
       "number": 6,
@@ -926,7 +934,7 @@
       "isbn": 9788467971194
     },
     {
-      "id": 69,
+      "id": 147,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_7.jpg",
       "number": 7,
@@ -934,7 +942,7 @@
       "isbn": 9788467971200
     },
     {
-      "id": 74,
+      "id": 156,
       "id_series": 4,
       "cover": "IMG/covers/sailorMoon/sailorMoon_8.jpg",
       "number": 8,
@@ -942,7 +950,7 @@
       "isbn": 9788467971217
     },
     {
-      "id": 109,
+      "id": 35,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_1.jpg",
       "number": 1,
@@ -950,7 +958,7 @@
       "isbn": 9788417373412
     },
     {
-      "id": 114,
+      "id": 38,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_2.jpg",
       "number": 2,
@@ -958,7 +966,7 @@
       "isbn": 9788417373535
     },
     {
-      "id": 119,
+      "id": 41,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_3.jpg",
       "number": 3,
@@ -966,7 +974,7 @@
       "isbn": 9788417373726
     },
     {
-      "id": 124,
+      "id": 46,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_4.jpg",
       "number": 4,
@@ -974,7 +982,7 @@
       "isbn": 9788417820053
     },
     {
-      "id": 129,
+      "id": 59,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_5.jpg",
       "number": 5,
@@ -982,7 +990,7 @@
       "isbn": 9788417820626
     },
     {
-      "id": 134,
+      "id": 69,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_6.jpg",
       "number": 6,
@@ -990,7 +998,7 @@
       "isbn": 9788418222245
     },
     {
-      "id": 140,
+      "id": 77,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_7.jpg",
       "number": 7,
@@ -998,7 +1006,7 @@
       "isbn": 9788418222740
     },
     {
-      "id": 144,
+      "id": 87,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_8.jpg",
       "number": 8,
@@ -1006,7 +1014,7 @@
       "isbn": 9788418788581
     },
     {
-      "id": 148,
+      "id": 94,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_9.jpg",
       "number": 9,
@@ -1014,7 +1022,7 @@
       "isbn": 9788419195456
     },
     {
-      "id": 152,
+      "id": 98,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_10.jpg",
       "number": 10,
@@ -1022,7 +1030,7 @@
       "isbn": 9788419536204
     },
     {
-      "id": 156,
+      "id": 107,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_11.jpg",
       "number": 11,
@@ -1030,7 +1038,7 @@
       "isbn": 9788419914217
     },
     {
-      "id": 159,
+      "id": 115,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_12.jpg",
       "number": 12,
@@ -1038,7 +1046,7 @@
       "isbn": 9788410223585
     },
     {
-      "id": 163,
+      "id": 120,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_13.jpg",
       "number": 13,
@@ -1046,7 +1054,7 @@
       "isbn": 9791387506162
     },
     {
-      "id": 166,
+      "id": 141,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_14.jpg",
       "number": 14,
@@ -1054,7 +1062,7 @@
       "isbn": 9791387831431
     },
     {
-      "id": 169,
+      "id": 164,
       "id_series": 5,
       "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_15.jpg",
       "number": 15,
@@ -1062,7 +1070,7 @@
       "isbn": 9791388055461
     },
     {
-      "id": 131,
+      "id": 100,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_1.jpg",
       "number": 1,
@@ -1070,7 +1078,7 @@
       "isbn": 9788419536655
     },
     {
-      "id": 135,
+      "id": 103,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_2.jpg",
       "number": 2,
@@ -1078,7 +1086,7 @@
       "isbn": 9788419914095
     },
     {
-      "id": 141,
+      "id": 108,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_3.jpg",
       "number": 3,
@@ -1086,7 +1094,7 @@
       "isbn": 9788419914798
     },
     {
-      "id": 145,
+      "id": 114,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_4.jpg",
       "number": 4,
@@ -1094,7 +1102,7 @@
       "isbn": 9788410223523
     },
     {
-      "id": 149,
+      "id": 119,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_5.jpg",
       "number": 5,
@@ -1102,7 +1110,7 @@
       "isbn": 9791387506063
     },
     {
-      "id": 153,
+      "id": 128,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_6.jpg",
       "number": 6,
@@ -1110,7 +1118,7 @@
       "isbn": 9791387506544
     },
     {
-      "id": 157,
+      "id": 151,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_7.jpg",
       "number": 7,
@@ -1118,7 +1126,7 @@
       "isbn": 9791387831929
     },
     {
-      "id": 161,
+      "id": 165,
       "id_series": 6,
       "cover": "IMG/covers/hikaru/hikaru_8.jpg",
       "number": 8,
@@ -1126,7 +1134,7 @@
       "isbn": 9791388055409
     },
     {
-      "id": 53,
+      "id": 132,
       "id_series": 7,
       "cover": "IMG/covers/longPeriod/longPeriod_1.jpg",
       "number": 1,
@@ -1134,7 +1142,7 @@
       "isbn": 9791387506810
     },
     {
-      "id": 57,
+      "id": 134,
       "id_series": 7,
       "cover": "IMG/covers/longPeriod/longPeriod_2.jpg",
       "number": 2,
@@ -1142,7 +1150,7 @@
       "isbn": 9791387831097
     },
     {
-      "id": 160,
+      "id": 121,
       "id_series": 8,
       "cover": "IMG/covers/notAGuy/notAGuy_1.jpg",
       "number": 1,
@@ -1150,7 +1158,7 @@
       "isbn": 9788410515895
     },
     {
-      "id": 164,
+      "id": 125,
       "id_series": 8,
       "cover": "IMG/covers/notAGuy/notAGuy_2.jpg",
       "number": 2,
@@ -1158,7 +1166,7 @@
       "isbn": 9788410516533
     },
     {
-      "id": 167,
+      "id": 170,
       "id_series": 8,
       "cover": "IMG/covers/notAGuy/notAGuy_3.jpg",
       "number": 3,
@@ -1166,7 +1174,7 @@
       "isbn": 9791370136970
     },
     {
-      "id": 83,
+      "id": 104,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_1.jpg",
       "number": 1,
@@ -1174,7 +1182,7 @@
       "isbn": 9788467962970
     },
     {
-      "id": 88,
+      "id": 111,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_2.jpg",
       "number": 2,
@@ -1182,7 +1190,7 @@
       "isbn": 9788467965407
     },
     {
-      "id": 93,
+      "id": 117,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_3.jpg",
       "number": 3,
@@ -1190,7 +1198,7 @@
       "isbn": 9788467965414
     },
     {
-      "id": 98,
+      "id": 129,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_4.jpg",
       "number": 4,
@@ -1198,7 +1206,7 @@
       "isbn": 9788467974225
     },
     {
-      "id": 103,
+      "id": 137,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_5.jpg",
       "number": 5,
@@ -1206,7 +1214,7 @@
       "isbn": 9788467974232
     },
     {
-      "id": 108,
+      "id": 159,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_6.jpg",
       "number": 6,
@@ -1214,7 +1222,7 @@
       "isbn": 9788467974249
     },
     {
-      "id": 113,
+      "id": 166,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_7.jpg",
       "number": 7,
@@ -1222,7 +1230,7 @@
       "isbn": 9788467982473
     },
     {
-      "id": 118,
+      "id": 172,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_8.jpg",
       "number": 8,
@@ -1230,7 +1238,7 @@
       "isbn": 9788467982480
     },
     {
-      "id": 123,
+      "id": 177,
       "id_series": 9,
       "cover": "IMG/covers/eldenRing/eldenRing_9.jpg",
       "number": 9,
@@ -1238,7 +1246,7 @@
       "isbn": 9788467982497
     },
     {
-      "id": 0,
+      "id": 112,
       "id_series": 10,
       "cover": "IMG/covers/claudine/claudine_1.jpg",
       "number": 1,
@@ -1246,7 +1254,7 @@
       "isbn": 9788419986498
     },
     {
-      "id": 86,
+      "id": 88,
       "id_series": 11,
       "cover": "IMG/covers/paradiseKiss/paradiseKiss_1.jpg",
       "number": 1,
@@ -1254,7 +1262,7 @@
       "isbn": 9788418963674
     },
     {
-      "id": 91,
+      "id": 89,
       "id_series": 11,
       "cover": "IMG/covers/paradiseKiss/paradiseKiss_2.jpg",
       "number": 2,
@@ -1262,7 +1270,7 @@
       "isbn": 9788419096722
     },
     {
-      "id": 96,
+      "id": 90,
       "id_series": 11,
       "cover": "IMG/covers/paradiseKiss/paradiseKiss_3.jpg",
       "number": 3,
@@ -1270,7 +1278,7 @@
       "isbn": 9788419185662
     },
     {
-      "id": 101,
+      "id": 93,
       "id_series": 11,
       "cover": "IMG/covers/paradiseKiss/paradiseKiss_4.jpg",
       "number": 4,
@@ -1278,7 +1286,7 @@
       "isbn": 9788419306722
     },
     {
-      "id": 106,
+      "id": 95,
       "id_series": 11,
       "cover": "IMG/covers/paradiseKiss/paradiseKiss_5.jpg",
       "number": 5,
@@ -1294,7 +1302,7 @@
       "isbn": 9788416816521
     },
     {
-      "id": 26,
+      "id": 22,
       "id_series": 12,
       "cover": "IMG/covers/wolfChildren/wolfChildren_2.jpg",
       "number": 2,
@@ -1302,7 +1310,7 @@
       "isbn": 9788416816620
     },
     {
-      "id": 31,
+      "id": 23,
       "id_series": 12,
       "cover": "IMG/covers/wolfChildren/wolfChildren_3.jpg",
       "number": 3,
@@ -1310,7 +1318,7 @@
       "isbn": 9788416889662
     },
     {
-      "id": 1,
+      "id": 24,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_1.jpg",
       "number": 1,
@@ -1318,7 +1326,7 @@
       "isbn": 9788411015035
     },
     {
-      "id": 5,
+      "id": 25,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_2.jpg",
       "number": 2,
@@ -1326,7 +1334,7 @@
       "isbn": 9788411016964
     },
     {
-      "id": 9,
+      "id": 28,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_3.jpg",
       "number": 3,
@@ -1334,7 +1342,7 @@
       "isbn": 9788411016971
     },
     {
-      "id": 13,
+      "id": 29,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_4.jpg",
       "number": 4,
@@ -1342,7 +1350,7 @@
       "isbn": 9788411015042
     },
     {
-      "id": 17,
+      "id": 31,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_5.jpg",
       "number": 5,
@@ -1350,7 +1358,7 @@
       "isbn": 9788411016988
     },
     {
-      "id": 22,
+      "id": 33,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_6.jpg",
       "number": 6,
@@ -1358,7 +1366,7 @@
       "isbn": 9788411015059
     },
     {
-      "id": 27,
+      "id": 34,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_7.jpg",
       "number": 7,
@@ -1366,7 +1374,7 @@
       "isbn": 9788411016995
     },
     {
-      "id": 32,
+      "id": 36,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_8.jpg",
       "number": 8,
@@ -1374,7 +1382,7 @@
       "isbn": 9788411017725
     },
     {
-      "id": 36,
+      "id": 40,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_9.jpg",
       "number": 9,
@@ -1382,7 +1390,7 @@
       "isbn": 9788411017008
     },
     {
-      "id": 40,
+      "id": 43,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_10.jpg",
       "number": 10,
@@ -1390,7 +1398,7 @@
       "isbn": 9788411017732
     },
     {
-      "id": 45,
+      "id": 47,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_11.jpg",
       "number": 11,
@@ -1406,7 +1414,7 @@
       "isbn": 9788411500913
     },
     {
-      "id": 54,
+      "id": 53,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_13.jpg",
       "number": 13,
@@ -1414,7 +1422,7 @@
       "isbn": 9788411500920
     },
     {
-      "id": 58,
+      "id": 57,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_14.jpg",
       "number": 14,
@@ -1422,7 +1430,7 @@
       "isbn": 9788411019415
     },
     {
-      "id": 62,
+      "id": 61,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_15.jpg",
       "number": 15,
@@ -1430,7 +1438,7 @@
       "isbn": 9788411017015
     },
     {
-      "id": 67,
+      "id": 63,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_16.jpg",
       "number": 16,
@@ -1438,7 +1446,7 @@
       "isbn": 9788411017022
     },
     {
-      "id": 72,
+      "id": 65,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_17.jpg",
       "number": 17,
@@ -1446,7 +1454,7 @@
       "isbn": 9788411017039
     },
     {
-      "id": 77,
+      "id": 68,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_18.jpg",
       "number": 18,
@@ -1454,7 +1462,7 @@
       "isbn": 9788411017749
     },
     {
-      "id": 81,
+      "id": 72,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_19.jpg",
       "number": 19,
@@ -1462,7 +1470,7 @@
       "isbn": 9788411017046
     },
     {
-      "id": 85,
+      "id": 75,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_20.jpg",
       "number": 20,
@@ -1470,7 +1478,7 @@
       "isbn": 9788411017756
     },
     {
-      "id": 90,
+      "id": 154,
       "id_series": 13,
       "cover": "IMG/covers/berserk/berserk_21.jpg",
       "number": 21,
@@ -1478,7 +1486,7 @@
       "isbn": 8424248924928
     },
     {
-      "id": 100,
+      "id": 144,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_1.jpg",
       "number": 1,
@@ -1486,7 +1494,7 @@
       "isbn": 9788467967272
     },
     {
-      "id": 105,
+      "id": 148,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_2.jpg",
       "number": 2,
@@ -1494,7 +1502,7 @@
       "isbn": 9788467967289
     },
     {
-      "id": 111,
+      "id": 157,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_3.jpg",
       "number": 3,
@@ -1502,7 +1510,7 @@
       "isbn": 9788467967296
     },
     {
-      "id": 116,
+      "id": 162,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_4.jpg",
       "number": 4,
@@ -1510,7 +1518,7 @@
       "isbn": 9788467982053
     },
     {
-      "id": 121,
+      "id": 167,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_5.jpg",
       "number": 5,
@@ -1518,7 +1526,7 @@
       "isbn": 9788467982060
     },
     {
-      "id": 126,
+      "id": 173,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_6.jpg",
       "number": 6,
@@ -1526,7 +1534,7 @@
       "isbn": 9788467982077
     },
     {
-      "id": 130,
+      "id": 176,
       "id_series": 14,
       "cover": "IMG/covers/digimon/digimon_7.jpg",
       "number": 7,
@@ -1542,7 +1550,7 @@
       "isbn": 9788467963137
     },
     {
-      "id": 7,
+      "id": 4,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_2.jpg",
       "number": 2,
@@ -1550,7 +1558,7 @@
       "isbn": 9788467963144
     },
     {
-      "id": 11,
+      "id": 5,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_3.jpg",
       "number": 3,
@@ -1558,7 +1566,7 @@
       "isbn": 9788467963151
     },
     {
-      "id": 15,
+      "id": 6,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_4.jpg",
       "number": 4,
@@ -1566,7 +1574,7 @@
       "isbn": 9788467966916
     },
     {
-      "id": 19,
+      "id": 7,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_5.jpg",
       "number": 5,
@@ -1574,7 +1582,7 @@
       "isbn": 9788467963168
     },
     {
-      "id": 24,
+      "id": 8,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_6.jpg",
       "number": 6,
@@ -1582,7 +1590,7 @@
       "isbn": 9788467966923
     },
     {
-      "id": 29,
+      "id": 9,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_7.jpg",
       "number": 7,
@@ -1590,7 +1598,7 @@
       "isbn": 9788467966930
     },
     {
-      "id": 34,
+      "id": 10,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_8.jpg",
       "number": 8,
@@ -1598,7 +1606,7 @@
       "isbn": 9788467966947
     },
     {
-      "id": 38,
+      "id": 11,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_9.jpg",
       "number": 9,
@@ -1606,7 +1614,7 @@
       "isbn": 9788467975581
     },
     {
-      "id": 43,
+      "id": 12,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_10.jpg",
       "number": 10,
@@ -1614,7 +1622,7 @@
       "isbn": 9788467975598
     },
     {
-      "id": 48,
+      "id": 13,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_11.jpg",
       "number": 11,
@@ -1622,7 +1630,7 @@
       "isbn": 9788467914924
     },
     {
-      "id": 52,
+      "id": 14,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_12.jpg",
       "number": 12,
@@ -1630,7 +1638,7 @@
       "isbn": 9788467966954
     },
     {
-      "id": 56,
+      "id": 15,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_13.jpg",
       "number": 13,
@@ -1638,7 +1646,7 @@
       "isbn": 9788467975611
     },
     {
-      "id": 61,
+      "id": 16,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_14.jpg",
       "number": 14,
@@ -1646,7 +1654,7 @@
       "isbn": 9788467975628
     },
     {
-      "id": 66,
+      "id": 17,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_15.jpg",
       "number": 15,
@@ -1654,7 +1662,7 @@
       "isbn": 9788467916485
     },
     {
-      "id": 71,
+      "id": 18,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_16.jpg",
       "number": 16,
@@ -1662,7 +1670,7 @@
       "isbn": 9788467975642
     },
     {
-      "id": 76,
+      "id": 19,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_17.jpg",
       "number": 17,
@@ -1670,7 +1678,7 @@
       "isbn": 9788467975659
     },
     {
-      "id": 80,
+      "id": 20,
       "id_series": 15,
       "cover": "IMG/covers/fullmetalAlchemist/fullmetalAlchemist_18.jpg",
       "number": 18,
@@ -1678,7 +1686,7 @@
       "isbn": 9788467966961
     },
     {
-      "id": 63,
+      "id": 91,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_1.jpg",
       "number": 1,
@@ -1686,7 +1694,7 @@
       "isbn": 9788467951585
     },
     {
-      "id": 68,
+      "id": 92,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_2.jpg",
       "number": 2,
@@ -1694,7 +1702,7 @@
       "isbn": 9788467951592
     },
     {
-      "id": 73,
+      "id": 96,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_3.jpg",
       "number": 3,
@@ -1702,7 +1710,7 @@
       "isbn": 9788467951615
     },
     {
-      "id": 78,
+      "id": 97,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_4.jpg",
       "number": 4,
@@ -1710,7 +1718,7 @@
       "isbn": 9788467975048
     },
     {
-      "id": 82,
+      "id": 99,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_5.jpg",
       "number": 5,
@@ -1718,7 +1726,7 @@
       "isbn": 9788467975055
     },
     {
-      "id": 87,
+      "id": 102,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_6.jpg",
       "number": 6,
@@ -1726,7 +1734,7 @@
       "isbn": 9788467961737
     },
     {
-      "id": 92,
+      "id": 105,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_7.jpg",
       "number": 7,
@@ -1734,7 +1742,7 @@
       "isbn": 9788467963472
     },
     {
-      "id": 97,
+      "id": 106,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_8.jpg",
       "number": 8,
@@ -1742,7 +1750,7 @@
       "isbn": 9788467963489
     },
     {
-      "id": 102,
+      "id": 110,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_9.jpg",
       "number": 9,
@@ -1750,7 +1758,7 @@
       "isbn": 9788467965148
     },
     {
-      "id": 107,
+      "id": 113,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_10.jpg",
       "number": 10,
@@ -1758,7 +1766,7 @@
       "isbn": 9788467965155
     },
     {
-      "id": 112,
+      "id": 116,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_11.jpg",
       "number": 11,
@@ -1766,7 +1774,7 @@
       "isbn": 9788467965162
     },
     {
-      "id": 117,
+      "id": 118,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_12.jpg",
       "number": 12,
@@ -1774,7 +1782,7 @@
       "isbn": 9788467971279
     },
     {
-      "id": 122,
+      "id": 124,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_13.jpg",
       "number": 13,
@@ -1790,7 +1798,7 @@
       "isbn": 9788467973440
     },
     {
-      "id": 132,
+      "id": 133,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_15.jpg",
       "number": 15,
@@ -1798,7 +1806,7 @@
       "isbn": 9788467976984
     },
     {
-      "id": 136,
+      "id": 138,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_16.jpg",
       "number": 16,
@@ -1806,7 +1814,7 @@
       "isbn": 9788467976984
     },
     {
-      "id": 138,
+      "id": 145,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_17.jpg",
       "number": 17,
@@ -1814,7 +1822,7 @@
       "isbn": 9788467976991
     },
     {
-      "id": 142,
+      "id": 153,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_18.jpg",
       "number": 18,
@@ -1822,7 +1830,7 @@
       "isbn": 9788467977004
     },
     {
-      "id": 146,
+      "id": 163,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_19.jpg",
       "number": 19,
@@ -1830,7 +1838,7 @@
       "isbn": 9788467981483
     },
     {
-      "id": 150,
+      "id": 168,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_20.jpg",
       "number": 20,
@@ -1838,7 +1846,7 @@
       "isbn": 9788467981490
     },
     {
-      "id": 154,
+      "id": 174,
       "id_series": 16,
       "cover": "IMG/covers/dandadan/dandadan_21.jpg",
       "number": 21,
@@ -1846,7 +1854,7 @@
       "isbn": 9788467981506
     },
     {
-      "id": 60,
+      "id": 37,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_1.jpg",
       "number": 1,
@@ -1854,7 +1862,7 @@
       "isbn": 9788417537586
     },
     {
-      "id": 65,
+      "id": 42,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_2.jpg",
       "number": 2,
@@ -1862,7 +1870,7 @@
       "isbn": 9788417699260
     },
     {
-      "id": 70,
+      "id": 44,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_3.jpg",
       "number": 3,
@@ -1870,7 +1878,7 @@
       "isbn": 9788417699970
     },
     {
-      "id": 75,
+      "id": 48,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_4.jpg",
       "number": 4,
@@ -1878,7 +1886,7 @@
       "isbn": 9788417777609
     },
     {
-      "id": 79,
+      "id": 51,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_5.jpg",
       "number": 5,
@@ -1886,7 +1894,7 @@
       "isbn": 9788417920241
     },
     {
-      "id": 84,
+      "id": 56,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_6.jpg",
       "number": 6,
@@ -1894,7 +1902,7 @@
       "isbn": 9788418061035
     },
     {
-      "id": 89,
+      "id": 66,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_7.jpg",
       "number": 7,
@@ -1902,7 +1910,7 @@
       "isbn": 9788418271281
     },
     {
-      "id": 95,
+      "id": 71,
       "id_series": 17,
       "cover": "IMG/covers/aoNoFlag/aoNoFlag_8.jpg",
       "number": 8,
@@ -1910,7 +1918,7 @@
       "isbn": 9788418450105
     },
     {
-      "id": 4,
+      "id": 52,
       "id_series": 18,
       "cover": "IMG/covers/given/given_1.jpg",
       "number": 1,
@@ -1918,7 +1926,7 @@
       "isbn": 9788417820268
     },
     {
-      "id": 8,
+      "id": 55,
       "id_series": 18,
       "cover": "IMG/covers/given/given_2.jpg",
       "number": 2,
@@ -1926,7 +1934,7 @@
       "isbn": 9788417820466
     },
     {
-      "id": 12,
+      "id": 60,
       "id_series": 18,
       "cover": "IMG/covers/given/given_3.jpg",
       "number": 3,
@@ -1934,7 +1942,7 @@
       "isbn": 9788417820640
     },
     {
-      "id": 16,
+      "id": 62,
       "id_series": 18,
       "cover": "IMG/covers/given/given_4.jpg",
       "number": 4,
@@ -1942,7 +1950,7 @@
       "isbn": 9788417820800
     },
     {
-      "id": 20,
+      "id": 64,
       "id_series": 18,
       "cover": "IMG/covers/given/given_5.jpg",
       "number": 5,
@@ -1950,7 +1958,7 @@
       "isbn": 9788418222108
     },
     {
-      "id": 25,
+      "id": 78,
       "id_series": 18,
       "cover": "IMG/covers/given/given_6.jpg",
       "number": 6,
@@ -1958,7 +1966,7 @@
       "isbn": 9788418222788
     },
     {
-      "id": 30,
+      "id": 82,
       "id_series": 18,
       "cover": "IMG/covers/given/given_7.jpg",
       "number": 7,
@@ -1966,7 +1974,7 @@
       "isbn": 9788419195517
     },
     {
-      "id": 35,
+      "id": 101,
       "id_series": 18,
       "cover": "IMG/covers/given/given_8.jpg",
       "number": 8,
@@ -1974,7 +1982,7 @@
       "isbn": 9788419536822
     },
     {
-      "id": 39,
+      "id": 109,
       "id_series": 18,
       "cover": "IMG/covers/given/given_9.jpg",
       "number": 9,
@@ -1982,12 +1990,84 @@
       "isbn": 9788419914668
     },
     {
-      "id": 44,
+      "id": 150,
       "id_series": 18,
       "cover": "IMG/covers/given/given_10.jpg",
       "number": 10,
       "price": 9,
       "isbn": 9791387831981
+    },
+    {
+      "id": 139,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_1.jpg",
+      "number": 1,
+      "price": 9.00,
+      "isbn": 9791387836986
+    },
+    {
+      "id": 140,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_2.jpg",
+      "number": 2,
+      "price": 9.00,
+      "isbn": 9791387836993
+    },
+    {
+      "id": 146,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_3.jpg",
+      "number": 3,
+      "price": 9.00,
+      "isbn": 9791387981570
+    },
+    {
+      "id": 152,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_4.jpg",
+      "number": 4,
+      "price": 9.00,
+      "isbn": 9791388024177
+    },
+    {
+      "id": 158,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_5.jpg",
+      "number": 5,
+      "price": 9.00,
+      "isbn": 9791388104596
+    },
+    {
+      "id": 161,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_6.jpg",
+      "number": 6,
+      "price": 9.00,
+      "isbn": 9791388178863
+    },
+    {
+      "id": 171,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_7.jpg",
+      "number": 7,
+      "price": 9.00,
+      "isbn": 9791388298271
+    },
+    {
+      "id": 175,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_8.jpg",
+      "number": 8,
+      "price": 9.00,
+      "isbn": 9791388450334
+    },
+    {
+      "id": 178,
+      "id_series": 19,
+      "cover": "IMG/covers/centuria/centuria_9.jpg",
+      "number": 9,
+      "price": 9.00,
+      "isbn": 9791388487477
     }
   ]
 }

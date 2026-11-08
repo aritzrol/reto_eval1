@@ -1,19 +1,9 @@
-<?php
-/*
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    header('Location: index.php');
-}
-*/
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -29,7 +19,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
 <div class="container mt-5">
     <h1 class="text-center mb-4">Lista de Usuarios</h1>
-    
+
     <table class="table table-striped table-bordered">
         <thead class="bg-dark text-white">
             <tr>
@@ -40,11 +30,11 @@ if (!isset($_SESSION['id_usuario'])) {
                 <th scope="col">Telefono</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Rol</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Aquí va el PHP -->
-            <?php //var_dump($data);
+            <?php
                 foreach($data as $dato) {
                     echo '<tr>';
                     echo '<td>' . $dato["id_usuario"] . '</td>';
@@ -57,17 +47,16 @@ if (!isset($_SESSION['id_usuario'])) {
                     echo '<td>';
                     echo '<a href="index.php?entity=usuario&action=show&id=' . $dato['id_usuario'] . '" class="btn btn-info mx-1">Ver</a>';
                     echo '<a href="index.php?entity=usuario&action=edit&id=' . $dato['id_usuario'] . '" class="btn btn-warning mx-1">Modificar</a>';
-                    echo '<a href="index.php?entity=usuario&action=destroy&id=' . $dato['id_usuario'] . '" class="btn btn-danger mx-1">Eliminar</a>';
+                    echo '<a href="index.php?entity=usuario&action=destroy&id=' . $dato['id_usuario'] . '" class="btn btn-danger mx-1" onclick="return confirm(\'¿Eliminar este usuario?\');">Eliminar</a>';
                     echo '</td>';
                     echo '</tr>';
-            }
+                }
             ?>
         </tbody>
     </table>
     <a href="index.php?entity=usuario&action=create" class="btn btn-success">Crear nuevo usuario</a>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
