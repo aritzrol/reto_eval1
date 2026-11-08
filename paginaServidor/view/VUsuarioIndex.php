@@ -8,10 +8,13 @@
 </head>
 <body>
 
+
 <div class="container mt-5">
     <a href="index.php?entity=usuario&action=index" class="btn btn-info">Usuarios</a>
-    <a href="index.php?entity=producto&action=index" class="btn btn-info">Productos</a>
-    <a href="index.php?entity=serie&action=index" class="btn btn-info">Series</a>
+    <a href="index.php?entity=pedido&action=index" class="btn btn-info">Pedidos</a>
+    <a href="index.php?entity=serie&action=index" class="btn btn-info">Productos</a>
+    <br/>
+    <a href="index.php?entity=login&action=logout" class="btn btn-danger">Cerrar sesión</a>
 </div>
 
 <div class="container mt-5">
@@ -22,7 +25,10 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
                 <th scope="col">Email</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Direccion</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -32,8 +38,11 @@
                 foreach($data as $dato) {
                     echo '<tr>';
                     echo '<td>' . $dato["id_usuario"] . '</td>';
-                    echo '<td>' . htmlspecialchars($dato["nombre"]) . '</td>';
-                    echo '<td>' . htmlspecialchars($dato["email"]) . '</td>';
+                    echo '<td>' . $dato["nombre"] . '</td>';
+                    echo '<td>' . $dato["apellidos"] . '</td>';
+                    echo '<td>' . $dato["email"] . '</td>';
+                    echo '<td>' . $dato["telefono"] . '</td>';
+                    echo '<td>' . $dato["direccion"] . '</td>';
                     echo '<td>' . $dato["rol"] . '</td>';
                     echo '<td>';
                     echo '<a href="index.php?entity=usuario&action=show&id=' . $dato['id_usuario'] . '" class="btn btn-info mx-1">Ver</a>';

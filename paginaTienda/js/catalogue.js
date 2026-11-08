@@ -12,9 +12,7 @@ document.querySelector(`.content`).querySelector(`input`).addEventListener(`keyu
 //When clicking on any of the filters, they are applied
 document.querySelectorAll(`input[type="checkbox"]`).forEach(c => {
     c.addEventListener(`change`, (e) => {
-        if (e.target.checked) {
-            filterVolumes(e.target.value);
-        }
+        filterVolumes(e.target);
     });
 })
 
@@ -24,7 +22,7 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
     const option = e.target.value;
 
     if (option == `new`) {
-        sortById();
+        sortVolumes(`id`);
         volumes.reverse();
 
         volumes.forEach(v => {
@@ -32,18 +30,27 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
         });
     }
     else if (option == `old`) {
-        document.querySelector(`.products`).innerHTML = "";
-        sortById();
+        
+        sortVolumes(`id`);
         
         volumes.forEach(v => {
             displayVolume(v);
         });
     }
     else if (option == `cheap`) {
+        sortVolumes(`price`);
 
+        volumes.forEach(v => {
+            displayVolume(v);
+        });
     }
     else if (option == `expensive`) {
+        sortVolumes(`price`);
+        volumes.reverse();
 
+        volumes.forEach(v => {
+            displayVolume(v);
+        });
     }
 });
 
@@ -83,7 +90,8 @@ async function getVolumes() {
         }
 
         volumes = await answer.json();
-        sortById();
+        sortVolumes(`id`);
+
         volumes.reverse();
 
         volumes.forEach(v => {
@@ -220,25 +228,24 @@ function searchVolumes(t) {
     });
 }
 
-function sortById() {
+//Sorts volumes based on the selected option
+function sortVolumes(option) {
     const n = volumes.length;
     
     for (i = 1; i < n; ++i) {
         const key = volumes[i];
         let j = i - 1;
 
-        while (j >= 0 && volumes[j].id > key.id) {
+        while (j >= 0 && volumes[j][option] > key[option]) {
             volumes[j + 1] = volumes[j];
             j = j - 1;
         }
         volumes[j + 1] = key;
     }
-
-    console.log(volumes);
 }
 
-function filterVolumes(filter) {
-
+function filterVolumes(target) {
+    
 }
 
 getSeries();

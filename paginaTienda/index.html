@@ -42,16 +42,18 @@
             <!--ICON BUTTONS-->
             <div>
                 <a class="nav-icon" href="cart.html">
-                    <img src="IMG/icons/bag_icon.png" alt="carrito">
+                    <img src="IMG/icons/bag_icon.png" alt="carrito" id="cart-icon">
                 </a>
                 <a class="nav-icon" href="login.html">
-                    <img src="IMG/icons/user_icon.png" alt="usuario">
+                    <img src="IMG/icons/user_icon.png" alt="usuario" id="user-icon">
                 </a>
-                <a href=""><img src="IMG/icons/darkMode_icon.png" alt="dark mode button" /></a>
+                <a href=""><img src="IMG/icons/dia.png" alt="dark mode button" id="dark-mode-icon"/>
+                </a>
             </div>
         </div>
     </nav>
-    <section class="series-info">
+    <div class="home-modal-backdrop hidden"></div>
+    <section class="series-info hidden">
         <button type="button">x</button>
         <img src="" alt="">
         <h2>TITLE</h2>
@@ -139,9 +141,9 @@
                 coleccionista</a>
         </section>
         <section>
-            <header>ATENCIÓN AL CLIENTE</header><a href="#footer">Tarifas y plazos de envío</a><a
-                href="#footer">Embalaje para coleccionistas</a><a href="#footer">Devoluciones y garantías</a><a
-                href="#footer">Contacto</a>
+            <header>ATENCIÓN AL CLIENTE</header><a href="policy.html">Tarifas y plazos de envío</a><a
+                href="policy.html">Embalaje para coleccionistas</a><a href="policy.html">Devoluciones y garantías</a><a
+                href="policy.html">Contacto</a>
         </section>
         <section>
             <header>EDITORIALES DISTRIBUIDAS</header><a href="catalogue.html">Norma Editorial</a><a
@@ -153,6 +155,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="js/home.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

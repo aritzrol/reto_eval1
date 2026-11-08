@@ -2,7 +2,6 @@
 
     require_once __DIR__ . '/../model/MProducto.php';
     require_once __DIR__ . '/../model/MSerie.php';
-    require_once __DIR__ . '/../view/VProductoShow.php';
 
     class CProducto{
 
@@ -34,11 +33,6 @@
             $this->model->insert($_POST);
 
             header('Location: index.php?entity=producto&action=index');
-        }
-
-        public function edit(){
-            //ventana
-            require_once __DIR__ . '/../view/VProductoUpdate.php';
         }
 
         public function edit($id){

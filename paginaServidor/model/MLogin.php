@@ -9,7 +9,7 @@ class Login {
     }
 
     // Busca el correo y comprueba la contraseña. Devuelve el usuario o null.
-    public function comparar($email, $password) {
+    public function getLogin($email, $password) {
         $sentencia = $this->con->prepare(
             "SELECT id_usuario, nombre, email, password, rol FROM usuario WHERE email = ?"
         );

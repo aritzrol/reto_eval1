@@ -23,12 +23,6 @@
       "name": "gaizka",
       "email": "gaizka@example.com",
       "password": "gaizka123"
-    },
-    {
-      "id": 5,
-      "name": "dfgdfg",
-      "email": "dfgdfg",
-      "password": "dfgdf"
     }
   ],
   "pedidos": [
@@ -36,78 +30,448 @@
       "id": 1,
       "id_usuario": 1,
       "fecha": "2024-06-01",
-      "total": 25.99,
-      "estado": "Enviado"
+      "total": 21.85,
+      "estado": "Enviado",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Berserk 1",
+          "price": 9.95,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Naruto 5",
+          "price": 7.95,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 2,
       "id_usuario": 2,
       "fecha": "2024-06-02",
-      "total": 15.49,
-      "estado": "Pendiente"
+      "total": 12.45,
+      "estado": "Pendiente",
+      "productos": [
+        {
+          "id": 3,
+          "name": "One Piece 10",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 3,
       "id_usuario": 3,
       "fecha": "2024-06-03",
-      "total": 30,
-      "estado": "Entregado"
+      "total": 40.45,
+      "estado": "Entregado",
+      "productos": [
+        {
+          "id": 6,
+          "name": "Akira 1",
+          "price": 12,
+          "quantity": 2
+        },
+        {
+          "id": 5,
+          "name": "Death Note 1",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 4,
       "id_usuario": 4,
       "fecha": "2024-06-04",
-      "total": 12.75,
-      "estado": "Cancelado"
+      "total": 11.45,
+      "estado": "Cancelado",
+      "productos": [
+        {
+          "id": 7,
+          "name": "Bleach 7",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 5,
       "id_usuario": 1,
       "fecha": "2024-06-05",
-      "total": 18.99,
-      "estado": "Enviado"
+      "total": 21.4,
+      "estado": "Enviado",
+      "productos": [
+        {
+          "id": 4,
+          "name": "Dragon Ball 3",
+          "price": 8.95,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "name": "One Piece 10",
+          "price": 8.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 6,
       "id_usuario": 2,
       "fecha": "2024-06-06",
-      "total": 22.5,
-      "estado": "Pendiente"
+      "total": 19.85,
+      "estado": "Pendiente",
+      "productos": [
+        {
+          "id": 2,
+          "name": "Naruto 5",
+          "price": 7.95,
+          "quantity": 2
+        }
+      ]
     },
     {
       "id": 7,
       "id_usuario": 3,
       "fecha": "2024-06-07",
-      "total": 40,
-      "estado": "Entregado"
+      "total": 40.85,
+      "estado": "Entregado",
+      "productos": [
+        {
+          "id": 8,
+          "name": "Vagabond 2",
+          "price": 11.95,
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "name": "Akira 1",
+          "price": 12,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "name": "Berserk 1",
+          "price": 9.95,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 8,
       "id_usuario": 4,
       "fecha": "2024-06-08",
-      "total": 10.25,
-      "estado": "Cancelado"
+      "total": 13.45,
+      "estado": "Cancelado",
+      "productos": [
+        {
+          "id": 5,
+          "name": "Death Note 1",
+          "price": 9.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 9,
       "id_usuario": 1,
       "fecha": "2024-06-09",
-      "total": 35.99,
-      "estado": "Enviado"
+      "total": 35.8,
+      "estado": "Enviado",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Berserk 1",
+          "price": 9.95,
+          "quantity": 2
+        },
+        {
+          "id": 8,
+          "name": "Vagabond 2",
+          "price": 11.95,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 10,
       "id_usuario": 2,
       "fecha": "2024-06-10",
-      "total": 28.49,
-      "estado": "Pendiente"
+      "total": 29.35,
+      "estado": "Pendiente",
+      "productos": [
+        {
+          "id": 4,
+          "name": "Dragon Ball 3",
+          "price": 8.95,
+          "quantity": 2
+        },
+        {
+          "id": 7,
+          "name": "Bleach 7",
+          "price": 7.5,
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 11,
       "id_usuario": 2,
       "fecha": "2024-06-08",
-      "total": 10.25,
-      "estado": "Cancelado"
+      "total": 22.4,
+      "estado": "Cancelado",
+      "productos": [
+        {
+          "id": 7,
+          "name": "Bleach 7",
+          "price": 7.5,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Naruto 5",
+          "price": 7.95,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 33.25,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Puella Magi Madoka Magica",
+          "number": 3,
+          "price": 8.5,
+          "quantity": 2,
+          "cover": "IMG/covers/madoka/madoka_3.jpg"
+        },
+        {
+          "id": 2,
+          "name": "The Guy She Was Interested In<br>Wasn't a Guy at All",
+          "number": 3,
+          "price": 12.3,
+          "quantity": 1,
+          "cover": "IMG/covers/notAGuy/notAGuy_3.jpg"
+        }
+      ],
+      "id": 12
+    },
+    {
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 16.25,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 2,
+          "name": "The Guy She Was Interested In<br>Wasn't a Guy at All",
+          "number": 3,
+          "price": 12.3,
+          "quantity": 1,
+          "cover": "IMG/covers/notAGuy/notAGuy_3.jpg"
+        }
+      ],
+      "id": 13
+    },
+    {
+      "id": 14,
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 34.25,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "The Summer Hikaru Died",
+          "number": 8,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/hikaru/hikaru_8.jpg"
+        },
+        {
+          "id": 2,
+          "name": "The Guy She Was Interested In<br>Wasn't a Guy at All",
+          "number": 1,
+          "price": 12.3,
+          "quantity": 1,
+          "cover": "IMG/covers/notAGuy/notAGuy_1.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Witch Hat Atelier",
+          "number": 12,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_12.jpg"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 25.25,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 2,
+          "name": "The Guy She Was Interested In<br>Wasn't a Guy at All",
+          "number": 1,
+          "price": 12.3,
+          "quantity": 1,
+          "cover": "IMG/covers/notAGuy/notAGuy_1.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Witch Hat Atelier",
+          "number": 12,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_12.jpg"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 12.95,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Dan Da Dan",
+          "number": 20,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/dandadan/dandadan_20.jpg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 12.95,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Witch Hat Atelier",
+          "number": 15,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_15.jpg"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 26.95,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Nana",
+          "number": 7,
+          "price": 20,
+          "quantity": 1,
+          "cover": "IMG/covers/nana/nana_7.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "id_usuario": 2,
+      "fecha": "2026-11-07",
+      "total": 12.95,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "The Summer Hikaru Died",
+          "number": 3,
+          "price": 9,
+          "quantity": 1,
+          "cover": "IMG/covers/hikaru/hikaru_3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "id_usuario": 2,
+      "fecha": "2026-11-08",
+      "total": 64.95,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Witch Hat Atelier",
+          "number": 15,
+          "price": 9,
+          "quantity": 2,
+          "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_15.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Nana",
+          "number": 1,
+          "price": 20,
+          "quantity": 1,
+          "cover": "IMG/covers/nana/nana_1.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Nana",
+          "number": 2,
+          "price": 20,
+          "quantity": 1,
+          "cover": "IMG/covers/nana/nana_2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "id_usuario": 2,
+      "fecha": "2026-11-08",
+      "total": 51.95,
+      "estado": "pendiente de envio",
+      "productos": [
+        {
+          "id": 1,
+          "name": "Witch Hat Atelier",
+          "number": 15,
+          "price": 9,
+          "quantity": 2,
+          "cover": "IMG/covers/witchHatAtelier/witchHatAtelier_15.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Nana",
+          "number": 1,
+          "price": 20,
+          "quantity": 1,
+          "cover": "IMG/covers/nana/nana_1.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Digimon Adventure V-Tamer 01",
+          "number": 7,
+          "price": 10,
+          "quantity": 1,
+          "cover": "IMG/covers/digimon/digimon_7.jpg"
+        }
+      ]
     }
   ],
   "series": [

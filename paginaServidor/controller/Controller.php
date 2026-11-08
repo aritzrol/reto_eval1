@@ -1,8 +1,8 @@
 <?php
 require_once("db/Db.php");
 require_once("controller/CUsuario.php");
-require_once __DIR__ . '/CProducto.php';
-require_once __DIR__ . '/CSerie.php';
+require_once ("controller/CProducto.php");
+require_once ("controller/CSerie.php");
 // require_once __DIR__ . '/CPerfil.php';
 // require_once __DIR__ . '/CPedido.php';
 // require_once __DIR__ . '/CLineaPedido.php';
@@ -54,8 +54,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CProducto();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'serie':
@@ -90,8 +90,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CSerie();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'perfil':
@@ -126,8 +126,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CPerfil();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'pedido':
@@ -162,8 +162,8 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CPedido();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
     case 'lineaPedido':
@@ -198,10 +198,43 @@ switch ($entity) {
                 $controller->destroy($id);
                 break;
             default:
-                $controller = new CLineaPedido();
-                $controller->index();
+                header("Location: index.php?entity=usuario&action=index");
+                break;
         }
         break;
+
+    case 'login':
+        
+        switch($action){
+
+            case 'index':
+
+                $controller = new CLogin();
+                $controller->index();
+
+            break;
+
+            case 'login':
+
+                $controller = new CLogin();
+                $controller->logIn($_POST);
+
+            break;    
+
+            case 'logOut':
+
+                $controller = new CLogin();
+                $controller->logOut();
+            
+            break;
+
+            default:
+                header('Location: index.php?entity=login&action=index');
+            break;
+        }
+
+    break;
+    
     default:
         header("Location: index.php?entity=usuario&action=index");
         break;
