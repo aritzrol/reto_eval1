@@ -81,6 +81,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem 0.75rem;
 }
 
 /*USER ICON LOGED*/
@@ -98,7 +99,8 @@ main{
 /*ALERT CARD*/
 #alert{
     position: absolute;
-    width: 20rem;
+    width: 90%;              
+    max-width: 20rem;
     height: auto;
     background: #eef0f4;
     border-radius: 0.8rem;
@@ -154,7 +156,7 @@ main{
     border-radius: 0.2rem;
     box-shadow: var(--shadow-md);
     padding: 1rem;
-    width: 60%;
+    width: 100%;
     margin-bottom: 0.5rem;
 }
 
@@ -188,7 +190,7 @@ main{
     border: 1px solid rgb(255 255 255 / 30%);
     border-radius: 0.2rem;
     box-shadow: var(--shadow-md);
-    width: 60%;
+    width: 100%;
     padding: 1rem;
     color: var(--color-text);
 
@@ -202,7 +204,7 @@ main{
 .top-card{
     display: flex;
     justify-content: space-around;
-    
+    gap: 0.5rem;
 }
 
 /*contenedor de los formularios login y create*/
@@ -377,4 +379,21 @@ main{
 .pendiente  { background: #ff9800; }
 .entregado  { background: #4caf50; }
 .cancelado  { background: #f44336; }
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    .customer-area,
+    .card {
+        width: 80%;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .customer-area,
+    .card {
+        width: 60%;      /* el valor que tenías originalmente */
+    }
+}
 

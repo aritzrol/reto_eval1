@@ -12,12 +12,17 @@ async function init(){
     // check if localStorage has a logged user
     const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
+
+
     // Now the data is ready, check if a user is logged
     if (loggedUser) {
         customerArea.classList.add("customer-area-loged");
         forms.style.display = "none";
         logoutButton.style.display = "block";
         showOrders(loggedUser.id);
+
+        // //Change the user icon to LOG IN (green)
+        // userIcon.classList.add("user-icon");
     }
 }
 
@@ -128,9 +133,21 @@ function showOrders(id){
         const orderCard = document.createElement("div");
         orderCard.classList.add("order-card");
 
+        // 1. Empezamos con un texto vacío
+        let productsHTML = "";
+
+        // 2. Recorremos los productos de ESTE pedido
+        order.productos.forEach((p) => {
+            // 3. Por cada producto, añadimos una línea al texto
+            productsHTML = productsHTML + "<li>" + p.name + " " + p.number + " x " + p.quantity + "</li>";
+        });
+
+
         //Order details
+        // 4. Metemos el texto ya construido en la card
         orderCard.innerHTML = `
-            <h3>Order: ${order.id}</h3>
+            <h3>Order:</h3>
+            <ul>${productsHTML}</ul>
             <p>Date Order: ${order.fecha}</p>
             <p>Total €: ${order.total}</p>
             <span class="order-status ${order.estado.toLowerCase()}">${order.estado}</span>

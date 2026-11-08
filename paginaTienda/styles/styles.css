@@ -17,22 +17,44 @@ body {
 }
 
 /*BLACK BAR AT THE TOP*/
+
+/* MOVIL */
 .top-bar {
     z-index: 2;
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;   
     align-items: center;
+    gap: 2px;
 
     background-color: var(--neutral-color);
     color: lightgrey;
 
-    height: 35px;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
 
-    padding-left: 75px;
-    padding-right: 75px;
+    padding: 6px 16px;        /* la altura sale del padding, no de height */
+}
+
+/* TABLET ++*/
+@media (min-width: 768px) {
+    .top-bar {
+        flex-direction: row;
+        justify-content: space-between;
+
+        font-size: 14px;
+        height: 35px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .top-bar {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
 }
 
 /*NAVBAR*/
@@ -307,4 +329,20 @@ body.dark-mode .customer-area,
 body.dark-mode .form-login,
 body.dark-mode .form-register {
     color: #f2eaea;
+}
+
+/*USER ICON LOGED*/
+.user-icon{
+    background: radial-gradient(circle at center, #8cf504, #10f60459);
+    border-radius: 999px;
+    
+}
+
+.cart-icon{
+    background: radial-gradient(circle at center, #f1e915, #fbfaf973);
+    border-radius: 999px;
+}
+
+#dark-mode-icon{
+    scale: 1.5;
 }
