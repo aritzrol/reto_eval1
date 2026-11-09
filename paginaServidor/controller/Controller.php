@@ -1,15 +1,23 @@
 <?php
+// die("ESTE ES MI INDEX");
+
 require_once("db/Db.php");
 require_once("controller/CUsuario.php");
 require_once ("controller/CProducto.php");
 require_once ("controller/CSerie.php");
+require_once ("controller/CLogin.php");
 // require_once __DIR__ . '/CPerfil.php';
 // require_once __DIR__ . '/CPedido.php';
 // require_once __DIR__ . '/CLineaPedido.php';
 
+//define acciones por defecto
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-$entity = isset($_GET['entity']) ? $_GET['entity'] : 'usuario';
+$entity = isset($_GET['entity']) ? $_GET['entity'] : 'login';
+
+// echo "entity: $entity | action: $action | método: " . $_SERVER['REQUEST_METHOD'];
+// var_dump($_POST);
+// exit();
 
 switch ($entity) {
     case 'usuario':
@@ -23,41 +31,41 @@ switch ($entity) {
                 break;
         }
         break;
-    case 'producto':
-        switch ($action) {
-            case 'index':
-                $controller = new CProducto();
-                $controller->index();
-                break;
-            case 'show':
-                $controller = new CProducto();
-                $controller->show($id);
-                break;
-            case 'create':
-                $controller = new CProducto();
-                $controller->create();
-                break;
-            case 'store':
-                $controller = new CProducto();
-                $controller->store();
-                break;
-            case 'edit':
-                $controller = new CProducto();
-                $controller->edit($id);
-                break;
-            case 'update':
-                $controller = new CProducto();
-                $controller->update();
-                break;
-            case 'destroy':
-                $controller = new CProducto();
-                $controller->destroy($id);
-                break;
-            default:
-                header("Location: index.php?entity=usuario&action=index");
-                break;
-        }
-        break;
+    // case 'producto':
+    //     switch ($action) {
+    //         case 'index':
+    //             $controller = new CProducto();
+    //             $controller->index();
+    //             break;
+    //         case 'show':
+    //             $controller = new CProducto();
+    //             $controller->show($id);
+    //             break;
+    //         case 'create':
+    //             $controller = new CProducto();
+    //             $controller->create();
+    //             break;
+    //         case 'store':
+    //             $controller = new CProducto();
+    //             $controller->store();
+    //             break;
+    //         case 'edit':
+    //             $controller = new CProducto();
+    //             $controller->edit($id);
+    //             break;
+    //         case 'update':
+    //             $controller = new CProducto();
+    //             $controller->update();
+    //             break;
+    //         case 'destroy':
+    //             $controller = new CProducto();
+    //             $controller->destroy($id);
+    //             break;
+    //         default:
+    //             header("Location: index.php?entity=usuario&action=index");
+    //             break;
+    //     }
+    //     break;
     case 'serie':
         switch ($action) {
 
@@ -81,10 +89,10 @@ switch ($entity) {
                 $controller = new CSerie();
                 $controller->edit($id);
                 break;
-            case 'update':
-                $controller = new CSerie();
-                $controller->update();
-                break;
+            // case 'update':
+            //     $controller = new CSerie();
+            //     $controller->update();
+            //     break;
             case 'destroy':
                 $controller = new CSerie();
                 $controller->destroy($id);
@@ -92,116 +100,116 @@ switch ($entity) {
             default:
                 header("Location: index.php?entity=usuario&action=index");
                 break;
-        }
+         }
         break;
-    case 'perfil':
-        switch ($action) {
+    // case 'perfil':
+    //     switch ($action) {
 
-            case 'index':
-                $controller = new CPerfil();
-                $controller->index();
-                break;
-            case 'show':
-                $controller = new CPerfil();
-                $controller->show($id);
-                break;
-            case 'create':
-                $controller = new CPerfil();
-                $controller->create();
-                break;
-            case 'store':
-                $controller = new CPerfil();
-                $controller->store();
-                break;
-            case 'edit':
-                $controller = new CPerfil();
-                $controller->edit($id);
-                break;
-            case 'update':
-                $controller = new CPerfil();
-                $controller->update();
-                break;
-            case 'destroy':
-                $controller = new CPerfil();
-                $controller->destroy($id);
-                break;
-            default:
-                header("Location: index.php?entity=usuario&action=index");
-                break;
-        }
-        break;
-    case 'pedido':
-        switch ($action) {
+    //         case 'index':
+    //             $controller = new CPerfil();
+    //             $controller->index();
+    //             break;
+    //         case 'show':
+    //             $controller = new CPerfil();
+    //             $controller->show($id);
+    //             break;
+    //         case 'create':
+    //             $controller = new CPerfil();
+    //             $controller->create();
+    //             break;
+    //         case 'store':
+    //             $controller = new CPerfil();
+    //             $controller->store();
+    //             break;
+    //         case 'edit':
+    //             $controller = new CPerfil();
+    //             $controller->edit($id);
+    //             break;
+    //         case 'update':
+    //             $controller = new CPerfil();
+    //             $controller->update();
+    //             break;
+    //         case 'destroy':
+    //             $controller = new CPerfil();
+    //             $controller->destroy($id);
+    //             break;
+    //         default:
+    //             header("Location: index.php?entity=usuario&action=index");
+    //             break;
+    //     }
+    //     break;
+    // case 'pedido':
+    //     switch ($action) {
 
-            case 'index':
-                $controller = new CPedido();
-                $controller->index();
-                break;
-            case 'show':
-                $controller = new CPedido();
-                $controller->show($id);
-                break;
-            case 'create':
-                $controller = new CPedido();
-                $controller->create();
-                break;
-            case 'store':
-                $controller = new CPedido();
-                $controller->store();
-                break;
-            case 'edit':
-                $controller = new CPedido();
-                $controller->edit($id);
-                break;
-            case 'update':
-                $controller = new CPedido();
-                $controller->update();
-                break;
-            case 'destroy':
-                $controller = new CPedido();
-                $controller->destroy($id);
-                break;
-            default:
-                header("Location: index.php?entity=usuario&action=index");
-                break;
-        }
-        break;
-    case 'lineaPedido':
-        switch ($action) {
+    //         case 'index':
+    //             $controller = new CPedido();
+    //             $controller->index();
+    //             break;
+    //         case 'show':
+    //             $controller = new CPedido();
+    //             $controller->show($id);
+    //             break;
+    //         case 'create':
+    //             $controller = new CPedido();
+    //             $controller->create();
+    //             break;
+    //         case 'store':
+    //             $controller = new CPedido();
+    //             $controller->store();
+    //             break;
+    //         case 'edit':
+    //             $controller = new CPedido();
+    //             $controller->edit($id);
+    //             break;
+    //         case 'update':
+    //             $controller = new CPedido();
+    //             $controller->update();
+    //             break;
+    //         case 'destroy':
+    //             $controller = new CPedido();
+    //             $controller->destroy($id);
+    //             break;
+    //         default:
+    //             header("Location: index.php?entity=usuario&action=index");
+    //             break;
+    //     }
+    //     break;
+    // case 'lineaPedido':
+    //     switch ($action) {
 
-            case 'index':
-                $controller = new CLineaPedido();
-                $controller->index();
-                break;
-            case 'show':
-                $controller = new CLineaPedido();
-                $controller->show($id);
-                break;
-            case 'create':
-                $controller = new CLineaPedido();
-                $controller->create();
-                break;
-            case 'store':
-                $controller = new CLineaPedido();
-                $controller->store();
-                break;
-            case 'edit':
-                $controller = new CLineaPedido();
-                $controller->edit($id);
-                break;
-            case 'update':
-                $controller = new CLineaPedido();
-                $controller->update();
-                break;
-            case 'destroy':
-                $controller = new CLineaPedido();
-                $controller->destroy($id);
-                break;
-            default:
-                header("Location: index.php?entity=usuario&action=index");
-                break;
-        }
-        break;
+    //         case 'index':
+    //             $controller = new CLineaPedido();
+    //             $controller->index();
+    //             break;
+    //         case 'show':
+    //             $controller = new CLineaPedido();
+    //             $controller->show($id);
+    //             break;
+    //         case 'create':
+    //             $controller = new CLineaPedido();
+    //             $controller->create();
+    //             break;
+    //         case 'store':
+    //             $controller = new CLineaPedido();
+    //             $controller->store();
+    //             break;
+    //         case 'edit':
+    //             $controller = new CLineaPedido();
+    //             $controller->edit($id);
+    //             break;
+    //         case 'update':
+    //             $controller = new CLineaPedido();
+    //             $controller->update();
+    //             break;
+    //         case 'destroy':
+    //             $controller = new CLineaPedido();
+    //             $controller->destroy($id);
+    //             break;
+    //         default:
+    //             header("Location: index.php?entity=usuario&action=index");
+    //             break;
+    //     }
+    //     break;
 
     case 'login':
         
@@ -217,14 +225,14 @@ switch ($entity) {
             case 'login':
 
                 $controller = new CLogin();
-                $controller->logIn($_POST);
+                $controller->login($_POST);
 
             break;    
 
-            case 'logOut':
+            case 'logout':
 
                 $controller = new CLogin();
-                $controller->logOut();
+                $controller->logout();
             
             break;
 
