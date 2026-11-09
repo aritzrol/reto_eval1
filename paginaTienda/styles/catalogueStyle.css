@@ -8,11 +8,12 @@
     --font-family-btn: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/*BODY*/
 body {
     display: grid;
 }
 
-/*PRODUCTS VIEW*/
+/*MAIN CONTENT OF THE PAGE: SEARCH OPTIONS, FILTERS AND PRODUCTS*/
 .content {
     display: grid;
     grid-template-columns: 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr;
@@ -21,6 +22,7 @@ body {
     margin: 20px;
 }
 
+/*CARD WITH SERIES INFORMATION*/
 .series-info {
     display: block;
     align-self: center;
@@ -42,12 +44,13 @@ body {
     transition: scale 0.2s, opacity 0.3s ease-in-out;
 }
 
+/*CARD WITH SERIES INFORMATION WHEN HIDDEN (HIDDEN BY DEFAULT WHEN THE WEBSITE LOADS)*/
 .series-info.hidden {
     opacity: 0;
-
     scale: 0;
 }
 
+/*BUTTON TO CLOSE THE SERIES INFO CARD*/
 .series-info>button {
     position: absolute;
     top: 0px;
@@ -64,10 +67,12 @@ body {
     font-size: large;
 }
 
+/*MAKES THE CURSOR CHANGE TO POINTER WHEN HOVERING OVER CLOSE BUTTON*/
 .series-info>button:hover {
     cursor: pointer;
 }
 
+/*IMAGE OF THE SERIES INFO CARD*/
 .series-info>img {
     width: 50%;
     height: 100%;
@@ -149,6 +154,7 @@ body {
     background-color: white;
 }
 
+/*FILTER CATEGORIES*/
 .filters>h3 {
     margin: 0px;
     padding-top: 15px;
@@ -158,15 +164,18 @@ body {
     border-top: 1px solid var(--primary-color);
 }
 
+/*FILTER HEADER/TITLE*/
 .filters>h3:first-child {
     border: none;
     background-color: var(--secondary-color);
 }
 
+/*FILTER CHECKBOXES*/
 .filters>input {
     margin-left: 15px;
 }
 
+/*SECTION FOR THE PRODUCTS*/
 .products {
     grid-column-start: 5;
     grid-column-end: 20;
@@ -182,6 +191,7 @@ body {
     padding-left: 60px;
 }
 
+/*PRODUCT CARDS*/
 .card {
     position: relative;
 
@@ -203,10 +213,12 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
+/*MAKES THE CURSOR CHANGE TO POINTER WHEN HOVERING OVER PRODUCT CARDS*/
 .card:hover {
     cursor: pointer;
 }
 
+/*WHEN HOVERING OVER A PRODUCT CARD, BLURS ALL OTHERS AND LOWERS OPACITY AND SATURATION*/
 .products:has(.card:hover)
 .card:not(:hover) {
     opacity: 80%;
@@ -214,6 +226,7 @@ body {
     filter: blur(2px);
 }
 
+/*IMAGES FOR THE PRODUCTS CARDS*/
 .card>img {
     width: 250px;
     height: 352px;
@@ -223,6 +236,7 @@ body {
     margin-bottom: 5px;
 }
 
+/*TEXT IN THE PRODUCTS CARDS*/
 .card>h4, .card>p, .card>section>h4 {
     align-self: self-start;
 
@@ -230,6 +244,7 @@ body {
     padding-left: 15px;
 }
 
+/*HORIZONTAL LINE/SEPARATOR BEFORE PRICE IN THE PRODUCT CARDS*/
 .card>hr {
     align-self: center;
     width: 80%;
@@ -238,6 +253,7 @@ body {
     margin-bottom: 10px;
 }
 
+/*SECTION FOR PRICE AND BUTTON AT THE BOTTOM OF THE PRODUCT CARDS*/
 .card>section {
     width: 100%;
 
@@ -245,6 +261,7 @@ body {
     bottom: 0;
 }
 
+/*ADD TO CART BUTTON IN THE PRODUCTS CARDS*/
 .add-to-cart-button {
     height: 30px;
     width: 100%;
@@ -260,6 +277,7 @@ body {
 
 }
 
+/*CREATES A SHADOW AND MAKES THE BUTTON SLIGHTLY BIGGER WHEN HOVERING*/
 .add-to-cart-button:hover{
 
     box-shadow:
