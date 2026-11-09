@@ -21,7 +21,7 @@
         }
 
         public function show($id){
-            $data = $this->model->getById((int) $id);
+            $data = $this->model->getById($id);
             require_once __DIR__ . '/../view/VProductoShow.php';
         }
 
@@ -35,9 +35,9 @@
 
             try {
                 $this->model->insert(
-                    (int) $_POST['id_serie'],
-                    (int) $_POST['numero'],
-                    (float) $_POST['precio'],
+                    $_POST['id_serie'],
+                    $_POST['numero'],
+                    $_POST['precio'],
                     $isbn
                 );
             } catch (mysqli_sql_exception $e) {
@@ -48,16 +48,16 @@
         }
 
         public function edit($id){
-            $data = $this->model->getById((int) $id);
+            $data = $this->model->getById( $id);
             $series = $this->serieModel->getAll();
             require_once __DIR__ . '/../view/VProductoUpdate.php';
         }
 
         public function update(){
-            $id_producto = (int) $_POST['id_producto'];
-            $id_serie = (int) $_POST['id_serie'];
-            $numero = (int) $_POST['numero'];
-            $precio = (float) $_POST['precio'];
+            $id_producto =  $_POST['id_producto'];
+            $id_serie =  $_POST['id_serie'];
+            $numero =  $_POST['numero'];
+            $precio =  $_POST['precio'];
             $isbn = (isset($_POST['isbn']) && trim($_POST['isbn']) !== '') ? trim($_POST['isbn']) : null;
 
             try {
@@ -72,9 +72,8 @@
         //Elimina el producto
         public function destroy($id){
             try {
-                $this->model->delete((int) $id);
+                $this->model->delete( $id);
             } catch (mysqli_sql_exception $e) {
-                // Por ejemplo, si el producto esta en alguna linea de pedido
                 $this->redirect('index.php?entity=producto&action=index&error=destroy');
             }
 

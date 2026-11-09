@@ -32,17 +32,17 @@
             <tbody>
                 <?php
                     echo '<tr>';
-                    echo '<td>' . (int) $data['id_producto'] . '</td>';
+                    echo '<td>' . $data['id_producto'] . '</td>';
                     echo '<td>' . htmlspecialchars($data['nombre']) . '</td>';
                     echo '<td>' . htmlspecialchars($data['numero']) . '</td>';
                     echo '<td>' . htmlspecialchars($data['precio']) . '€</td>';
-                    echo '<td>' . htmlspecialchars((string) $data['isbn']) . '</td>';
+                    echo '<td>' . htmlspecialchars($data['isbn']) . '</td>';
                     echo '</tr>';
                 ?>
             </tbody>
         </table>
-        <a href="index.php?entity=producto&action=edit&id=<?php echo (int) $data['id_producto']; ?>" class="btn btn-warning">Modificar</a>
-        <a href="index.php?entity=producto&action=destroy&id=<?php echo (int) $data['id_producto']; ?>" class="btn btn-danger" onclick="return confirm('¿Seguro que quieres eliminar este producto?');">Eliminar</a>
+        <a href="index.php?entity=producto&action=edit&id=<?php echo $data['id_producto']; ?>" class="btn btn-warning">Modificar</a>
+        <a href="index.php?entity=producto&action=destroy&id=<?php echo $data['id_producto']; ?>" class="btn btn-danger" onclick="return confirm('¿Seguro que quieres eliminar este producto?');">Eliminar</a>
         <a href="index.php?entity=producto&action=index" class="btn btn-secondary">Volver a la lista</a>
     <?php } else { ?>
         <div class="alert alert-warning text-center">No existe ese producto.</div>

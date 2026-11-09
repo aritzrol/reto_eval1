@@ -94,42 +94,42 @@ switch ($entity) {
                 break;
         }
         break;
-    case 'perfil':
-        switch ($action) {
+    // case 'perfil':
+    //     switch ($action) {
 
-            case 'index':
-                $controller = new CPerfil();
-                $controller->index();
-                break;
-            case 'show':
-                $controller = new CPerfil();
-                $controller->show($id);
-                break;
-            case 'create':
-                $controller = new CPerfil();
-                $controller->create();
-                break;
-            case 'store':
-                $controller = new CPerfil();
-                $controller->store();
-                break;
-            case 'edit':
-                $controller = new CPerfil();
-                $controller->edit($id);
-                break;
-            case 'update':
-                $controller = new CPerfil();
-                $controller->update();
-                break;
-            case 'destroy':
-                $controller = new CPerfil();
-                $controller->destroy($id);
-                break;
-            default:
-                header("Location: index.php?entity=usuario&action=index");
-                break;
-        }
-        break;
+    //         case 'index':
+    //             $controller = new CPerfil();
+    //             $controller->index();
+    //             break;
+    //         case 'show':
+    //             $controller = new CPerfil();
+    //             $controller->show($id);
+    //             break;
+    //         case 'create':
+    //             $controller = new CPerfil();
+    //             $controller->create();
+    //             break;
+    //         case 'store':
+    //             $controller = new CPerfil();
+    //             $controller->store();
+    //             break;
+    //         case 'edit':
+    //             $controller = new CPerfil();
+    //             $controller->edit($id);
+    //             break;
+    //         case 'update':
+    //             $controller = new CPerfil();
+    //             $controller->update();
+    //             break;
+    //         case 'destroy':
+    //             $controller = new CPerfil();
+    //             $controller->destroy($id);
+    //             break;
+    //         default:
+    //             header("Location: index.php?entity=usuario&action=index");
+    //             break;
+    //     }
+    //     break;
     case 'pedido':
         switch ($action) {
 
