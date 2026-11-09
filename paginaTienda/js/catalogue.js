@@ -1,9 +1,3 @@
-//HTML ELEMENTS
-const cartIcon = document.getElementById("cart-icon");
-const alertBox = document.getElementById("alert");
-
-
-
 //When clicking on the x button, it closes the displayed info card, setting the display to none
 document.querySelector(`.series-info`).querySelector(`button`).addEventListener(`click`, (e) => {
     e.target.closest(`.series-info`).classList.add(`hidden`);
@@ -65,8 +59,16 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
 const SERIES_URL = `http://localhost:3000/series`;
 const VOLUMES_URL = `http://localhost:3000/volumes`;
 
+//Navbar icons
+const cartIcon = document.getElementById("cart-icon");
+const alertBox = document.getElementById("alert");
+
 let series = [];
 let volumes = [];
+let appliedFilters = [];
+
+getSeries();
+getVolumes();
 
 //Makes a call to the json server and fetches all the series, saving it in a predeclared array
 //If something fails, it shows the corresponding error
@@ -140,7 +142,6 @@ function displayVolume(v) {
     card.id = `card-${volumes.indexOf(v)}`;
 
     document.querySelector(`.products`).appendChild(card);
-
 
     const btn = document.createElement(`button`);
     btn.type = `button`;
@@ -259,8 +260,84 @@ function sortVolumes(option) {
     }
 }
 
-getSeries();
-getVolumes();
+//Filters the volumes according to the selected filters
+//Calls to toggleFilterDisplay to show the applied filters
+function filterVolumes(target) {
+    toggleFilterDisplay(target);
+
+    //Saves all checked boxes to an array
+    let checkedBoxes = [];
+    document.querySelectorAll(`input[type="checkbox"]`).forEach(box => {
+        if (box.checked) {
+            checkedBoxes.push(box);
+        }
+    });
+
+    //Empties the product display
+    document.querySelector(`.products`).innerHTML = "";
+
+    //If there are no checked boxes, it shows all the volumes
+    if (checkedBoxes.length == 0) {
+        volumes.forEach(volume => {
+            displayVolume(volume);
+            return;
+        });
+    }
+
+    //For each checked box, it makes the necessary comparisons, displaying the volumes only if the validation is fulfilled
+    checkedBoxes.forEach(box => {
+        if (box.name == "genre") {
+            volumes.forEach(volume => {
+                series.forEach(serie => {
+                    if (serie.id == volume.id_series && serie.genre == box.value) {
+                        displayVolume(volume);
+                    }
+                });
+            });
+        }
+
+        else if (box.name == "publisher") {
+            volumes.forEach(volume => {
+                series.forEach(serie => {
+                    if (serie.id == volume.id_series && serie.publisher == box.value) {
+                        displayVolume(volume);
+                    }
+                });
+            });
+        }
+
+        else if (box.name == "price") {
+            volumes.forEach(volume => {
+                if (box.className == "under10" && volume.price < 10) {
+                    displayVolume(volume);
+                }
+                else if (box.className == "under15" && volume.price > 10 && volume.price < 15) {
+                    displayVolume(volume);
+                }
+                if (box.className == "over15" && volume.price > 15) {
+                    displayVolume(volume);
+                }
+            });
+        }
+    });
+
+}
+
+//Creates a div with the selected filter's value and saves it to a preexisting array
+//If the activated checkbox is checked, the corresponding filter is shown. If not, it is removed
+function toggleFilterDisplay(target) {
+    const filter = document.createElement(`div`);
+    filter.innerHTML = target.value;
+    filter.className = target.className;
+    appliedFilters.push(filter);
+
+    if (target.checked) {
+        document.querySelector(`.appliedFilters`).appendChild(filter);
+    }
+    else {
+        document.querySelector(`.${target.className}`).remove();
+    }
+}
 
 //CART LIGHT
 function cartView(){

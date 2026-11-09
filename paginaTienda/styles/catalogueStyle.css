@@ -18,6 +18,7 @@ body {
     display: grid;
     grid-template-columns: 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr;
     grid-template-rows: 35px 50px auto;
+    row-gap: 10px;
 
     margin: 20px;
 }
@@ -130,13 +131,26 @@ body {
     justify-self: start;
 }
 
-/*APPLIED FILTERS*/
-.content>div {
+/*DIV FOR APPLIED FILTERS*/
+.appliedFilters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
     grid-column-start: 4;
-    grid-column-end: 8;
+    grid-column-end: 20;
 
     grid-row-start: 2;
     grid-row-end: 3;
+}
+
+/*APPLIED FILTERS*/
+.appliedFilters>div {
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+
+    margin: 5px;
+    padding: 2px 5px 2px 5px;
 }
 
 /*FILTERS*/
