@@ -34,23 +34,13 @@ class CSerie
         //Crea la entidad y la guarda
         $data = [
             "nombre" => $_POST["nombre"],
-            "email" => $_POST["email"],
-            "password" => $_POST["password"],
-            "rol" => $_POST["rol"]
+            "sinopsis" => $_POST["sinopsis"],
+            "genero" => $_POST["genero"],
+            "autor" => $_POST["autor"],
+            "editorial" => $_POST["editorial"]
         ];
 
-        $id_serie = $this->model->insert($data);
-
-        $this->producto = new MProducto();
-
-        $data = [
-            "id_serie" => $id_serie,
-            "apellidos" => $_POST["apellidos"],
-            "telefono" => $_POST["telefono"],
-            "direccion" => $_POST["direccion"]
-        ];
-
-        $this->producto->insert($data);
+        $this->model->insert($data);
 
         header('Location: index.php?entity=Serie&action=index');
     }
