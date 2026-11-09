@@ -26,7 +26,7 @@
                 <?php
                 foreach ($series as $serie) {
                     $idSerie = $serie['id_serie'];
-                    $nombreSerie = htmlspecialchars($serie['nombre']);
+                    $nombreSerie = $serie['nombre'];
                     echo '<option value="' . $idSerie . '">' . $nombreSerie . '</option>';
                 }
                 ?>

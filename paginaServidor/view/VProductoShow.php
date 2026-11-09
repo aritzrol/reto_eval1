@@ -33,10 +33,10 @@
                 <?php
                     echo '<tr>';
                     echo '<td>' . $data['id_producto'] . '</td>';
-                    echo '<td>' . htmlspecialchars($data['nombre']) . '</td>';
-                    echo '<td>' . htmlspecialchars($data['numero']) . '</td>';
-                    echo '<td>' . htmlspecialchars($data['precio']) . '€</td>';
-                    echo '<td>' . htmlspecialchars($data['isbn']) . '</td>';
+                    echo '<td>' . $data['nombre'] . '</td>';
+                    echo '<td>' . $data['numero'] . '</td>';
+                    echo '<td>' . $data['precio'] . '€</td>';
+                    echo '<td>' . $data['isbn'] . '</td>';
                     echo '</tr>';
                 ?>
             </tbody>
