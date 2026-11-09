@@ -1,7 +1,6 @@
 <?php
 
     require_once __DIR__ . '/../model/MLogin.php';
-    require_once __DIR__ . '/../model/MUsuario.php';
 
     class CLogin{
 
@@ -23,8 +22,11 @@
         public function login($data){
 
             //se comprueba que los datos existan para evitar errores si llegan vacios
-            $email = $data['login-email'] ?? '';
-            $password = $data['login-password'] ?? '';
+            $email = $data['email'] ?? '';
+            $password = $data['password'] ?? '';
+
+            var_dump($email, $password);
+            exit();
 
             //modelo
             $usuarioEncontrado = $this->model->getLogin($email, $password);
@@ -35,27 +37,25 @@
                     session_start();
                 }
 
-                //se guardar los datos del login en la sesion
+                //se guardan los datos del login en la sesion
                 $_SESSION['logged_in_user'] = $usuarioEncontrado['email'];
                 $_SESSION['user_id'] = $usuarioEncontrado['id_usuario'];
                 $_SESSION['user_rol'] = $usuarioEncontrado['rol'];
 
-                if($usuarioEncontrado['rol'] === 'cliente'){
-                    header("Location: index.php?entity=producto&action=index");
-                }else if($usuarioEncontrado['rol'] === 'admin'){
-                    header("Location: index.php?entity=producto&action=index");
-                }else{
-
-                    //se redirige al login
-                    header("Location: index.php?entity=login&action=index");
-                    exit();
-                }
-
+                //se va a series
+                header("Location: index.php?entity=serie&action=index");
+                exit();
             }
+
+            //login incorrecto: se vuelve al formulario
+            header("Location: index.php?entity=login&action=index");
+            exit();
+
         }
+    
 
         //LOGOUT
-        public function logOut(){
+    public function logout(){
 
             // Iniciamos la sesión si no lo está para poder destruirla
             if (session_status() === PHP_SESSION_NONE) {
