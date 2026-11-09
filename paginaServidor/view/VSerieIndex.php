@@ -1,70 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Series</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Gestión de Pedidos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #27ae60;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .serie-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            font-weight: 600;
+            border-bottom: 2px solid #e3e6f0;
+        }
+
+        .logout {
+            margin-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container mt-5">
-    <a href="index.php?entity=usuario&action=index" class="btn btn-info">Usuarios</a>
-    <a href="index.php?entity=producto&action=index" class="btn btn-info">Productos</a>
-    <a href="index.php?entity=serie&action=index" class="btn btn-info">Series</a>
-</div>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col">
+                <h1>Gestión de Series</h1>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="index.php?entity=usuario&action=index" class="btn btn-outline-success">Usuarios</a>
+                    <a href="index.php?entity=pedido&action=index" class="btn btn-outline-success">Pedidos</a>
+                </div>
+                <div class="logout d-flex gap-2 flex-wrap">
+                    <a href="index.php?entity=login&action=logout" class="btn btn-outline-danger">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
 
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Lista de Series</h1>
+        
 
-    <table class="table table-striped table-bordered">
-        <thead class="bg-dark text-white">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Tomos</th>
-                <th scope="col">Editorial</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                foreach($data as $dato) {
-                    echo '<tr>';
-                    echo '<td>' . $dato["id_serie"] . '</td>';
-                    echo '<td>' . $dato["nombre"] . '</td>';
-                    echo '<td>' . $dato["autor"] . '</td>';
-                    echo '<td><select>';
+        <div class="row">
+            <div class="col">
+                <?php
+            foreach ($data as $dato) {
+                echo '<div class="card mb-4 shadow-sm">';
+                    echo '<div class="card-header bg-white py-3">';
+                        echo '<div class="serie-header flex-wrap gap-2">';
+                            echo '<span>';
+                                 echo '<strong>' . $dato['nombre'] . '</strong>';
+                            echo '</span>';
+                            echo '<div>';
+                                echo '<a href="index.php?entity=serie&show=show&id=' . $dato["id_serie"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Serie">';
+                                    echo '<i class="bi bi-eye"> Ver</i>';
+                                echo '</a>';
+                                echo '<a href="index.php?entity=pedido&action=edit&id=' . $dato["id_serie"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Serie">';
+                                    echo '<i class="bi bi-pencil">Modificar</i>';
+                                echo '</a>';
+                                echo '<a href="index.php?entity=pedido&action=delete&id=' . $dato["id_serie"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Serie">';
+                                    echo '<i class="bi bi-trash">Eliminar</i>';
+                                echo '</a>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
 
-                    foreach($productos as $producto) {
-                        if ($producto["id_serie"] == $dato["id_serie"]) {
-                            echo '<option name="id" value="' . $producto["id_producto"] . '">Tomo ' . $producto["numero"] . '</option>';
-                        }
-                    }
+                    echo '<div class="card-body p-0">';
+                        echo '<div class="table-responsive">';
+                            echo '<table class="table table-hover mb-0 align-middle">';
+                                echo '<thead>';
+                                    echo '<tr>';
+                                        echo '<th class="ps-3" style="width: 50%;">Tomos</th>';
+                                        echo '<th class="text-end pe-3" style="width: 50%;">Acciones</th>';
+                                    echo '</tr>';
+                                echo '</thead>';
+                                echo '<tbody>';
+                                foreach ($productos as $producto) {
+                                    if ($producto['id_serie'] == $dato['id_serie']){
+                                        echo '<tr>';
+                                            echo '<td class="ps-3 text-muted">#' . $producto['numero'] . '</td>';
+                                            echo '<td>';
+                                                echo '<a href="index.php?entity=producto&show=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Producto">';
+                                                    echo '<i class="bi bi-eye"> Ver</i>';
+                                                echo '</a>';
+                                                echo '<a href="index.php?entity=producto&action=edit&id=' . $producto["id_producto"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Producto">';
+                                                    echo '<i class="bi bi-pencil">Modificar</i>';
+                                                echo '</a>';
+                                                echo '<a href="index.php?entity=producto&action=delete&id=' . $producto["id_producto"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Producto">';
+                                                    echo '<i class="bi bi-trash">Eliminar</i>';
+                                                echo '</a>';
+                                            echo '</td>';
+                                        echo '</tr>';
+                                    }
+                                }
+                                echo '</tbody>';
+                            echo '</table>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
+            }
+        ?>
+        </div>
+    </div>
 
-                    echo '</select>';
-                    echo '<a href="index.php?entity=producto&action=show' . $dato['id_producto'] . '" class="btn btn-info mx-1" type="submit">Ver</a>';
-                    echo '<a href="index.php?entity=producto&action=insert' . $dato['id_producto'] . '" class="btn btn-info mx-1" type="submit">Agregar</a>';
-                    echo '<a href="index.php?entity=producto&action=edit' . $dato['id_producto'] . '" class="btn btn-warning mx-1" type="submit">Modificar</a>';
-                    echo '<a href="index.php?entity=producto&action=destroy=' . $dato['id_producto'] . '" class="btn btn-danger mx-1" type="submit">Eliminar</a>';
-                    echo '</td>';
-                    echo '<td>' . $dato["editorial"] . '</td>';
-                    echo '<td>';
-                    echo '<a href="index.php?entity=serie&action=show&id=' . $dato['id_serie'] . '" class="btn btn-info mx-1">Ver</a>';
-                    echo '<a href="index.php?entity=serie&action=edit&id=' . $dato['id_serie'] . '" class="btn btn-warning mx-1">Modificar</a>';
-                    echo '<a href="index.php?entity=serie&action=destroy&id=' . $dato['id_serie'] . '" class="btn btn-danger mx-1">Eliminar</a>';
-                    echo '</td>';
-                    echo '</tr>';
-                }
-            ?>
-        </tbody>
-    </table>
-    <a href="index.php?entity=serie&action=create" class="btn btn-success">Crear nueva serie</a>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
