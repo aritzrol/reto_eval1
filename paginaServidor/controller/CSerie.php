@@ -47,12 +47,8 @@ class CSerie
 
     public function show($id)
     {
-        //Muestra uno
-        $this->producto = new MProducto();
+        $data = [$this->model->getById($id)];
 
-        $data = $this->model->getById($id);
-        array_merge($data, $this->producto->getById($id));
-        
         require __DIR__ . '/../view/VSerieShow.php';
     }
 
