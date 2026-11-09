@@ -79,13 +79,13 @@
                                         echo '<a href="index.php?entity=serie&action=show&id=' . $dato["id_serie"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Serie">';
                                             echo '<i class="bi bi-eye">Ver</i>';
                                         echo '</a>';
-                                        echo '<a href="index.php?entity=pedido&action=edit&id=' . $dato["id_serie"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Serie">';
+                                        echo '<a href="index.php?entity=serie&action=edit&id=' . $dato["id_serie"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Serie">';
                                             echo '<i class="bi bi-pencil">Modificar</i>';
                                         echo '</a>';
-                                        echo '<a href="index.php?entity=pedido&action=delete&id=' . $dato["id_serie"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Serie">';
+                                        echo '<a href="index.php?entity=serie&action=delete&id=' . $dato["id_serie"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Serie">';
                                             echo '<i class="bi bi-trash">Eliminar</i>';
                                         echo '</a>';
-                                        echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
+                                        echo '<a href="index.php?entity=producto&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
                                             echo '<i class="bi bi-plus">Agregar tomo</i>';
                                         echo '</a>';
                                     echo '</div>';
