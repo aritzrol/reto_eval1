@@ -25,9 +25,6 @@
             $email = $data['email'] ?? '';
             $password = $data['password'] ?? '';
 
-            var_dump($email, $password);
-            exit();
-
             //modelo
             $usuarioEncontrado = $this->model->getLogin($email, $password);
 
@@ -38,9 +35,10 @@
                 }
 
                 //se guardan los datos del login en la sesion
-                $_SESSION['logged_in_user'] = $usuarioEncontrado['email'];
-                $_SESSION['user_id'] = $usuarioEncontrado['id_usuario'];
-                $_SESSION['user_rol'] = $usuarioEncontrado['rol'];
+                $_SESSION['logged_in_user'] = $usuarioEncontrado['nombre'];
+                $_SESSION['id_usuario'] = $usuarioEncontrado['id_usuario'];
+                $_SESSION['rol_usuario'] = $usuarioEncontrado['rol'];
+                $_SESSION['usuario'] = $usuarioEncontrado['usuario'];
 
                 //se va a series
                 header("Location: index.php?entity=serie&action=index");

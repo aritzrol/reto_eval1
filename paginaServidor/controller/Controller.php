@@ -11,9 +11,11 @@ require_once ("controller/CLogin.php");
 // require_once __DIR__ . '/CLineaPedido.php';
 
 //define acciones por defecto
-$id = isset($_GET['id']) ? $_GET['id'] : null;
-$action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $entity = isset($_GET['entity']) ? $_GET['entity'] : 'login';
+$action = isset($_GET['action']) ? $_GET['action'] : 'index';
+$id = isset($_GET['id']) ? $_GET['id'] : null;
+
+// var_dump($email, $password);
 
 // echo "entity: $entity | action: $action | método: " . $_SERVER['REQUEST_METHOD'];
 // var_dump($_POST);

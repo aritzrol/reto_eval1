@@ -1,10 +1,12 @@
 <?php
-/*
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    header('Location: index.php');
-}
-*/
+    session_start();
+    if(!isset($_SESSION['logged_in_user'])){
+        header("Location: index.php?entity=login&action=index");
+        exit();
+    }
+    $id_usuario = $_SESSION['id_usuario'];
+    $usuario = $_SESSION['usuario'];
+    $rol_usuario = $_SESSION['rol_usuario'];
 ?>
 
 <!DOCTYPE html>
