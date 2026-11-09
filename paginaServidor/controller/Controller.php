@@ -134,31 +134,31 @@ switch ($entity) {
         switch ($action) {
 
             case 'index':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->index();
                 break;
             case 'show':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->show($id);
                 break;
             case 'create':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->create();
                 break;
             case 'store':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->store();
                 break;
             case 'edit':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->edit($id);
                 break;
             case 'update':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->update();
                 break;
             case 'destroy':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->destroy($id);
                 break;
             default:
@@ -176,7 +176,7 @@ switch ($entity) {
             case 'show':
                 $controller = new CLineaPedido();
                 $controller->show($id);
-                break;
+                break;  
             case 'create':
                 $controller = new CLineaPedido();
                 $controller->create();

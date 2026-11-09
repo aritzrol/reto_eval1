@@ -49,17 +49,17 @@
                 }
 
                 foreach ($data as $dato) {
-                    $id = (int) $dato['id_producto'];
+                    $id = $dato['id_producto'];
                     echo '<tr>';
                     echo '<td>' . $id . '</td>';
                     echo '<td>' . $dato['nombre_serie'] . '</td>';
                     echo '<td>' . $dato['numero'] . '</td>';
                     echo '<td>' . $dato['precio'] . '€</td>';
-                    echo '<td>' . (string) $dato['isbn'] . '</td>';
+                    echo '<td>' . $dato['isbn'] . '</td>';
                     echo '<td>';
                     echo '<a href="index.php?entity=producto&action=show&id=' . $id . '" class="btn btn-info mx-1">Ver</a>';
                     echo '<a href="index.php?entity=producto&action=edit&id=' . $id . '" class="btn btn-warning mx-1">Modificar</a>';
-                    echo '<a href="index.php?entity=producto&action=destroy&id=' . $id . '" class="btn btn-danger mx-1" onclick="return confirm(\'¿Seguro que quieres eliminar este producto?\');">Eliminar</a>';
+                    echo '<a href="index.php?entity=producto&action=destroy&id=' . $dato['id_producto'] . '" class="btn btn-danger mx-1" onclick="return confirm(\'¿Seguro que quieres eliminar este producto?\');">Eliminar</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
