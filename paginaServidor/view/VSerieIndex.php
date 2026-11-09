@@ -68,70 +68,71 @@
         <div class="row">
             <div class="col">
                 <?php
-                    foreach ($data as $dato) {
-                        echo '<div class="card mb-4 shadow-sm">';
-                            echo '<div class="card-header bg-white py-3">';
-                                echo '<div class="serie-header flex-wrap gap-2">';
-                                    echo '<span>';
-                                        echo '<strong>' . $dato['nombre'] . '</strong>';
-                                    echo '</span>';
-                                    echo '<div>';
-                                        echo '<a href="index.php?entity=serie&action=show&id=' . $dato["id_serie"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Serie">';
-                                            echo '<i class="bi bi-eye">Ver</i>';
-                                        echo '</a>';
-                                        echo '<a href="index.php?entity=serie&action=edit&id=' . $dato["id_serie"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Serie">';
-                                            echo '<i class="bi bi-pencil">Modificar</i>';
-                                        echo '</a>';
-                                        echo '<a href="index.php?entity=serie&action=delete&id=' . $dato["id_serie"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Serie">';
-                                            echo '<i class="bi bi-trash">Eliminar</i>';
-                                        echo '</a>';
-                                        echo '<a href="index.php?entity=producto&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
-                                            echo '<i class="bi bi-plus">Agregar tomo</i>';
-                                        echo '</a>';
-                                    echo '</div>';
-                                echo '</div>';
-                            echo '</div>';
+                foreach ($data as $dato) {
+                    echo '<div class="card mb-4 shadow-sm">';
+                    echo '<div class="card-header bg-white py-3">';
+                    echo '<div class="serie-header flex-wrap gap-2">';
+                    echo '<span>';
+                    echo '<strong>' . $dato['nombre'] . '</strong>';
+                    echo '</span>';
+                    echo '<div>';
+                    echo '<a href="index.php?entity=serie&action=show&id=' . $dato["id_serie"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Serie">';
+                    echo '<i class="bi bi-eye">Ver</i>';
+                    echo '</a>';
+                    echo '<a href="index.php?entity=serie&action=edit&id=' . $dato["id_serie"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Serie">';
+                    echo '<i class="bi bi-pencil">Modificar</i>';
+                    echo '</a>';
+                    echo '<a href="index.php?entity=serie&action=destroy&id=' . $dato["id_serie"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Serie" onclick="return confirm(\'¿Seguro que quieres eliminar esta serie?\');">';
+                    echo '<i class="bi bi-trash">Eliminar</i>';
+                    echo '</a>';
+                    echo '</a>';
+                    echo '<a href="index.php?entity=producto&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
+                    echo '<i class="bi bi-plus">Agregar tomo</i>';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
 
-                            echo '<div class="card-body p-0">';
-                                echo '<div class="table-responsive">';
-                                    echo '<table class="table table-hover mb-0 align-middle">';
-                                        echo '<thead>';
-                                            echo '<tr>';
-                                                echo '<th class="ps-3" style="width: 50%;">Tomos</th>';
-                                                echo '<th class="text-end pe-3" style="width: 50%;">Acciones</th>';
-                                            echo '</tr>';
-                                        echo '</thead>';
-                                        echo '<tbody>';
-                                        foreach ($productos as $producto) {
-                                            if ($producto['id_serie'] == $dato['id_serie']) {
-                                                echo '<tr>';
-                                                    echo '<td class="ps-3 text-muted">#' . $producto['numero'] . '</td>';
-                                                    echo '<td class="text-end">';
-                                                        echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Producto">';
-                                                            echo '<i class="bi bi-eye">Ver</i>';
-                                                        echo '</a>';
-                                                        echo '<a href="index.php?entity=producto&action=edit&id=' . $producto["id_producto"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Producto">';
-                                                            echo '<i class="bi bi-pencil">Modificar</i>';
-                                                        echo '</a>';
-                                                        echo '<a href="index.php?entity=producto&action=delete&id=' . $producto["id_producto"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Producto">';
-                                                            echo '<i class="bi bi-trash">Eliminar</i>';
-                                                        echo '</a>';
-                                                    echo '</td>';
-                                                echo '</tr>';
-                                            }
-                                        }
-                                        echo '</tbody>';
-                                    echo '</table>';
-                                echo '</div>';
-                            echo '</div>';
-                        echo '</div>';
+                    echo '<div class="card-body p-0">';
+                    echo '<div class="table-responsive">';
+                    echo '<table class="table table-hover mb-0 align-middle">';
+                    echo '<thead>';
+                    echo '<tr>';
+                    echo '<th class="ps-3" style="width: 50%;">Tomos</th>';
+                    echo '<th class="text-end pe-3" style="width: 50%;">Acciones</th>';
+                    echo '</tr>';
+                    echo '</thead>';
+                    echo '<tbody>';
+                    foreach ($productos as $producto) {
+                        if ($producto['id_serie'] == $dato['id_serie']) {
+                            echo '<tr>';
+                            echo '<td class="ps-3 text-muted">#' . $producto['numero'] . '</td>';
+                            echo '<td class="text-end">';
+                            echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Producto">';
+                            echo '<i class="bi bi-eye">Ver</i>';
+                            echo '</a>';
+                            echo '<a href="index.php?entity=producto&action=edit&id=' . $producto["id_producto"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Producto">';
+                            echo '<i class="bi bi-pencil">Modificar</i>';
+                            echo '</a>';
+                            echo '<a href="index.php?entity=producto&action=delete&id=' . $producto["id_producto"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Producto">';
+                            echo '<i class="bi bi-trash">Eliminar</i>';
+                            echo '</a>';
+                            echo '</td>';
+                            echo '</tr>';
+                        }
                     }
+                    echo '</tbody>';
+                    echo '</table>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }
                 ?>
+            </div>
+            <a href="index.php?entity=serie&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Serie">
+                <i class="bi bi-plus">Agregar</i>
+            </a>
         </div>
-        <a href="index.php?entity=serie&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Serie">
-            <i class="bi bi-plus">Agregar</i>
-        </a>
-    </div>
 
 </body>
 

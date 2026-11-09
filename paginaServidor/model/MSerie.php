@@ -8,8 +8,6 @@ class MSerie {
     }
 
     public function getById($id) {
-        $resultado = null;
-
         $sentencia = $this->conexion->prepare("SELECT * FROM serie WHERE id_serie = ?;");
         $sentencia->bind_param("i", $id);
         $sentencia->execute();
@@ -29,12 +27,11 @@ class MSerie {
             $resultado[] = $fila;
         }
 
-        $sentencia->close();
         return $resultado;
     }
 
     public function insert($data) {
-        $sentencia = $this->conexion->prepare("INSERT INTO serie VALUES(?, ?, ?, ?, ?);");
+        $sentencia = $this->conexion->prepare("INSERT INTO serie (nombre, sinopsis, genero, autor, editorial) VALUES(?, ?, ?, ?, ?);");
         $sentencia->bind_param("sssss", $data["nombre"], $data["sinopsis"], $data["genero"], $data["autor"], $data["editorial"]);
 
         $sentencia->execute();
@@ -42,7 +39,7 @@ class MSerie {
     }
 
     public function edit($id, $data) {
-        $sentencia = $this->conexion->prepare("UPDATE serie SET nombre = ?, sinopsis = ?, genero = ?, autor = ?, editorial = ? WHERE id_usuario = ?;");
+        $sentencia = $this->conexion->prepare("UPDATE serie SET nombre = ?, sinopsis = ?, genero = ?, autor = ?, editorial = ? WHERE id_serie = ?;");
         $sentencia->bind_param("sssssi", $data["nombre"], $data["sinopsis"], $data["genero"], $data["autor"], $data["editorial"], $id);
 
         $sentencia->execute();
@@ -50,7 +47,7 @@ class MSerie {
     }
 
     public function delete($id) {
-        $sentencia = $this->conexion->prepare("DELETE FROM serie WHERE id_usuario = ?;");
+        $sentencia = $this->conexion->prepare("DELETE FROM serie WHERE id_serie = ?;");
         $sentencia->bind_param("i", $id);
 
         $sentencia->execute();

@@ -26,7 +26,7 @@
 
         public function create(){
             //ventana
-            require_once __DIR__ . '/../view/VProductoCreateForm.php';
+            require_once __DIR__ . '/../view/VProductoCreate.php';
         }
 
         public function store(){

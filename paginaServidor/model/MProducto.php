@@ -47,9 +47,9 @@ class MProducto
     }
 
     //borrar un producto
-    public function delete($id_producto){
+    public function delete($id_serie){
 
-        $consulta=$this->db->prepare("delete from caballero where id_producto=?");
+        $consulta=$this->db->prepare("delete from serie where id_serie=?");
         $consulta->bind_param("i", $id_producto);
         $consulta->execute();
 
