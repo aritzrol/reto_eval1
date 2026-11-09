@@ -348,4 +348,14 @@ body.dark-mode .form-register {
 
 #dark-mode-icon{
     scale: 1.5;
+    transition: filter 0.2s;
+}
+
+/* Hover del icono de modo oscuro: sin subrayado, solo se oscurece */
+nav .nav-buttons a:has(#dark-mode-icon):hover {
+    border-bottom: none;
+}
+
+#dark-mode-icon:hover {
+    filter: brightness(0.75);
 }
