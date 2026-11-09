@@ -1,4 +1,5 @@
 const SERIES_URL = "store.json";
+const cartIcon = document.getElementById("cart-icon");
 let series = [];
 let volumes = [];
 let serieSeleccionada;
@@ -198,6 +199,9 @@ function agregarAlCarro() {
         fondo.classList.add(`hidden`);
         boton.classList.remove("clicked");
     }, 250);
+
+    cartView();
+
 }
 
 // Cierra la ficha al pulsar la X.
@@ -207,3 +211,21 @@ document.querySelector(".series-info").querySelector("button").addEventListener(
 });
 
 getSeries();
+
+
+//CART LIGHT
+function cartView(){
+    
+    // sin icono en esta página, no hay nada que hacer
+    if(cartIcon === null) return;
+
+    //Check localStorage if any products exists
+    let cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(cartStorage.length > 0){
+        cartIcon.classList.add("cart-icon");      
+    }else{
+        cartIcon.classList.remove("cart-icon");  
+    }
+    
+}

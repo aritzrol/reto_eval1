@@ -1,3 +1,9 @@
+//HTML ELEMENTS
+const cartIcon = document.getElementById("cart-icon");
+const alertBox = document.getElementById("alert");
+
+
+
 //When clicking on the x button, it closes the displayed info card, setting the display to none
 document.querySelector(`.series-info`).querySelector(`button`).addEventListener(`click`, (e) => {
     e.target.closest(`.series-info`).classList.add(`hidden`);
@@ -213,7 +219,12 @@ function addToCart(event, s, v) {
 
     //The cart array is saved to localStorage
     localStorage.setItem("cart", JSON.stringify(cart)); 
-    alert("The volume has been added to the cart!");
+    // alert("The volume has been added to the cart!");
+
+    let text = "The volume has been added to the cart!";
+    newAlert(text, "✓");
+
+    cartView();
 }
 
 //Checks if any of the series titles contains the value in the search bar. If it does, it calls to displayVolume
@@ -250,3 +261,44 @@ function filterVolumes(target) {
 
 getSeries();
 getVolumes();
+
+//CART LIGHT
+function cartView(){
+    
+    // sin icono en esta página, no hay nada que hacer
+    if(cartIcon === null) return;
+
+    //Check localStorage if any products exists
+    let cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(cartStorage.length > 0){
+        cartIcon.classList.add("cart-icon");      
+    }else{
+        cartIcon.classList.remove("cart-icon");  
+    }
+    
+}
+
+//function to create the alert message
+function newAlert(text, icon){
+
+    alertBox.innerHTML = "";
+
+    const box = document.createElement("div");
+    box.classList.add("textAlert");
+
+    box.innerHTML = `
+        <span>${icon}</span>
+        <p>ALERT : ${text}</p>
+    `;
+
+    alertBox.appendChild(box);
+
+    alertBox.style.display = "block";
+}
+
+//HIDE ALERT
+alertBox.addEventListener("click", function(){
+
+    alertBox.style.display = "none";
+});
