@@ -16,12 +16,26 @@ function darkMode(){
     if (darkModeIcon !== null) {
         const darkModeButton = darkModeIcon.closest("a");
 
+        updateDarkModeIcon();
+
         darkModeButton.addEventListener("click", function (event) {
             event.preventDefault();
 
             document.body.classList.toggle("dark-mode");
             localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+            updateDarkModeIcon();
         });
+    }
+}
+
+// Cambia el icono según el modo actual: dia.svg en modo día, noche.svg en modo noche.
+function updateDarkModeIcon(){
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeIcon.src = "IMG/icons/noche.svg";
+        darkModeIcon.alt = "Modo noche";
+    } else {
+        darkModeIcon.src = "IMG/icons/dia.svg";
+        darkModeIcon.alt = "Modo día";
     }
 }
 
