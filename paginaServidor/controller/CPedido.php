@@ -39,16 +39,17 @@ class CPedido
         header('Location: index.php?entity=pedido&action=index');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $data = $this->model->getById($id);
         //ventana
         require_once __DIR__ . '/../view/VPedidoEditForm.php';
     }
 
-    public function edit($id)
+    public function update($id)
     {
-        $this->model->edit($id);
-        //ventana
+        $this->model->update($id, $_POST);
+
         header('Location: index.php?entity=pedido&action=index');
     }
 

@@ -107,7 +107,7 @@
                                                         echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Producto">';
                                                             echo '<i class="bi bi-eye">Ver</i>';
                                                         echo '</a>';
-                                                        echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
+                                                        echo '<a href="index.php?entity=producto&action=create&id=' . $producto["id_producto"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
                                                             echo '<i class="bi bi-plus">Agregar</i>';
                                                         echo '</a>';
                                                         echo '<a href="index.php?entity=producto&action=edit&id=' . $producto["id_producto"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Producto">';

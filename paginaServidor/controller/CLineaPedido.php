@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . '/../model/MLineaLineaPedido.php';
+    require_once __DIR__ . '/../model/MLineaPedido.php';
 
     class CLineaPedido{
 
@@ -34,7 +34,7 @@
             header('Location: index.php?entity=lineaPedido&action=index');
         }
 
-        public function edit(){
+        public function update(){
             //ventana
             require_once __DIR__ . '/../view/VLineaPedidoEditForm.php';
         }
