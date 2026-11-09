@@ -18,7 +18,7 @@ body {
 
 /*BLACK BAR AT THE TOP*/
 
-/* MOVIL */
+/* MOBILE */
 .top-bar {
     z-index: 2;
 
@@ -33,7 +33,7 @@ body {
     font-size: 12px;
     text-align: center;
 
-    padding: 6px 16px;        /* la altura sale del padding, no de height */
+    padding: 6px 16px;
 }
 
 /* TABLET ++*/
@@ -57,14 +57,17 @@ body {
     }
 }
 
-/*NAVBAR*/
+/*NAVBAR BUTTONS*/
 .nav-buttons a.nav-icon {
     border-bottom: 3px solid transparent;
 }
 
+/*ADDS A WHITE UNDERLINE WHEN HOVERING*/
 .nav-buttons a.nav-icon:hover {
     border-bottom-color: white;
 }
+
+/*NAVBAR*/
 nav {
     z-index: 2;
     
