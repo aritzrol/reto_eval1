@@ -15,7 +15,7 @@
         public function index(){
             $data = $this->model->getAll();
             //ventana
-            require_once __DIR__ . '/../view/VProductoShow.php';
+            require_once __DIR__ . '/../view/VProductoIndex.php';
         }
 
         public function show($id){
@@ -26,7 +26,7 @@
 
         public function create(){
             //ventana
-            require_once __DIR__ . '/../view/VProductoCreate.php';
+            require_once __DIR__ . '/../view/VProductoCreateForm.php';
         }
 
         public function store(){

@@ -12,7 +12,7 @@
     </head>
     <body>
 
-        <!--BLACK SECTION AT THE TOP-->
+        <!--BLACK BAR AT THE TOP OF THE PAGE-->
         <section class="top-bar">
             <span>Free shipping for orders over €35</span>
             <span>New products every week</span>
@@ -60,6 +60,7 @@
         <div id="alert"></div>
 
         <!--CARD SERIES INFO-->
+        <!--CARD WITH SERIES INFO, HIDDEN BY DEFAULT-->
         <section class="series-info hidden">
             <button type="button">x</button>
             <img src="" alt="">
@@ -70,21 +71,27 @@
             <span></span>
         </section>
 
-        <!--CONTENT-->
+        <!--CONTENT OF THE PAGE: SEARCH OPTIONS, FILTERS AND PRODUCTS-->
         <section class="content">
         
             <h2>MANGA CATALOGUE</h2>
-        
+            
+            <!--SEARCH BAR-->
             <input type="text" for="title" name="title" placeholder="🔍 Search by title" />
+
+            <!--ORDER SELECTOR-->
             <select>
                 <option value="new" selected>Order: newest first</option>
                 <option value="old">Order: oldest first</option>
                 <option value="cheap">Order: cheapest first</option>
                 <option value="expensive">Order: most expensive first</option>
             </select>
+
+            <!--APPLIED FILTERS-->
             <p><strong>Applied filters:</strong></p>
             <div class="appliedFilters"></div>
-        
+            
+            <!--FILTERS-->
             <form class="filters">
                 <h3>FILTERS</h3>
                 
@@ -130,6 +137,8 @@
                 <input type="checkbox" name="publisher" value="arechi">
                 <label for="publisher">Arechi</label><br><br>
             </form>
+
+            <!--EMPTY SECTION FOR PRODUCTS, TO BE FILLED WITH JAVASCRIPT-->
             <section class="products"></section>
         </section>
 

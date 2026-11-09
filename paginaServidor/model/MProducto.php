@@ -59,7 +59,7 @@ class MProducto
     function getById($id_producto){
 
         //se accede a la base de datos
-        $consulta = $this->db->prepare("select * from producto where id_producto = ?");
+        $consulta = $this->db->prepare("select p.id_producto, s.nombre, p.numero, p.precio, p.isbn from producto p, serie s where p.id_producto = ?");
         $consulta->bind_param("i", $id_producto);
         $consulta->execute();
         $resultado = $consulta->get_result();

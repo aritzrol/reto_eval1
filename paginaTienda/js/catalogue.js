@@ -23,6 +23,8 @@ document.querySelectorAll(`input[type="checkbox"]`).forEach(c => {
 })
 
 //When changing the order selector, it reorders the volumes according to the option selected
+//It calls to sortVolumes with the necessary value (id for chronological order, price for price order)
+//If necessary, it reverses the array
 document.querySelector(`select`).addEventListener(`change`, (e) => {
     document.querySelector(`.products`).innerHTML = "";
     const option = e.target.value;
@@ -36,7 +38,6 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
         });
     }
     else if (option == `old`) {
-        
         sortVolumes(`id`);
         
         volumes.forEach(v => {
@@ -64,8 +65,8 @@ document.querySelector(`select`).addEventListener(`change`, (e) => {
 const SERIES_URL = `http://localhost:3000/series`;
 const VOLUMES_URL = `http://localhost:3000/volumes`;
 
-let series;
-let volumes;
+let series = [];
+let volumes = [];
 
 //Makes a call to the json server and fetches all the series, saving it in a predeclared array
 //If something fails, it shows the corresponding error
@@ -240,23 +241,22 @@ function searchVolumes(t) {
 }
 
 //Sorts volumes based on the selected option
+//It compares every single value with all previous values to rearrange them from smallest to biggest
 function sortVolumes(option) {
     const n = volumes.length;
     
+    //Goes over the array, saving the current value as key. Starts from the second value
     for (i = 1; i < n; ++i) {
         const key = volumes[i];
         let j = i - 1;
 
+        //Enters a loop, comparing the key to all previous values until it finds one that's smaller
         while (j >= 0 && volumes[j][option] > key[option]) {
             volumes[j + 1] = volumes[j];
             j = j - 1;
         }
         volumes[j + 1] = key;
     }
-}
-
-function filterVolumes(target) {
-    
 }
 
 getSeries();
