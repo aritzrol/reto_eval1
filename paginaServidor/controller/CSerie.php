@@ -26,7 +26,7 @@ class CSerie
     public function create()
     {
         //Muestra la vista/formulario de crear
-        require __DIR__ . '/../view/VSerieCreateForm.php';
+        require __DIR__ . '/../view/VSerieCreate.php';
     }
 
     public function store()
@@ -70,7 +70,7 @@ class CSerie
     {
         //Muestra la vista/formulario de editar
         $data = $this->model->getById($id); 
-        require __DIR__ . '/../view/VSerieEditForm.php';
+        require __DIR__ . '/../view/VSerieUpdate.php';
     }
 
     public function update($id)
