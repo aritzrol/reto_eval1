@@ -1,10 +1,12 @@
 <?php
-// session_start();
-// if(!isset($_SESSION['logged_in_user'])) {
-    // header("Location: ../index.php?entity=login&action=index");
-    // exit();
+// if (session_status() === PHP_SESSION_NONE) {
+//     session_start();
 // }
-//?>
+// if(!isset($_SESSION['logged_in_user'])) {
+//     header("Location: index.php?entity=login&action=index");
+//     exit();
+// }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
