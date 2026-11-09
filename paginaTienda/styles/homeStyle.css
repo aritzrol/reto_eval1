@@ -261,13 +261,6 @@ footer section a {
 
 /* Ajustes para pantallas medianas */
 @media (max-width: 800px) {
-    nav {
-        height: auto;
-        min-height: 65px;
-        padding: 8px 4%;
-        grid-template-columns: 1fr auto;
-    }
-
     nav input {
         display: none;
     }

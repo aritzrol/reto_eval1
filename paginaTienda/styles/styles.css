@@ -359,3 +359,43 @@ nav .nav-buttons a:has(#dark-mode-icon):hover {
 #dark-mode-icon:hover {
     filter: brightness(0.75);
 }
+
+/* NAVBAR Y TOP-BAR CONSISTENTES EN TODAS LAS PÁGINAS
+   Cada página carga CSS distintos (Bootstrap, box-sizing, font-size del body...).
+   Fijamos aquí los valores para que el tamaño no dependa de la página. */
+.top-bar,
+.top-bar *,
+nav,
+nav * {
+    box-sizing: border-box;
+}
+
+.top-bar {
+    line-height: 1.5;
+}
+
+nav {
+    height: 80px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+nav img {
+    display: block;
+    vertical-align: middle;
+}
+
+nav .nav-buttons > div {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajuste para pantallas medianas (antes solo en homeStyle.css) */
+@media (max-width: 800px) {
+    nav {
+        height: auto;
+        min-height: 65px;
+        padding: 8px 4%;
+        grid-template-columns: 1fr auto;
+    }
+}
