@@ -1,24 +1,14 @@
 <?php
-// ============================================================
-// VISTA de prueba: CRUD de `producto` (manga_ancha)
-// Aquí solo está la parte visual. La lógica la escribes tú.
-// La página ya se ve sin tocar nada porque las variables
-// de abajo están vacías.
-// ============================================================
 
-// ---------- TU CÓDIGO PHP AQUÍ (zona de práctica) ----------
+    session_start();
+    if(!isset($_SESSION['logged_in_user'])){
+        header("Location: index.php?entity=login&action=index");
+        exit();
+    }
+    $id_usuario = $_SESSION['id_usuario'];
+    $usuario = $_SESSION['usuario'];
+    $rol_usuario = $_SESSION['rol_usuario'];
 
-// TODO 1: conexión a la base de datos con PDO
-
-// TODO 2: si la petición es POST, mirar $_POST['accion'] y hacer:
-//         'crear'    -> INSERT
-//         'editar'   -> UPDATE
-//         'eliminar' -> DELETE
-//         (usa consultas preparadas)
-
-// TODO 3: si viene ?editar=ID por la URL, cargar esa fila en $enEdicion
-
-// TODO 4: rellenar $series (SELECT de serie) y $productos (SELECT con JOIN)
 
 // ---------- Variables que la vista espera ----------
 $mensaje   = '';   // texto de éxito, por ejemplo "Producto creado"
