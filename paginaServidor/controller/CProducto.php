@@ -6,84 +6,47 @@
     class CProducto{
 
         private MProducto $model;
-        private MSerie $serieModel;
 
         public function __construct()
         {
             $this->model = new MProducto();
-            $this->serieModel = new MSerie();
         }
 
         public function index(){
             $data = $this->model->getAll();
-            $error = isset($_GET['error']) ? $_GET['error'] : null;
+            //ventana
             require_once __DIR__ . '/../view/VProductoIndex.php';
         }
 
         public function show($id){
             $data = $this->model->getById($id);
+            //ventana
             require_once __DIR__ . '/../view/VProductoShow.php';
         }
 
         public function create(){
-            $series = $this->serieModel->getAll();
-            require_once __DIR__ . '/../view/VProductoCreate.php';
+            //ventana
+            require_once __DIR__ . '/../view/VProductoCreateForm.php';
         }
 
         public function store(){
-            $isbn = (isset($_POST['isbn']) && trim($_POST['isbn']) !== '') ? trim($_POST['isbn']) : null;
+            $this->model->insert($_POST);
 
-            try {
-                $this->model->insert(
-                    $_POST['id_serie'],
-                    $_POST['numero'],
-                    $_POST['precio'],
-                    $isbn
-                );
-            } catch (mysqli_sql_exception $e) {
-                $this->redirect('index.php?entity=producto&action=index&error=store');
-            }
-
-            $this->redirect('index.php?entity=producto&action=index');
+            header('Location: index.php?entity=producto&action=index');
         }
 
         public function edit($id){
-            $data = $this->model->getById( $id);
-            $series = $this->serieModel->getAll();
-            require_once __DIR__ . '/../view/VProductoUpdate.php';
+            $this->model->edit($id);
+            //ventana
+            header('Location: index.php?entity=producto&action=index');
         }
 
-        public function update(){
-            $id_producto =  $_POST['id_producto'];
-            $id_serie =  $_POST['id_serie'];
-            $numero =  $_POST['numero'];
-            $precio =  $_POST['precio'];
-            $isbn = (isset($_POST['isbn']) && trim($_POST['isbn']) !== '') ? trim($_POST['isbn']) : null;
-
-            try {
-                $this->model->edit($id_producto, $id_serie, $numero, $precio, $isbn);
-            } catch (mysqli_sql_exception $e) {
-                $this->redirect('index.php?entity=producto&action=index&error=update');
-            }
-
-            $this->redirect('index.php?entity=producto&action=index');
-        }
-
-        //Elimina el producto
         public function destroy($id){
-            try {
-                $this->model->delete( $id);
-            } catch (mysqli_sql_exception $e) {
-                $this->redirect('index.php?entity=producto&action=index&error=destroy');
-            }
+        //Elimina la entidad
+        $this->model->delete($id);
 
-            $this->redirect('index.php?entity=producto&action=index');
-        }
-
-        private function redirect($url){
-            header('Location: ' . $url);
-            exit();
-        }
+        header('Location: index.php?entity=producto&action=index');
+    }
 
     }
 
