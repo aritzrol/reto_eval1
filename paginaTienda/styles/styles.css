@@ -360,9 +360,7 @@ nav .nav-buttons a:has(#dark-mode-icon):hover {
     filter: brightness(0.75);
 }
 
-/* NAVBAR Y TOP-BAR CONSISTENTES EN TODAS LAS PÁGINAS
-   Cada página carga CSS distintos (Bootstrap, box-sizing, font-size del body...).
-   Fijamos aquí los valores para que el tamaño no dependa de la página. */
+/* NAVBAR Y TOP-BAR */
 .top-bar,
 .top-bar *,
 nav,

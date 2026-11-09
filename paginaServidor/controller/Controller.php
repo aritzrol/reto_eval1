@@ -3,9 +3,9 @@ require_once("db/Db.php");
 require_once("controller/CUsuario.php");
 require_once ("controller/CProducto.php");
 require_once ("controller/CSerie.php");
-// require_once __DIR__ . '/CPerfil.php';
-// require_once __DIR__ . '/CPedido.php';
-// require_once __DIR__ . '/CLineaPedido.php';
+require_once __DIR__ . '/CLogin.php';
+require_once __DIR__ . '/CPedido.php';
+require_once __DIR__ . '/CLineaPedido.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
@@ -134,31 +134,31 @@ switch ($entity) {
         switch ($action) {
 
             case 'index':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->index();
                 break;
             case 'show':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->show($id);
                 break;
             case 'create':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->create();
                 break;
             case 'store':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->store();
                 break;
             case 'edit':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->edit($id);
                 break;
             case 'update':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->update();
                 break;
             case 'destroy':
-                $controller = new CPedido();
+                $controller = new CProducto();
                 $controller->destroy($id);
                 break;
             default:

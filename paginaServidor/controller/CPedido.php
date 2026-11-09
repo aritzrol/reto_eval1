@@ -39,7 +39,7 @@ class CPedido
         header('Location: index.php?entity=pedido&action=index');
     }
 
-    public function edit()
+    public function update()
     {
         //ventana
         require_once __DIR__ . '/../view/VPedidoEditForm.php';

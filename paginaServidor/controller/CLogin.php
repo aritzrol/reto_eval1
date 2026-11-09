@@ -5,11 +5,11 @@
 
     class CLogin{
 
-        private MLogin $model;
+        private Login $model;
 
         public function __construct()
         {
-            $this->model = new MLogin();
+            $this->model = new Login();
         }
 
         public function index(){
