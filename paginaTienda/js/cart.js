@@ -34,6 +34,7 @@ const totalPrice = document.getElementById("summary-total");
 const buyButton = document.getElementById("checkout-button");
 const zeroProductsImage = document.getElementById("empty-cart");
 const alertBox = document.getElementById("alert");
+const cartIcon = document.getElementById("cart-icon");
 
 //variables
 let users = [];
@@ -129,6 +130,23 @@ function priceCalculator(){
 
     totalPrice.textContent = total.toFixed(2) + " €";
 
+}
+
+//CART LIGHT
+function cartView(){
+    
+    // sin icono en esta página, no hay nada que hacer
+    if(cartIcon === null) return;
+
+    //Check localStorage if any products exists
+    let cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(cartStorage.length > 0){
+        cartIcon.classList.add("cart-icon");      
+    }else{
+        cartIcon.classList.remove("cart-icon");  
+    }
+    
 }
 
 //LISTENERS
@@ -247,6 +265,8 @@ for(let i=0; i < deleteButtons.length; i++){
         priceCalculator();
 
         emptyCart();
+
+        cartView();
     
     });
 }
