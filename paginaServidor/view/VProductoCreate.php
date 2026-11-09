@@ -1,12 +1,10 @@
 <?php
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
+// session_start();
 // if(!isset($_SESSION['logged_in_user'])) {
-//     header("Location: index.php?entity=login&action=index");
-//     exit();
+    // header("Location: ../index.php?entity=login&action=index");
+    // exit();
 // }
-?>
+//?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,7 +24,7 @@
                 <?php
                 foreach ($series as $serie) {
                     $idSerie = $serie['id_serie'];
-                    $nombreSerie = $serie['nombre'];
+                    $nombreSerie = htmlspecialchars($serie['nombre']);
                     echo '<option value="' . $idSerie . '">' . $nombreSerie . '</option>';
                 }
                 ?>

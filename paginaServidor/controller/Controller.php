@@ -3,9 +3,9 @@ require_once("db/Db.php");
 require_once("controller/CUsuario.php");
 require_once ("controller/CProducto.php");
 require_once ("controller/CSerie.php");
-require_once __DIR__ . '/CLogin.php';
-require_once __DIR__ . '/CPedido.php';
-require_once __DIR__ . '/CLineaPedido.php';
+// require_once __DIR__ . '/CPerfil.php';
+// require_once __DIR__ . '/CPedido.php';
+// require_once __DIR__ . '/CLineaPedido.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
@@ -94,71 +94,71 @@ switch ($entity) {
                 break;
         }
         break;
-    // case 'perfil':
-    //     switch ($action) {
+    case 'perfil':
+        switch ($action) {
 
-    //         case 'index':
-    //             $controller = new CPerfil();
-    //             $controller->index();
-    //             break;
-    //         case 'show':
-    //             $controller = new CPerfil();
-    //             $controller->show($id);
-    //             break;
-    //         case 'create':
-    //             $controller = new CPerfil();
-    //             $controller->create();
-    //             break;
-    //         case 'store':
-    //             $controller = new CPerfil();
-    //             $controller->store();
-    //             break;
-    //         case 'edit':
-    //             $controller = new CPerfil();
-    //             $controller->edit($id);
-    //             break;
-    //         case 'update':
-    //             $controller = new CPerfil();
-    //             $controller->update();
-    //             break;
-    //         case 'destroy':
-    //             $controller = new CPerfil();
-    //             $controller->destroy($id);
-    //             break;
-    //         default:
-    //             header("Location: index.php?entity=usuario&action=index");
-    //             break;
-    //     }
-    //     break;
+            case 'index':
+                $controller = new CPerfil();
+                $controller->index();
+                break;
+            case 'show':
+                $controller = new CPerfil();
+                $controller->show($id);
+                break;
+            case 'create':
+                $controller = new CPerfil();
+                $controller->create();
+                break;
+            case 'store':
+                $controller = new CPerfil();
+                $controller->store();
+                break;
+            case 'edit':
+                $controller = new CPerfil();
+                $controller->edit($id);
+                break;
+            case 'update':
+                $controller = new CPerfil();
+                $controller->update();
+                break;
+            case 'destroy':
+                $controller = new CPerfil();
+                $controller->destroy($id);
+                break;
+            default:
+                header("Location: index.php?entity=usuario&action=index");
+                break;
+        }
+        break;
     case 'pedido':
         switch ($action) {
 
             case 'index':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->index();
                 break;
             case 'show':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->show($id);
                 break;
             case 'create':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->create();
                 break;
             case 'store':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->store();
                 break;
             case 'edit':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->edit($id);
                 break;
             case 'update':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->update();
                 break;
             case 'destroy':
-                $controller = new CProducto();
+                $controller = new CPedido();
                 $controller->destroy($id);
                 break;
             default:

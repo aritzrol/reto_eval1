@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Producto</title>
+    <title>Lista de Productos</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -16,38 +16,32 @@
 </div>
 
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Detalle del Producto</h1>
+    <?php
+    echo '<h1 class="text-center mb-4"></h1>';
+    ?>
 
-    <?php if ($data) { ?>
-        <table class="table table-striped table-bordered">
-            <thead class="bg-dark text-white">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Serie</th>
-                    <th scope="col">Número</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">ISBN</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    echo '<tr>';
-                    echo '<td>' . $data['id_producto'] . '</td>';
-                    echo '<td>' . $data['nombre'] . '</td>';
-                    echo '<td>' . $data['numero'] . '</td>';
-                    echo '<td>' . $data['precio'] . '€</td>';
-                    echo '<td>' . $data['isbn'] . '</td>';
-                    echo '</tr>';
-                ?>
-            </tbody>
-        </table>
-        <a href="index.php?entity=producto&action=edit&id=<?php echo $data['id_producto']; ?>" class="btn btn-warning">Modificar</a>
-        <a href="index.php?entity=producto&action=destroy&id=<?php echo $data['id_producto']; ?>" class="btn btn-danger" onclick="return confirm('¿Seguro que quieres eliminar este producto?');">Eliminar</a>
-        <a href="index.php?entity=producto&action=index" class="btn btn-secondary">Volver a la lista</a>
-    <?php } else { ?>
-        <div class="alert alert-warning text-center">No existe ese producto.</div>
-        <div class="text-center"><a href="index.php?entity=producto&action=index" class="btn btn-secondary">Volver a la lista</a></div>
-    <?php } ?>
+    <table class="table table-striped table-bordered">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Serie</th>
+                <th scope="col">Número</th>
+                <th scope="col">Precio</th>
+                <th scope="col">ISBN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                echo '<tr>';
+                echo '<td>' . $data["id_producto"] . '</td>';
+                echo '<td>' . $data["nombre"] . '</td>';
+                echo '<td>' . $data["numero"] . '</td>';
+                echo '<td>' . $data["precio"] . '€</td>';
+                echo '<td>' . $data["isbn"] . '</td>';
+                echo '</tr>';
+            ?>
+        </tbody>
+    </table>
 </div>
 
 <!-- Bootstrap JS -->

@@ -85,6 +85,9 @@
                                         echo '<a href="index.php?entity=pedido&action=delete&id=' . $dato["id_serie"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Serie">';
                                             echo '<i class="bi bi-trash">Eliminar</i>';
                                         echo '</a>';
+                                        echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
+                                            echo '<i class="bi bi-plus">Agregar tomo</i>';
+                                        echo '</a>';
                                     echo '</div>';
                                 echo '</div>';
                             echo '</div>';
@@ -107,9 +110,6 @@
                                                         echo '<a href="index.php?entity=producto&action=show&id=' . $producto["id_producto"] . '" class="btn btn-outline-primary btn-sm me-1" title="Ver Producto">';
                                                             echo '<i class="bi bi-eye">Ver</i>';
                                                         echo '</a>';
-                                                        echo '<a href="index.php?entity=producto&action=create&id=' . $producto["id_producto"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
-                                                            echo '<i class="bi bi-plus">Agregar</i>';
-                                                        echo '</a>';
                                                         echo '<a href="index.php?entity=producto&action=edit&id=' . $producto["id_producto"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Producto">';
                                                             echo '<i class="bi bi-pencil">Modificar</i>';
                                                         echo '</a>';
@@ -128,7 +128,7 @@
                     }
                 ?>
         </div>
-        <a href="index.php?entity=producto&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Serie">
+        <a href="index.php?entity=serie&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Serie">
             <i class="bi bi-plus">Agregar</i>
         </a>
     </div>
