@@ -5,20 +5,18 @@ require_once 'model/MPerfil.php';
 class CUsuario
 {
     private $model;
-    private $perfil;
+    private $perfilModel;
 
     public function __construct()
     {
         $this->model = new MUsuario();
+        $this->perfilModel = new MPerfil();
     }
 
     public function index()
     {
         //Muestra todos
-        $this->perfil = new MPerfil();
-
         $data = $this->model->getAll();
-        array_merge($data, $this->perfil->getAll());
 
         require __DIR__ . '/../view/VUsuarioIndex.php';
     }
@@ -58,10 +56,8 @@ class CUsuario
     public function show($id)
     {
         //Muestra uno
-        $this->perfil = new MPerfil();
 
-        $data = $this->model->getById($id);
-        array_merge($data, $this->perfil->getById($id));
+        $data = $this->model->getByIdUsuarioPerfil($id);
         
         require __DIR__ . '/../view/VUsuarioShow.php';
     }
@@ -69,31 +65,26 @@ class CUsuario
     public function edit($id)
     {
         //Muestra la vista/formulario de editar
-        $data = $this->model->getById($id); 
-        require __DIR__ . '/../view/VUsuarioEditForm.php';
+        $data = $this->model->getByIdUsuarioPerfil($id); 
+        require __DIR__ . '/../view/VUsuarioUpdate.php';
     }
 
-    public function update($id)
+    public function update($data)
     {
-        //Edita la entidad y la guarda
-        $data = [
-            "nombre" => $_POST["nombre"],
-            "email" => $_POST["email"],
-            "password" => $_POST["password"],
-            "rol" => $_POST["rol"]
-        ];
+        //parametros recuperados de data
+        $id_usuario = $data['id_usuario'];
+        $nombre = $data['nombre'];
+        $email = $data['email'];
+        $rol = $data['rol'];
+        $apellidos = $data['apellidos'];
+        $telefono = $data['telefono'];
+        $direccion = $data['direccion'];
+        
+        //se actualiza usuario
+        $this->model->edit($id_usuario, $nombre, $email, $rol);
 
-        $this->model->edit($id, $data);
-
-        $data = [
-            "id_usuario" => "id_usuario",
-            "apellidos" => $_POST["apellidos"],
-            "telefono"  => $_POST["telefono"],
-            "direccion" => $_POST["direccion"]
-        ];
-
-        $this->perfil = new MPerfil();
-        $this->model->edit($id, $data);
+        //se actualiza el perfil de ese usuario
+        $this->perfilModel->edit($id_usuario, $apellidos, $telefono, $direccion);
 
         header('Location: index.php?entity=usuario&action=index');
     }
@@ -101,9 +92,8 @@ class CUsuario
     public function destroy($id)
     {
         //Elimina la entidad
-        $this->perfil = new MPerfil();
 
-        $this->perfil->delete($id);
+        $this->perfilModel->delete($id);
         $this->model->delete($id);
 
         header('Location: index.php?entity=usuario&action=index');

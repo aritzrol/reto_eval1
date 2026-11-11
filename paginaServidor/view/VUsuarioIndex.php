@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['logged_in_user'])){
         header("Location: index.php?entity=login&action=index");
         exit();
@@ -37,10 +39,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellidos</th>
                 <th scope="col">Email</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Direccion</th>
                 <th scope="col">Rol</th>
             </tr>
         </thead>
@@ -51,10 +50,7 @@
                     echo '<tr>';
                     echo '<td>' . $dato["id_usuario"] . '</td>';
                     echo '<td>' . $dato["nombre"] . '</td>';
-                    echo '<td>' . $dato["apellidos"] . '</td>';
                     echo '<td>' . $dato["email"] . '</td>';
-                    echo '<td>' . $dato["telefono"] . '</td>';
-                    echo '<td>' . $dato["direccion"] . '</td>';
                     echo '<td>' . $dato["rol"] . '</td>';
                     echo '<td>';
                     echo '<a href="index.php?entity=usuario&action=show&id=' . $dato['id_usuario'] . '" class="btn btn-info mx-1">Ver</a>';

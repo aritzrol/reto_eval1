@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['logged_in_user'])){
         header("Location: index.php?entity=login&action=index");
         exit();
@@ -33,10 +35,6 @@
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($data['email']); ?>" maxlength="100" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Escribe la contraseña" required>
             </div>
             <div class="mb-3">
                 <label for="rol" class="form-label">Rol</label>

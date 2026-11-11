@@ -1,0 +1,72 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if(!isset($_SESSION['logged_in_user'])){
+        header("Location: index.php?entity=login&action=index");
+        exit();
+    }
+    $id_usuario = $_SESSION['id_usuario'];
+    $usuario = $_SESSION['usuario'];
+    $rol_usuario = $_SESSION['rol_usuario'];
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pedidos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container mt-5">
+    <a href="index.php?entity=usuario&action=index" class="btn btn-info">Usuarios</a>
+    <a href="index.php?entity=pedido&action=index" class="btn btn-info">Pedidos</a>
+    <a href="index.php?entity=serie&action=index" class="btn btn-info">Series</a>
+    <br/>
+    <a href="index.php?entity=login&action=logout" class="btn btn-danger">Cerrar sesión</a>
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Lista de Pedidos</h1>
+    
+    <table class="table table-striped table-bordered">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Precio Total</th>
+                <th scope="col">Estado del Pedido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí va el PHP -->
+            <?php //var_dump($data);
+                foreach($data as $dato) {
+                    echo '<tr>';
+                    echo '<td>' . $dato["id_pedido"] . '</td>';
+                    echo '<td>' . $dato["nombre"] . '</td>';
+                    echo '<td>' . $dato["fecha"] . '</td>';
+                    echo '<td>' . $dato["precio_total"] . '</td>';
+                    echo '<td>' . $dato["estado_pedido"] . '</td>';
+                    echo '<td>';
+                    echo '<a href="index.php?entity=pedido&action=edit&id=' . $dato['id_pedido'] . '" class="btn btn-warning mx-1">Modificar</a>';
+                    echo '<a href="index.php?entity=pedido&action=destroy&id=' . $dato['id_pedido'] . '" class="btn btn-danger mx-1">Eliminar</a>';
+                    echo '</td>';
+                    echo '</tr>';
+            }
+            ?>
+        </tbody>
+    </table>
+    
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

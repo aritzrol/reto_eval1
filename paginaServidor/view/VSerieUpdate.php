@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['logged_in_user'])){
         header("Location: index.php?entity=login&action=index");
         exit();
@@ -45,7 +47,7 @@
                 <input type="text" class="form-control" id="editorial" name="editorial" value="<?php echo htmlspecialchars($data['editorial']); ?>" maxlength="50">
             </div>
             <button type="submit" class="btn btn-warning">Guardar cambios</button>
-            <a href="index.php?entity=serie&action=index" class="btn btn-secondary">Cancelar</a>
+            <a href="index.php?entity=serie&action=update&id=<?= $data["id_serie"] ?>" class="btn btn-secondary">Cancelar</a>
         </form>
     <?php } else { ?>
         <div class="alert alert-warning text-center">No existe esa serie.</div>

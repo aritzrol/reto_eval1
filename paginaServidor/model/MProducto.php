@@ -40,16 +40,16 @@ class MProducto
     //actualizar un producto
     public function edit($id_producto, $id_serie, $numero, $precio, $isbn){
 
-        $consulta=$this->db->prepare("update caballero set id_serie=?, numero=?, precio=?, isbn=? where id_producto=?");
+        $consulta=$this->db->prepare("update producto set id_serie=?, numero=?, precio=?, isbn=? where id_producto=?");
         $consulta->bind_param("iidsi", $id_serie, $numero, $precio, $isbn, $id_producto);
         $consulta->execute();
         
     }
 
     //borrar un producto
-    public function delete($id_serie){
+    public function delete($id_producto){
 
-        $consulta=$this->db->prepare("delete from serie where id_serie=?");
+        $consulta=$this->db->prepare("delete from producto where id_producto=?");
         $consulta->bind_param("i", $id_producto);
         $consulta->execute();
 
@@ -59,7 +59,7 @@ class MProducto
     function getById($id_producto){
 
         //se accede a la base de datos
-        $consulta = $this->db->prepare("select p.id_producto, s.nombre, p.numero, p.precio, p.isbn from producto p, serie s where p.id_producto = ?");
+        $consulta = $this->db->prepare("select p.id_producto, p.id_serie, s.nombre, p.numero, p.precio, p.isbn from producto p, serie s where p.id_producto = ?");
         $consulta->bind_param("i", $id_producto);
         $consulta->execute();
         $resultado = $consulta->get_result();

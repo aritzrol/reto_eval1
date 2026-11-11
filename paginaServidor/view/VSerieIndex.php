@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['logged_in_user'])){
         header("Location: index.php?entity=login&action=index");
         exit();
@@ -67,6 +69,7 @@
                 <div class="d-flex gap-2 flex-wrap">
                     <a href="index.php?entity=usuario&action=index" class="btn btn-outline-success">Usuarios</a>
                     <a href="index.php?entity=pedido&action=index" class="btn btn-outline-success">Pedidos</a>
+                    <a href="index.php?entity=lineaPedido&action=index" class="btn btn-outline-primary btn-sm me-1"><i class="bi bi-cart"></i> Carrito</a>
                 </div>
                 <div class="logout d-flex gap-2 flex-wrap">
                     <a href="index.php?entity=login&action=logout" class="btn btn-outline-danger">Cerrar sesión</a>
@@ -97,7 +100,7 @@
                     echo '<i class="bi bi-trash">Eliminar</i>';
                     echo '</a>';
                     echo '</a>';
-                    echo '<a href="index.php?entity=producto&action=create" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
+                    echo '<a href="index.php?entity=producto&action=create&id=' . $dato["id_serie"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
                     echo '<i class="bi bi-plus">Agregar tomo</i>';
                     echo '</a>';
                     echo '</div>';
@@ -125,8 +128,11 @@
                             echo '<a href="index.php?entity=producto&action=edit&id=' . $producto["id_producto"] . '" class="btn btn-outline-warning btn-sm" title="Modificar Producto">';
                             echo '<i class="bi bi-pencil">Modificar</i>';
                             echo '</a>';
-                            echo '<a href="index.php?entity=producto&action=delete&id=' . $producto["id_producto"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Producto">';
+                            echo '<a href="index.php?entity=producto&action=destroy&id=' . $producto["id_producto"] . '" class="btn btn-outline-danger btn-sm" title="Eliminar Producto">';
                             echo '<i class="bi bi-trash">Eliminar</i>';
+                            echo '</a>';
+                            echo '<a href="index.php?entity=lineaPedido&action=store&id=' . $producto["id_producto"] . '" class="btn btn-outline-success btn-sm me-1" title="Agregar Producto">';
+                            echo '<i class="bi bi-plus">Añadir al carrito</i>';
                             echo '</a>';
                             echo '</td>';
                             echo '</tr>';

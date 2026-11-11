@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['logged_in_user'])){
         header("Location: index.php?entity=login&action=index");
         exit();
@@ -27,9 +29,16 @@
                 <option value="">Selecciona una serie</option>
                 <?php
                 foreach ($series as $serie) {
-                    $idSerie = $serie['id_serie'];
-                    $nombreSerie = htmlspecialchars($serie['nombre']);
-                    echo '<option value="' . $idSerie . '">' . $nombreSerie . '</option>';
+
+                    if($id === $serie['id_serie']){
+                        $idSerie = $serie['id_serie'];
+                        $nombreSerie = htmlspecialchars($serie['nombre']);
+                        echo '<option value="' . $idSerie . '" selected>' . $nombreSerie . '</option>';
+                    }else{
+                        $idSerie = $serie['id_serie'];
+                        $nombreSerie = htmlspecialchars($serie['nombre']);
+                        echo '<option value="' . $idSerie . '">' . $nombreSerie . '</option>';
+                    }
                 }
                 ?>
             </select>

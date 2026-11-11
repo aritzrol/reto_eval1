@@ -34,7 +34,7 @@ CREATE TABLE producto (
     numero INT NOT NULL,
     precio DECIMAL(6,2) NOT NULL,
     isbn VARCHAR(13) UNIQUE,
-    FOREIGN KEY (id_serie) REFERENCES serie(id_serie)
+    FOREIGN KEY (id_serie) REFERENCES serie(id_serie) ON DELETE CASCADE
 );
 
 CREATE TABLE pedido (
@@ -42,18 +42,21 @@ CREATE TABLE pedido (
     id_usuario INT NOT NULL,
     fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     precio_total DECIMAL(8,2) NOT NULL,
-    estado_pedido ENUM('pendiente', 'pagado', 'enviado') NOT NULL DEFAULT 'pendiente',
+    estado_pedido ENUM('pendiente', 'pagado', 'enviado', 'cancelado') NOT NULL DEFAULT 'pendiente',
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
 CREATE TABLE linea_pedido (
-	 id_linea_pedido INT AUTO_INCREMENT PRIMARY KEY,
-    id_pedido INT NOT NULL,
+	id_linea_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
     id_producto INT NOT NULL,
+    id_pedido INT NULL,
     cantidad INT NOT NULL,
     precio_unitario DECIMAL(6,2) NOT NULL,
-    FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido),
-    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+    estado_pedido ENUM('carrito', 'pagado') NOT NULL DEFAULT 'carrito',
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto),
+    FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido)
 );
 
 /*INSERT DE PRUEBA*/
@@ -78,3 +81,27 @@ INSERT INTO producto (id_serie, numero, precio, isbn) VALUES
 (3, 2, 8.95, '9780000000080'),
 (4, 1, 9.50, '9780000000097'),
 (4, 2, 9.50, '9780000000103');
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `email`, `password`, `rol`) VALUES
+	(1, 'fernando', 'fer@gmail.com', '$2y$10$A4ah/c9DmJ16HFzjXVMFAukH1wiGOgSSqBrfU8u03tXMnbfIXtwBC', 'cliente'),
+	(2, 'aritz', 'aritz@gmail.com', '$2y$10$O4O/LJr0zxQ7zBJkyDP17u0BLVyajPZtpB8clchLonm/PnrhTdMiq', 'admin'),
+	(3, 'gaizka', 'gaizka@gmail.com', 'abcd', 'cliente');
+
+INSERT INTO `perfil` (`id_usuario`, `apellidos`, `telefono`, `direccion`) VALUES
+	(1, 'Medrano', '123456789', 'donosti'),
+	(2, 'Rolando', '987654321', 'bilbao'),
+	(3, 'prueba', '654654654', 'prueba');
+
+INSERT INTO `pedido` (`id_pedido`, `id_usuario`, `fecha`, `precio_total`, `estado_pedido`) VALUES
+	(1, 1, '2026-11-10 09:36:43', 50.00, 'pendiente'),
+	(2, 1, '2026-10-15 09:37:04', 60.00, 'pagado'),
+	(3, 1, '2026-09-10 09:37:34', 70.00, 'enviado'),
+	(4, 3, '2026-05-10 10:12:44', 100.00, 'pendiente');
+
+
+SELECT L.id_linea_pedido, L.id_usuario, L.id_producto, L.cantidad, L.precio_unitario,
+               S.nombre, P.numero
+        FROM linea_pedido L
+        JOIN producto P ON P.id_producto = L.id_producto
+        JOIN serie S ON S.id_serie = P.id_serie
+        WHERE L.id_usuario = ? AND L.estado_pedido = 'carrito';

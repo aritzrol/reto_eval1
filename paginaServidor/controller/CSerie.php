@@ -59,29 +59,19 @@ class CSerie
         require __DIR__ . '/../view/VSerieUpdate.php';
     }
 
-    public function update($id)
+    public function update($data)
     {
         //Edita la entidad y la guarda
-        $data = [
-            "nombre" => $_POST["nombre"],
-            "email" => $_POST["email"],
-            "password" => $_POST["password"],
-            "rol" => $_POST["rol"]
-        ];
+        $id_serie = $data['id_serie'];
+        $nombre = $data['nombre'];
+        $sinopsis = $data['sinopsis'];
+        $genero = $data['genero'];
+        $autor = $data['autor'];
+        $editorial = $data['editorial'];
+        
+        $this->model->edit($id_serie, $nombre, $sinopsis, $genero, $autor, $editorial);
 
-        $this->model->edit($id, $data);
-
-        $data = [
-            "id_serie" => "id_serie",
-            "apellidos" => $_POST["apellidos"],
-            "telefono"  => $_POST["telefono"],
-            "direccion" => $_POST["direccion"]
-        ];
-
-        $this->producto = new MProducto();
-        $this->model->edit($id, $data);
-
-        header('Location: index.php?entity=Serie&action=index');
+        header('Location: index.php?entity=serie&action=index');
     }
 
     public function destroy($id)

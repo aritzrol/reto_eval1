@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if(!isset($_SESSION['logged_in_user'])){
         header("Location: index.php?entity=login&action=index");
         exit();
@@ -24,18 +26,10 @@
     <?php if ($data) { ?>
         <form method="post" action="index.php?entity=producto&action=update">
             <input type="hidden" name="id_producto" value="<?php echo $data['id_producto']; ?>">
+            <input type="hidden" name="id_serie" value="<?php echo $data['id_serie']; ?>">
             <div class="mb-3">
-                <label for="id_serie" class="form-label">Serie</label>
-                <select class="form-select" id="id_serie" name="id_serie" required>
-                    <?php
-                    foreach ($series as $serie) {
-                        $idSerie = $serie['id_serie'];
-                        $nombreSerie = htmlspecialchars($serie['nombre']);
-                        $selected = ($data['id_serie'] == $idSerie) ? ' selected' : '';
-                        echo '<option value="' . $idSerie . '"' . $selected . '>' . $nombreSerie . '</option>';
-                    }
-                    ?>
-                </select>
+                <label for="numero" class="form-label">Serie</label>
+                <input type="text" class="form-control" id="id_serie" name="nombre" value="<?php echo htmlspecialchars($data['nombre']); ?>" readonly>
             </div>
             <div class="mb-3">
                 <label for="numero" class="form-label">Número de tomo</label>

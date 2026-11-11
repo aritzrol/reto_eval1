@@ -38,9 +38,9 @@ class MSerie {
         $sentencia->close();
     }
 
-    public function edit($id, $data) {
+    public function edit($id_serie, $nombre, $sinopsis, $genero, $autor, $editorial) {
         $sentencia = $this->conexion->prepare("UPDATE serie SET nombre = ?, sinopsis = ?, genero = ?, autor = ?, editorial = ? WHERE id_serie = ?;");
-        $sentencia->bind_param("sssssi", $data["nombre"], $data["sinopsis"], $data["genero"], $data["autor"], $data["editorial"], $id);
+        $sentencia->bind_param("sssssi", $nombre, $sinopsis, $genero, $autor, $editorial, $id_serie);
 
         $sentencia->execute();
         $sentencia->close();

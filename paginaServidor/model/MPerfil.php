@@ -41,16 +41,16 @@ class MPerfil {
         $sentencia->close();
     }
 
-    public function edit($id, $data) {
-        $sentencia = $this->conexion->prepare("UPDATE perfil SET, apellidos = ?, telefono = ?, direccion = ? WHERE id_usuario = ?;");
-        $sentencia->bind_param("sssi", $data["apellidos"], $data["telefono"], $data["direccion"], $id);
+    public function edit($id_usuario, $apellidos, $telefono, $direccion) {
+        $sentencia = $this->conexion->prepare("UPDATE perfil SET apellidos = ?, telefono = ?, direccion = ? WHERE id_usuario = ?;");
+        $sentencia->bind_param("sssi", $apellidos, $telefono, $direccion, $id_usuario);
 
         $sentencia->execute();
         $sentencia->close();
     }
 
     public function delete($id) {
-        $sentencia = $this->conexion->prepare("DELETE FROM arma WHERE id_usuario = ?;");
+        $sentencia = $this->conexion->prepare("DELETE FROM perfil WHERE id_usuario = ?;");
         $sentencia->bind_param("i", $id);
 
         $sentencia->execute();
