@@ -50,7 +50,7 @@
             </div>
 
             <button type="submit" class="btn btn-warning">Guardar cambios</button>
-            <a href="index.php?entity=producto&action=index" class="btn btn-secondary">Cancelar</a>
+            <a href="index.php?entity=pedido&action=index" class="btn btn-secondary">Cancelar</a>
         </form>
     <?php } else { ?>
         <div class="alert alert-warning text-center">No existe ese producto.</div>

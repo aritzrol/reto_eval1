@@ -43,7 +43,13 @@
         <tbody>
             <!-- Aquí va el PHP -->
             <?php //var_dump($data);
+                //se reclara una variable para el precio total del carrito
+                $precioTotal = 0;
+
                 foreach($data as $dato) {
+
+                    $precioTotal = $precioTotal + $dato['precio_unitario'];
+
                     echo '<tr>';
                     echo '<td>' . $dato["id_linea_pedido"] . '</td>';
                     echo '<td>' . $dato["nombre"] . '</td>';
@@ -58,6 +64,9 @@
             ?>
         </tbody>
     </table>
+
+    <h4 class="text-end mb-3">Total: <?php echo number_format($precioTotal, 2, ','); ?> €</h4>
+
     <a href="index.php?entity=lineaPedido&action=create" class="btn btn-success">Realizar Pedido</a>
 </div>
 
