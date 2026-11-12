@@ -274,9 +274,9 @@ function addToCart(event, s, v) {
 
     //The cart array is saved to localStorage
     localStorage.setItem("cart", JSON.stringify(cart)); 
-    // alert("The volume has been added to the cart!");
 
-    let text = "The volume has been added to the cart!";
+    //alert card
+    let text = "Added to cart!";
     newAlert(text, "✓");
 
     cartView();
@@ -419,7 +419,7 @@ function newAlert(text, icon){
 
     box.innerHTML = `
         <span>${icon}</span>
-        <p>ALERT : ${text}</p>
+        <p>INFO  ʕっ•ᴥ•ʔっ  : ${text}</p>
     `;
 
     alertBox.appendChild(box);

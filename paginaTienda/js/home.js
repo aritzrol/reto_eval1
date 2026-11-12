@@ -1,5 +1,6 @@
 const SERIES_URL = "store.json";
 const cartIcon = document.getElementById("cart-icon");
+const alertBox = document.getElementById("alert");
 let series = [];
 let volumes = [];
 let serieSeleccionada;
@@ -153,6 +154,7 @@ function showProductInfo(serie, volumen) {
 
 //Add to cart
 document.querySelector(".product-info-cart").addEventListener("click", agregarAlCarro);
+
 function agregarAlCarro() {
     const mangaName = serieSeleccionada.title;
     const mangaNumber = volumenSeleccionado.number;
@@ -202,6 +204,10 @@ function agregarAlCarro() {
 
     cartView();
 
+    //alert card
+    let text = " Added to cart!";
+    newAlert(text, "✓");
+
 }
 
 // Closes the product card when clicking the X.
@@ -229,3 +235,27 @@ function cartView(){
     }
     
 }
+
+//function to create the alert message
+function newAlert(text, icon){
+
+    alertBox.innerHTML = "";
+
+    const box = document.createElement("div");
+    box.classList.add("textAlert");
+
+    box.innerHTML = `
+        <span>${icon}</span>
+        <p>INFO  ʕっ•ᴥ•ʔっ  : ${text}</p>
+    `;
+
+    alertBox.appendChild(box);
+
+    alertBox.style.display = "block";
+}
+
+//HIDE ALERT
+alertBox.addEventListener("click", function(){
+
+    alertBox.style.display = "none";
+});

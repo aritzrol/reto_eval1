@@ -26,7 +26,7 @@
     }
   ],
   "pedidos": [
-    {
+        {
       "id": 1,
       "id_usuario": 1,
       "fecha": "2024-06-01",
@@ -35,15 +35,19 @@
       "productos": [
         {
           "id": 1,
-          "name": "Berserk 1",
+          "name": "Berserk",
+          "number": 1,
           "price": 9.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/berserk/berserk_1.jpg"
         },
         {
           "id": 2,
-          "name": "Naruto 5",
+          "name": "Naruto",
+          "number": 5,
           "price": 7.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/naruto/naruto_5.jpg"
         }
       ]
     },
@@ -56,9 +60,11 @@
       "productos": [
         {
           "id": 3,
-          "name": "One Piece 10",
+          "name": "One Piece",
+          "number": 10,
           "price": 8.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/onePiece/onePiece_10.jpg"
         }
       ]
     },
@@ -71,15 +77,19 @@
       "productos": [
         {
           "id": 6,
-          "name": "Akira 1",
+          "name": "Akira",
+          "number": 1,
           "price": 12,
-          "quantity": 2
+          "quantity": 2,
+          "cover": "IMG/covers/akira/akira_1.jpg"
         },
         {
           "id": 5,
-          "name": "Death Note 1",
+          "name": "Death Note",
+          "number": 1,
           "price": 9.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/deathNote/deathNote_1.jpg"
         }
       ]
     },
@@ -92,9 +102,11 @@
       "productos": [
         {
           "id": 7,
-          "name": "Bleach 7",
+          "name": "Bleach",
+          "number": 7,
           "price": 7.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/bleach/bleach_7.jpg"
         }
       ]
     },
@@ -107,15 +119,19 @@
       "productos": [
         {
           "id": 4,
-          "name": "Dragon Ball 3",
+          "name": "Dragon Ball",
+          "number": 3,
           "price": 8.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/dragonBall/dragonBall_3.jpg"
         },
         {
           "id": 3,
-          "name": "One Piece 10",
+          "name": "One Piece",
+          "number": 10,
           "price": 8.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/onePiece/onePiece_10.jpg"
         }
       ]
     },
@@ -128,9 +144,11 @@
       "productos": [
         {
           "id": 2,
-          "name": "Naruto 5",
+          "name": "Naruto",
+          "number": 5,
           "price": 7.95,
-          "quantity": 2
+          "quantity": 2,
+          "cover": "IMG/covers/naruto/naruto_5.jpg"
         }
       ]
     },
@@ -143,21 +161,27 @@
       "productos": [
         {
           "id": 8,
-          "name": "Vagabond 2",
+          "name": "Vagabond",
+          "number": 2,
           "price": 11.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/vagabond/vagabond_2.jpg"
         },
         {
           "id": 6,
-          "name": "Akira 1",
+          "name": "Akira",
+          "number": 1,
           "price": 12,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/akira/akira_1.jpg"
         },
         {
           "id": 1,
-          "name": "Berserk 1",
+          "name": "Berserk",
+          "number": 1,
           "price": 9.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/berserk/berserk_1.jpg"
         }
       ]
     },
@@ -170,9 +194,11 @@
       "productos": [
         {
           "id": 5,
-          "name": "Death Note 1",
+          "name": "Death Note",
+          "number": 1,
           "price": 9.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/deathNote/deathNote_1.jpg"
         }
       ]
     },
@@ -185,15 +211,19 @@
       "productos": [
         {
           "id": 1,
-          "name": "Berserk 1",
+          "name": "Berserk",
+          "number": 1,
           "price": 9.95,
-          "quantity": 2
+          "quantity": 2,
+          "cover": "IMG/covers/berserk/berserk_1.jpg"
         },
         {
           "id": 8,
-          "name": "Vagabond 2",
+          "name": "Vagabond",
+          "number": 2,
           "price": 11.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/vagabond/vagabond_2.jpg"
         }
       ]
     },
@@ -206,15 +236,19 @@
       "productos": [
         {
           "id": 4,
-          "name": "Dragon Ball 3",
+          "name": "Dragon Ball",
+          "number": 3,
           "price": 8.95,
-          "quantity": 2
+          "quantity": 2,
+          "cover": "IMG/covers/dragonBall/dragonBall_3.jpg"
         },
         {
           "id": 7,
-          "name": "Bleach 7",
+          "name": "Bleach",
+          "number": 7,
           "price": 7.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/bleach/bleach_7.jpg"
         }
       ]
     },
@@ -227,15 +261,19 @@
       "productos": [
         {
           "id": 7,
-          "name": "Bleach 7",
+          "name": "Bleach",
+          "number": 7,
           "price": 7.5,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/bleach/bleach_7.jpg"
         },
         {
           "id": 2,
-          "name": "Naruto 5",
+          "name": "Naruto",
+          "number": 5,
           "price": 7.95,
-          "quantity": 1
+          "quantity": 1,
+          "cover": "IMG/covers/naruto/naruto_5.jpg"
         }
       ]
     },

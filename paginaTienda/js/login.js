@@ -12,8 +12,6 @@ async function init(){
     // check if localStorage has a logged user
     const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
-
-
     // Now the data is ready, check if a user is logged
     if (loggedUser) {
         customerArea.classList.add("customer-area-loged");
@@ -21,8 +19,6 @@ async function init(){
         logoutButton.style.display = "block";
         showOrders(loggedUser.id);
 
-        // //Change the user icon to LOG IN (green)
-        // userIcon.classList.add("user-icon");
     }
 }
 
@@ -50,6 +46,7 @@ const userIcon = document.getElementById("user-icon");
 const cartIcon = document.getElementById("cart-icon");
 
 //FUNCTIONS
+
 async function fetchUsers(){
     
     const response = await fetch(API_URL_USUARIOS);
@@ -363,4 +360,5 @@ alertBox.addEventListener("click", function(){
 
     alertBox.style.display = "none";
 });
+
 

@@ -33,9 +33,21 @@ function updateDarkModeIcon(){
     if (document.body.classList.contains("dark-mode")) {
         darkModeIcon.src = "IMG/icons/noche.svg";
         darkModeIcon.alt = "Night mode";
+
+        navCartIcon.src = "IMG/icons/bag_icon_white.png";
+        navCartIcon.alt = "Night cart mode";
+
+        navUserIcon.src = "IMG/icons/user_icon_white.png";
+        navUserIcon.alt = "Night User mode";
     } else {
         darkModeIcon.src = "IMG/icons/dia.svg";
         darkModeIcon.alt = "Day mode";
+
+        navCartIcon.src = "IMG/icons/bag_icon.png";
+        navCartIcon.alt = "Day cart mode";
+
+        navUserIcon.src = "IMG/icons/user_icon.png";
+        navUserIcon.alt = "Day User mode";
     }
 }
 
