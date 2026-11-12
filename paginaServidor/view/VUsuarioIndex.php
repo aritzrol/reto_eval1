@@ -62,7 +62,6 @@
             ?>
         </tbody>
     </table>
-    <a href="index.php?entity=usuario&action=create" class="btn btn-success">Crear nuevo usuario</a>
 </div>
 
 <!-- Bootstrap JS -->

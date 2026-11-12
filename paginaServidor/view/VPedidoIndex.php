@@ -24,9 +24,16 @@
 
 
 <div class="container mt-5">
-    <a href="index.php?entity=usuario&action=index" class="btn btn-info">Usuarios</a>
-    <a href="index.php?entity=pedido&action=index" class="btn btn-info">Pedidos</a>
-    <a href="index.php?entity=serie&action=index" class="btn btn-info">Series</a>
+        <?php 
+            if($rol_usuario === 'admin'){
+                echo '<a href="index.php?entity=usuario&action=index" class="btn btn-info" me-2>Usuarios</a>';
+                echo '<a href="index.php?entity=pedido&action=index" class="btn btn-info" me-2>Pedidos</a>';
+                echo '<a href="index.php?entity=serie&action=index" class="btn btn-info">Series</a>';
+            }else{
+                echo '<a href="index.php?entity=serie&action=index" class="btn btn-info">Pagina principal</a>';
+                echo '<a href="index.php?entity=lineaPedido&action=index" class="btn btn-warning btn-sm me-1"><i class="bi bi-cart"></i> Carrito</a>';
+            }
+        ?>
     <br/>
     <a href="index.php?entity=login&action=logout" class="btn btn-danger">Cerrar sesión</a>
 </div>
@@ -55,8 +62,9 @@
                     echo '<td>' . $dato["precio_total"] . '</td>';
                     echo '<td>' . $dato["estado_pedido"] . '</td>';
                     echo '<td>';
-                    echo '<a href="index.php?entity=pedido&action=edit&id=' . $dato['id_pedido'] . '" class="btn btn-warning mx-1">Modificar</a>';
-                    echo '<a href="index.php?entity=pedido&action=destroy&id=' . $dato['id_pedido'] . '" class="btn btn-danger mx-1">Eliminar</a>';
+                    if($rol_usuario === 'admin'){
+                        echo '<a href="index.php?entity=pedido&action=edit&id=' . $dato['id_pedido'] . '" class="btn btn-warning mx-1">Modificar</a>';
+                    }
                     echo '</td>';
                     echo '</tr>';
             }

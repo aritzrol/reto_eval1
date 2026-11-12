@@ -64,14 +64,6 @@ class MUsuario {
         $sentencia->close();
         return $resultado->fetch_assoc();
 
-        // $sentencia = $this->conexion->query($sql);
-
-        // while($fila = $sentencia->fetch_assoc()) {
-        //     $resultado[] = $fila;
-        // }
-
-        // $sentencia->close();
-        // return $resultado;
     }
 
     public function insert($data) {
@@ -80,9 +72,6 @@ class MUsuario {
 
         $sentencia->execute();
         $sentencia->close();
-
-        $id = getByEmail($data["email"]);
-        return $id;
     }
 
     public function edit($id_usuario, $nombre, $email, $rol) {

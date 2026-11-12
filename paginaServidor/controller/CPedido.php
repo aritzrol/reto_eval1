@@ -19,6 +19,15 @@ class CPedido
         require_once __DIR__ . '/../view/VPedidoIndex.php';
     }
 
+    public function indexById(){
+
+        $id_usuario = $_SESSION['id_usuario'];
+
+        $data = $this->model->getAllById($id_usuario);
+        //ventana
+        require_once __DIR__ . '/../view/VPedidoIndex.php';
+    }
+
     public function show($id)
     {
         $data = $this->model->getById($id);

@@ -41,6 +41,30 @@ class MPedido
         return $this->pedidos;
     }
 
+    function getAllById($id_usuario){
+
+        $sql = "SELECT P.id_pedido, P.id_usuario, U.nombre, P.fecha, P.precio_total, P.estado_pedido
+                FROM pedido AS P
+                JOIN usuario AS U ON P.id_usuario = U.id_usuario
+                WHERE U.id_usuario = ?;";
+
+        //se prepara la consulta
+        $consulta = $this->conexion->prepare($sql);
+        $consulta->bind_param("i", $id_usuario);
+        $consulta->execute();
+
+        //se obtiene el resultado
+        $consulta = $consulta->get_result();
+
+        //se leen los datos
+        $this->pedidos = [];
+        while ($filas = $consulta->fetch_assoc()) {
+            $this->pedidos[] = $filas;
+        }
+
+        return $this->pedidos;
+    }
+
     //actualizar un pedido
     public function edit($id_pedido, $id_usuario, $fecha, $precio_total, $estado_pedido){
 
