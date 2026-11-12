@@ -85,7 +85,8 @@ INSERT INTO producto (id_serie, numero, precio, isbn) VALUES
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `email`, `password`, `rol`) VALUES
 	(1, 'fernando', 'fer@gmail.com', '$2y$10$A4ah/c9DmJ16HFzjXVMFAukH1wiGOgSSqBrfU8u03tXMnbfIXtwBC', 'cliente'),
 	(2, 'aritz', 'aritz@gmail.com', '$2y$10$O4O/LJr0zxQ7zBJkyDP17u0BLVyajPZtpB8clchLonm/PnrhTdMiq', 'admin'),
-	(3, 'gaizka', 'gaizka@gmail.com', 'abcd', 'cliente');
+	(3, 'gaizka', 'gaizka@gmail.com', '$2y$10$oAVlxTrqRnvitphwK0cZlOq9yIFuVcCX88JBjX9p.kvLypLqeLRcy', 'cliente'),
+    (4, 'prueba', 'prueba@gmail.com', '$2y$10$oAVlxTrqRnvitphwK0cZlOq9yIFuVcCX88JBjX9p.kvLypLqeLRcy', 'cliente');
 
 INSERT INTO `perfil` (`id_usuario`, `apellidos`, `telefono`, `direccion`) VALUES
 	(1, 'Medrano', '123456789', 'donosti'),
@@ -93,15 +94,8 @@ INSERT INTO `perfil` (`id_usuario`, `apellidos`, `telefono`, `direccion`) VALUES
 	(3, 'prueba', '654654654', 'prueba');
 
 INSERT INTO `pedido` (`id_pedido`, `id_usuario`, `fecha`, `precio_total`, `estado_pedido`) VALUES
-	(1, 1, '2026-11-10 09:36:43', 50.00, 'pendiente'),
-	(2, 1, '2026-10-15 09:37:04', 60.00, 'pagado'),
-	(3, 1, '2026-09-10 09:37:34', 70.00, 'enviado'),
-	(4, 3, '2026-05-10 10:12:44', 100.00, 'pendiente');
+	(1, 1, '2026-11-10 09:36:43', 50.00, 'enviado'),
+	(2, 1, '2026-10-15 09:37:04', 60.00, 'enviado'),
+	(3, 1, '2026-09-10 09:37:34', 70.00, 'pagado'),
+	(4, 3, '2026-05-10 10:12:44', 100.00, 'cancelado');
 
-
-SELECT L.id_linea_pedido, L.id_usuario, L.id_producto, L.cantidad, L.precio_unitario,
-               S.nombre, P.numero
-        FROM linea_pedido L
-        JOIN producto P ON P.id_producto = L.id_producto
-        JOIN serie S ON S.id_serie = P.id_serie
-        WHERE L.id_usuario = ? AND L.estado_pedido = 'carrito';

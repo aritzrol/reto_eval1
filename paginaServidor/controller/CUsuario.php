@@ -24,7 +24,7 @@ class CUsuario
     public function create()
     {
         //Muestra la vista/formulario de crear
-        require __DIR__ . '/../view/VUsuarioCreateForm.php';
+        require __DIR__ . '/../view/VUsuarioCreate.php';
     }
 
     public function store()

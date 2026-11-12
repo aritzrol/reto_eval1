@@ -72,8 +72,8 @@
             header('Location: index.php?entity=serie&action=index');
         }
 
-        public function edit($id){
-            $this->model->edit($id);
+        public function edit(){
+            
             //ventana
             header('Location: index.php?entity=lineaPedido&action=index');
         }
