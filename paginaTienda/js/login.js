@@ -27,7 +27,7 @@ async function init(){
 }
 
 // Call the init function and handle errors
-init().catch(error => console.error("Error al cargar los datos", error));
+init().catch(error => console.error("Error loading the data", error));
 
 //HTML ELEMENTS
 let users = [];
@@ -55,7 +55,7 @@ async function fetchUsers(){
     const response = await fetch(API_URL_USUARIOS);
 
     if(!response.ok){
-        throw new Error("No se pudieron cargar los usuarios");
+        throw new Error("The users could not be loaded");
     }
 
     users = await response.json();
@@ -66,7 +66,7 @@ async function fetchOrders(){
     const response = await fetch(API_URL_PEDIDOS);
 
     if(!response.ok){
-        throw new Error("No se pudieron cargar los pedidos");
+        throw new Error("The orders could not be loaded");
     }
 
     orders = await response.json();
@@ -90,7 +90,7 @@ async function registerUser(newId, newName, newEmail, newPassword){
     });
 
     if(!response.ok){
-        throw new Error("No se pudo registrar el usuario");
+        throw new Error("The user could not be registered");
     }
 
     const createdUser = await response.json();
@@ -103,11 +103,11 @@ function showOrders(id){
 
     console.log(id);
 
-    console.log("Orders antes de filtrar:", orders);
+    console.log("Orders before filtering:", orders);
 
     clearOrders(); // Clear previous orders before showing new ones
 
-    console.log("Orders despues de filtrar:", orders);
+    console.log("Orders after filtering:", orders);
 
     const userOrders = orders.filter((order) => order.id_usuario == id);
 
@@ -115,24 +115,24 @@ function showOrders(id){
 
     userOrders.forEach((order) => {
 
-        console.log("ha entrado en el foreach");
+        console.log("entered the foreach");
 
         //1 order - 1 card
         const orderCard = document.createElement("div");
         orderCard.classList.add("order-card");
 
-        // 1. Empezamos con un texto vacío
+        // 1. We start with an empty text
         let productsHTML = "";
 
-        // 2. Recorremos los productos de ESTE pedido
+        // 2. We go through the products of THIS order
         order.productos.forEach((p) => {
-            // 3. Por cada producto, añadimos una línea al texto
+            // 3. For each product, we add a line to the text
             productsHTML = productsHTML + "<li>" + p.name + " " + p.number + " x " + p.quantity + "</li>";
         });
 
 
         //Order details
-        // 4. Metemos el texto ya construido en la card
+        // 4. We put the finished text into the card
         orderCard.innerHTML = `
             <h3>Order:</h3>
             <ul>${productsHTML}</ul>
@@ -190,7 +190,7 @@ function newAlert(text, icon){
 //==========================
 buttonRegister.addEventListener("click", function(){
 
-    console.log("click en register");
+    console.log("click on register");
     coverImage.classList.add("cover-left");
 
 });
@@ -308,7 +308,7 @@ registerButton.addEventListener("click", function(event){
     //new id for the new user
     let newId = users.length > 0 ? users[users.length - 1].id + 1 : 1;
 
-    console.log("este es el id creado aproposito", newId);
+    console.log("this is the id created on purpose", newId);
 
     //alerts for empty fields
     if(newName.trim() === ""){
@@ -337,7 +337,7 @@ registerButton.addEventListener("click", function(event){
     }
 
     // Check if the email is already registered
-    const userRegistered = users.find((user) => user.email === newEmail); //pa luego
+    const userRegistered = users.find((user) => user.email === newEmail); //for later
 
     if(userRegistered){
         text = "THAT EMAIL ALREADY EXISTS!";
@@ -351,9 +351,9 @@ registerButton.addEventListener("click", function(event){
 
     //OK ALERT
     if(createdUser){
-        // let text = "USUARIO AÑADIDO CORRECTAMENTE";
+        // let text = "USER ADDED SUCCESSFULLY";
         // newAlert(text);
-        alert("usuario añadido");
+        alert("user added");
     }
 
 });

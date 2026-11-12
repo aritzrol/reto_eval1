@@ -240,7 +240,7 @@ footer {
     }
 }
 
-/* Tema oscuro compartido por las páginas de la tienda */
+/* Dark theme shared by the store pages */
 body.dark-mode {
     --color-background: #1d1a1a;
     --color-surface: #2b2625;
@@ -351,7 +351,7 @@ body.dark-mode .form-register {
     transition: filter 0.2s;
 }
 
-/* Hover del icono de modo oscuro: sin subrayado, solo se oscurece */
+/* Dark mode icon hover: no underline, it only gets darker */
 nav .nav-buttons a:has(#dark-mode-icon):hover {
     border-bottom: none;
 }
@@ -360,9 +360,9 @@ nav .nav-buttons a:has(#dark-mode-icon):hover {
     filter: brightness(0.75);
 }
 
-/* NAVBAR Y TOP-BAR CONSISTENTES EN TODAS LAS PÁGINAS
-   Cada página carga CSS distintos (Bootstrap, box-sizing, font-size del body...).
-   Fijamos aquí los valores para que el tamaño no dependa de la página. */
+/* NAVBAR AND TOP-BAR CONSISTENT ACROSS ALL PAGES
+   Each page loads different CSS (Bootstrap, box-sizing, body font-size...).
+   We set the values here so the size does not depend on the page. */
 .top-bar,
 .top-bar *,
 nav,
@@ -390,9 +390,9 @@ nav img {
     align-items: center;
 }
 
-/* ===== RESPONSIVE: NAVBAR Y FOOTER ===== */
+/* ===== RESPONSIVE: NAVBAR AND FOOTER ===== */
 
-/* TABLET Y MÓVIL (hasta 900px) */
+/* TABLET AND MOBILE (up to 900px) */
 @media (max-width: 900px) {
     nav {
         display: flex;
@@ -415,7 +415,7 @@ nav img {
         font-size: 11px;
     }
 
-    /* fila de botones con una línea fina encima */
+    /* row of buttons with a thin line above */
     nav .nav-buttons {
         width: 100%;
         justify-content: center;
@@ -434,7 +434,7 @@ nav img {
         background-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* footer en 2 columnas */
+    /* footer in 2 columns */
     footer {
         flex-wrap: wrap;
         height: auto;
@@ -447,7 +447,7 @@ nav img {
     }
 }
 
-/* MÓVIL (hasta 500px) */
+/* MOBILE (up to 500px) */
 @media (max-width: 500px) {
     nav > a:first-child div img {
         height: 45px;
@@ -462,7 +462,7 @@ nav img {
         font-size: 14px;
     }
 
-    /* footer en 1 columna */
+    /* footer in 1 column */
     footer {
         flex-direction: column;
         padding: 25px 20px;

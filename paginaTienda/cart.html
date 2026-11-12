@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compra | Manga Ancha</title>
+    <title>Shopping cart | Manga Ancha</title>
     <link rel="stylesheet" href="./referencia.css">
     <link rel="stylesheet" href="./styles/carritoStyle.css">
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- NAVBAR: implementar por separado -->
+    <!-- NAVBAR: implement separately -->
     <!--BLACK SECTION AT THE TOP-->
     <section class="top-bar">
         <span>Free shipping for orders over €35</span>
@@ -47,10 +47,10 @@
             <div>
                 
                     <a class="nav-icon" href="cart.html">
-                        <img src="IMG/icons/bag_icon.png" alt="carrito" id="cart-icon">
+                        <img src="IMG/icons/bag_icon.png" alt="cart" id="cart-icon">
                     </a>
                     <a class="nav-icon" href="login.html">
-                        <img src="IMG/icons/user_icon.png" alt="usuario" id="user-icon">
+                        <img src="IMG/icons/user_icon.png" alt="user" id="user-icon">
                     </a>
                     <a href=""><img src="IMG/icons/dia.png" alt="dark mode button" id="dark-mode-icon"/>
                     </a>
@@ -66,48 +66,48 @@
          <!-- ALERTS -->
         <div id="alert"></div>
 
-        <!-- Cabecera -->
+        <!-- Header -->
         <header class="cart-header">
 
             <div class="cart-header-content">
                 <div class="cart-heading">
-                    <h1>Tu cesta de lectura</h1>
+                    <h1>Your reading basket</h1>
                 </div>
 
                 <a href="catalogue.html" class="continue-shopping">
                     <span aria-hidden="true">←</span>
-                    Continuar explorando el catálogo
+                    Continue browsing the catalogue
                 </a>
             </div>
 
         </header>
 
 
-        <!-- Contenido principal -->
+        <!-- Main content -->
         <div class="cart-layout">
 
-            <!-- Columna izquierda: carrito -->
-            <section class="cart-products" aria-label="Productos del carrito">
+            <!-- Left column: cart -->
+            <section class="cart-products" aria-label="Cart products">
 
                 <div class="products-table">
 
                     <div class="products-table-header">
-                        <span>Tomos</span>
-                        <span>Precio unitario</span>
-                        <span>Cantidad</span>
+                        <span>Volumes</span>
+                        <span>Unit price</span>
+                        <span>Quantity</span>
                         <span>Subtotal</span>
-                        <span>Borrar</span>
+                        <span>Delete</span>
                     </div>
 
-                    <!-- JavaScript insertará aquí los productos del carrito -->
+                    <!-- JavaScript will insert the cart products here -->
                     <div id="cart-items"></div>
 
-                    <!-- Estado vacío del carrito -->
+                    <!-- Empty cart state -->
                     <div id="empty-cart" class="empty-cart">
-                        <h2>Tu cesta está vacía</h2>
-                        <p>Aún no has añadido ningún manga a tu cesta.</p>
+                        <h2>Your basket is empty</h2>
+                        <p>You haven't added any manga to your basket yet.</p>
                         <a href="catalogue.html" class="empty-cart-link">
-                            Explorar catálogo
+                            Browse catalogue
                         </a>
                     </div>
 
@@ -115,21 +115,21 @@
 
             </section>
 
-            <!-- Columna derecha: resumen -->
-            <aside class="order-summary" aria-label="Resumen del pedido">
+            <!-- Right column: summary -->
+            <aside class="order-summary" aria-label="Order summary">
 
-                <h2>Resumen del pedido</h2>
+                <h2>Order summary</h2>
 
-                <!-- Método de entrega -->
+                <!-- Delivery method -->
                 <form class="delivery-section">
-                    <legend>Método de entrega</legend>
+                    <legend>Delivery method</legend>
 
                     <label class="delivery-option">
                         <input type="radio" id="standard-radio" name="delivery" value="standard" checked >
 
                         <span class="delivery-details">
                             <span class="delivery-name">
-                                Envío estándar
+                                Standard shipping
                             </span>
                         </span>
 
@@ -143,7 +143,7 @@
 
                         <span class="delivery-details">
                             <span class="delivery-name">
-                                Envío express
+                                Express shipping
                             </span>
                         </span>
 
@@ -155,22 +155,21 @@
 
                 <!-- Total -->
                 <div class="buy-manga-button">
-                    <span>TOTAL A PAGAR</span>
+                    <span>TOTAL TO PAY</span>
                     <span id="summary-total" class="total-price">0,00 €</span>
                 </div>
 
                 <button id="checkout-button" type="button" class="checkout-button">
-                    Tramitar pedido de forma segura
+                    Check out securely
                 </button>
 
                 <div class="payment-methods">
-                    <img src="IMG/icons/Logo-pagos.png" alt="logo-pagos">
+                    <img src="IMG/icons/Logo-pagos.png" alt="payment-logos">
                 </div>
 
                 <div class="gift-message">
                     <p>
-                        ¿Quieres envolver para regalo o añadir una
-                        dedicatoria? Pues no puedes :^
+                        Want gift wrapping or a dedication? Well, you can't :^
                     </p>
                 </div>
 
@@ -180,7 +179,7 @@
 
     </main>
 
-    <!-- FOOTER: implementar por separado -->
+    <!-- FOOTER: implement separately -->
     <!--FOOTER-->
     <footer>
         <!--STORE INFORMATION-->

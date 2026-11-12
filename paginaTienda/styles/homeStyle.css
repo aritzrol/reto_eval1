@@ -1,4 +1,4 @@
-/* Estilos principales de la página de inicio */
+/* Main styles for the home page */
 body {
     background: var(--color-background);
     color: var(--color-text);
@@ -6,7 +6,7 @@ body {
     font-size: var(--font-size-base);
 }
 
-/* Bloque principal de bienvenida */
+/* Main welcome block */
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -54,7 +54,7 @@ body {
     border: 1px solid var(--color-border-strong);
 }
 
-/* Carrusel de novedades destacadas */
+/* Featured new releases carousel */
 .featured {
     min-width: 0;
     padding: 18px;
@@ -128,7 +128,7 @@ body {
     display: block;
 }
 
-/* Secciones de novedades, géneros y recomendaciones */
+/* New releases, genres and recommendations sections */
 .section {
     padding: 30px 5%;
     border-bottom: 1px solid var(--color-border);
@@ -224,7 +224,68 @@ body {
     object-fit: contain;
 }
 
-/* Formulario del boletín y pie */
+/* Promo video banner */
+.video-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 420px;
+    padding: 0 5%;
+    overflow: hidden;
+    background: #000000;
+}
+
+/* The video fills the whole banner */
+.video-banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark on the left, transparent on the right */
+.video-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 75%);
+}
+
+/* The text goes on top of the video and the dark layer */
+.video-banner-text {
+    position: relative;
+    max-width: 420px;
+    color: white;
+}
+
+.video-banner-text span {
+    color: var(--color-primary-light);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.video-banner-text h2 {
+    margin: 10px 0;
+    font-size: 32px;
+    line-height: 1.15;
+}
+
+.video-banner-text p {
+    margin-bottom: 20px;
+    color: #e6e6e6;
+    line-height: 1.5;
+}
+
+.video-banner-text .button {
+    color: white;
+}
+
+/* Newsletter form and footer */
 .newsletter {
     padding: 32px 15px;
     text-align: center;
@@ -259,7 +320,7 @@ footer section a {
     color: var(--color-text-secondary);
 }
 
-/* Ajustes para pantallas medianas */
+/* Adjustments for medium screens */
 @media (max-width: 800px) {
     nav input {
         display: none;
@@ -282,9 +343,21 @@ footer section a {
     .assurances {
         gap: 15px;
     }
+
+    .video-banner {
+        height: 340px;
+    }
+
+    .video-banner-overlay {
+        background: rgba(0, 0, 0, 0.65);
+    }
+
+    .video-banner-text h2 {
+        font-size: 26px;
+    }
 }
 
-/* Ajustes para móviles */
+/* Adjustments for mobiles */
 @media (max-width: 480px) {
 
     .products,
@@ -304,7 +377,7 @@ footer section a {
 }
 
 
-/* Ficha emergente con portada e información del volumen */
+/* Pop-up card with the cover and volume information */
 .home-modal-backdrop {
     position: fixed;
     z-index: 29;
@@ -458,7 +531,7 @@ footer section a {
     transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-/* El botón de carrito va en el contenido; la X queda en la esquina */
+/* The cart button goes in the content; the X stays in the corner */
 .series-info>.product-info-cart {
     position: static;
     top: auto;

@@ -21,7 +21,7 @@ a {
     text-decoration: none;
 }
 
-/* CONTENEDOR GENERAL */
+/* MAIN CONTAINER */
 
 .cart-page {
     width: 100%;
@@ -30,7 +30,7 @@ a {
     padding: var(--spacing-2xl) var(--page-padding-desktop);
 }
 
-/* CABECERA DEL CARRITO */
+/* CART HEADER */
 
 .cart-header-content {
     display: flex;
@@ -73,7 +73,7 @@ a {
     color: var(--color-primary);
 }
 
-/* CONTENIDO DEL CARRITO */
+/* CART CONTENT */
 
 .cart-layout {
     display: grid;
@@ -115,7 +115,7 @@ a {
     text-align: center;
 }
 
-/* CARRITO VACÍO */
+/* EMPTY CART */
 
 .empty-cart {
     display: flex;
@@ -148,7 +148,7 @@ a {
     color: var(--color-text-inverse);
 }
 
-/* RESUMEN DEL PEDIDO */
+/* ORDER SUMMARY */
 
 .order-summary {
     display: flex;
@@ -233,7 +233,7 @@ a {
     white-space: nowrap;
 }
 
-/* PAGO */
+/* PAYMENT */
 
 .checkout-button {
     display: flex;
@@ -371,7 +371,7 @@ a {
     }
 }
 
-/* TABLETS Y MÓVILES */
+/* TABLETS AND MOBILES */
 
 @media (max-width: 1000px) {
     .cart-page {
