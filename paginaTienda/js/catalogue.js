@@ -395,7 +395,7 @@ function toggleFilterDisplay(target) {
 //CART LIGHT
 function cartView(){
     
-    // sin icono en esta página, no hay nada que hacer
+    // no icon on this page, nothing to do
     if(cartIcon === null) return;
 
     //Check localStorage if any products exists

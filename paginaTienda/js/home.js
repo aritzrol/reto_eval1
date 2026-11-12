@@ -7,12 +7,12 @@ let volumenSeleccionado;
 
 
 
-// Descarga las series y los volúmenes del archivo JSON.
+// Downloads the series and volumes from the JSON file.
 async function getSeries() {
     try {
         const answer = await fetch(SERIES_URL);
         if (!answer.ok) {
-            throw new Error("No se han podido cargar los datos");
+            throw new Error("The data could not be loaded");
         }
 
         const data = await answer.json();
@@ -27,7 +27,7 @@ async function getSeries() {
     }
 }
 
-// Muestra los dos últimos volúmenes de cada serie.
+// Shows the last two volumes of each series.
 function showNewReleases() {
     for (let i = 0; i < series.length; i++) {
         let count = 0;
@@ -43,16 +43,16 @@ function showNewReleases() {
     }
 }
 
-// Muestra los ocho volúmenes con el precio más alto.
+// Shows the eight volumes with the highest price.
 function showBestSellers() {
     const sortedVolumes = [];
 
-    // Copia los volúmenes para poder ordenarlos sin cambiar la lista original.
+    // Copies the volumes so they can be sorted without changing the original list.
     for (let i = 0; i < volumes.length; i++) {
         sortedVolumes.push(volumes[i]);
     }
 
-    // Ordena los volúmenes desde el precio más alto al más bajo.
+    // Sorts the volumes from the highest price to the lowest.
     for (let i = 0; i < sortedVolumes.length; i++) {
         for (let j = 0; j < sortedVolumes.length - 1; j++) {
             if (Number(sortedVolumes[j].price) < Number(sortedVolumes[j + 1].price)) {
@@ -63,7 +63,7 @@ function showBestSellers() {
         }
     }
 
-    // Busca la serie correspondiente y muestra los primeros ocho volúmenes.
+    // Finds the matching series and shows the first eight volumes.
     for (let i = 0; i < 8 && i < sortedVolumes.length; i++) {
         let serieDelVolumen = null;
 
@@ -79,7 +79,7 @@ function showBestSellers() {
     }
 }
 
-// Muestra hasta seis portadas destacadas.
+// Shows up to six featured covers.
 function showFeaturedBooks() {
     let count = 0;
 
@@ -99,17 +99,17 @@ function showFeaturedBooks() {
     }
 }
 
-// Crea una tarjeta con los datos del título y del volumen.
+// Creates a card with the title and volume data.
 function displayVolume(serie, volumen, sectionId, compact) {
     const card = document.createElement("article");
 
     if (compact) {
         card.className = "carousel-item";
         card.innerHTML = `
-            <img src="${volumen.cover}" alt="${serie.title} volumen ${volumen.number}">
+            <img src="${volumen.cover}" alt="${serie.title} volume ${volumen.number}">
             <div class="carousel-caption d-none d-md-block">
                 <h5>${serie.title}</h5>
-                <p>Volumen ${volumen.number}</p>
+                <p>Volume ${volumen.number}</p>
             </div>
         `;
 
@@ -119,7 +119,7 @@ function displayVolume(serie, volumen, sectionId, compact) {
     } else {
         card.className = "product";
         card.innerHTML = `
-            <img src="${volumen.cover}" alt="${serie.title} volumen ${volumen.number}">
+            <img src="${volumen.cover}" alt="${serie.title} volume ${volumen.number}">
             <small>${serie.publisher}</small>
             <h3>${serie.title} #${volumen.number}</h3>
             <small>${serie.author}</small>
@@ -134,7 +134,7 @@ function displayVolume(serie, volumen, sectionId, compact) {
     });
 }
 
-// Muestra la información en la ficha igual que en el catálogo.
+// Shows the information in the product card, same as in the catalogue.
 function showProductInfo(serie, volumen) {
     serieSeleccionada = serie;
     volumenSeleccionado = volumen;
@@ -151,7 +151,7 @@ function showProductInfo(serie, volumen) {
     fondo.classList.remove(`hidden`);
 }
 
-//Añadir al carrito
+//Add to cart
 document.querySelector(".product-info-cart").addEventListener("click", agregarAlCarro);
 function agregarAlCarro() {
     const mangaName = serieSeleccionada.title;
@@ -204,7 +204,7 @@ function agregarAlCarro() {
 
 }
 
-// Cierra la ficha al pulsar la X.
+// Closes the product card when clicking the X.
 document.querySelector(".series-info").querySelector("button").addEventListener("click", function () {
     document.querySelector(".series-info").classList.add(`hidden`);
     document.querySelector(".home-modal-backdrop").classList.add(`hidden`);
@@ -216,7 +216,7 @@ getSeries();
 //CART LIGHT
 function cartView(){
     
-    // sin icono en esta página, no hay nada que hacer
+    // no icon on this page, nothing to do
     if(cartIcon === null) return;
 
     //Check localStorage if any products exists

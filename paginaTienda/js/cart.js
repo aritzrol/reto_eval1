@@ -17,15 +17,15 @@ async function init(){
 }
 
 // Call the init function and handle errors
-init().catch(error => console.error("Error al cargar los datos", error));
+init().catch(error => console.error("Error loading the data", error));
 
-//se lee el localStorage
+//read the localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
 console.log(cart);
 
-//variables html
+//html variables
 const cartBox = document.getElementById("cart-items");
 const deleteButtons = document.getElementsByClassName("delete-button");
 const standardRadio = document.getElementById("standard-radio");
@@ -57,7 +57,7 @@ async function fetchUsers(){
     const response = await fetch(API_URL_USUARIOS);
 
     if(!response.ok){
-        throw new Error("No se pudieron cargar los usuarios");
+        throw new Error("The users could not be loaded");
     }
 
     users = await response.json();
@@ -68,7 +68,7 @@ async function fetchOrders(){
     const response = await fetch(API_URL_PEDIDOS);
 
     if(!response.ok){
-        throw new Error("No se pudieron cargar los pedidos");
+        throw new Error("The orders could not be loaded");
     }
 
     orders = await response.json();
@@ -135,7 +135,7 @@ function priceCalculator(){
 //CART LIGHT
 function cartView(){
     
-    // sin icono en esta página, no hay nada que hacer
+    // no icon on this page, nothing to do
     if(cartIcon === null) return;
 
     //Check localStorage if any products exists
@@ -166,8 +166,8 @@ buyButton.addEventListener("click", function(event){
 
     // Check if a user is logged
     if (!loggedUser) {
-        console.log("usuario no logeado");
-        text = "usuario no logeado!!!";
+        console.log("user not logged in");
+        text = "user not logged in!!!";
         newAlert(text, "X");
 
         return;
@@ -179,7 +179,7 @@ buyButton.addEventListener("click", function(event){
     
     saveCart(user_id, cart);
 
-    alert("PEDIDO REALIZADO CON EXITO");
+    alert("ORDER PLACED SUCCESSFULLY");
 
     //remove products from localStorage
     //new array "cart" with 0 elements
@@ -214,7 +214,7 @@ async function saveCart(user_id, cart){
     });
 
     if(!response.ok){
-        throw new Error("No se pudo registrar el pedido");
+        throw new Error("The order could not be registered");
     }
 
     const createdProduct = await response.json();
@@ -229,7 +229,7 @@ for(let i=0; i < deleteButtons.length; i++){
 
     deleteButtons[i].addEventListener("click", function(event){
 
-        console.log("boton borrar");
+        console.log("delete button");
 
         event.preventDefault();
 
@@ -244,14 +244,14 @@ for(let i=0; i < deleteButtons.length; i++){
         //find the product
         let product = cart.find((p) => p.id === id);
 
-        //buscar la cantidad para borrar
+        //check the quantity to delete
         if(product.quantity > 1){
-            //resta 1 a cantidad
+            //subtract 1 from the quantity
             product.quantity = product.quantity - 1;
 
             location.reload();
         }else{
-            //si cantidad = 1, se quita del carrito
+            //if quantity = 1, it is removed from the cart
             cart = cart.filter((product) => product.id !== id);
 
             //remove this card

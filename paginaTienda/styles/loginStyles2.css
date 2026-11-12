@@ -1,50 +1,50 @@
 :root{
-        /* FONDOS */
+        /* BACKGROUNDS */
     --color-background: #FFFFFF;
     --color-surface: #FFFFFF;
     --color-surface-secondary: #FCF1EF;
     --color-surface-hover: #F8E8E5;
 
 
-    /* COLOR CORPORATIVO */
+    /* BRAND COLOUR */
     --color-primary: #A93632;
     --color-primary-hover: #852824;
     --color-primary-light: #F8E8E5;
 
 
-    /* TEXTOS */
+    /* TEXTS */
     --color-text: #292321;
     --color-text-secondary: #806B66;
     --color-text-inverse: #FFFFFF;
 
 
-    /* BORDES Y SEPARADORES */
+    /* BORDERS AND SEPARATORS */
     --color-border: #F0E5E2;
     --color-border-strong: #DFC9C4;
 
 
-    /* ESTADOS */
+    /* STATES */
     --color-success: #36734A;
     --color-error: #A93632;
     --color-warning: #9A691E;
     --color-info: #426B8C;
 
     /* ================================================
-       TRANSICIONES
+       TRANSITIONS
     ================================================ */
     --transition-slow: 0.5s ease;
     --transition-fast: 0.15s ease;
     --transition-normal: 0.2s ease;
 
     /* ================================================
-       SOMBRAS
+       SHADOWS
     ================================================ */
 
     --shadow-sm: 0 1px 3px rgb(41 35 33 / 5%);
     --shadow-md: 0 4px 12px rgb(41 35 33 / 8%);
 
     /* ================================================
-       TIPOGRAFÍA
+       TYPOGRAPHY
     ================================================ */
 
     --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -59,7 +59,7 @@
 
 /*MOBILE FIRST STYLE*/
 
-/*hace que el padding y el borde cuenten dentro del ancho y alto de cada caja*/
+/*makes the padding and border count inside the width and height of each box*/
 *, *::before, *::after{
     box-sizing: border-box;
 }
@@ -143,7 +143,7 @@ main{
 }
 
 
-/*area clientes antes de login o crear cuenta*/
+/*customer area before logging in or creating an account*/
 .customer-area{
     background: rgb(255 255 255 / 20%);
     backdrop-filter: blur(12px);
@@ -178,7 +178,7 @@ main{
     min-height: 90vh;
 }
 
-/*contenedor de formularios*/
+/*forms container*/
 .card{
     background: rgb(255 255 255 / 35%);
     backdrop-filter: blur(12px);
@@ -195,29 +195,29 @@ main{
     
 }
 
-/*contenedor de botones*/
+/*buttons container*/
 .top-card{
     display: flex;
     justify-content: space-around;
     gap: 0.5rem;
 }
 
-/*contenedor de los formularios login y create*/
+/*container for the login and create forms*/
 .forms{
     display: flex;
     flex-direction: column;   
     width: 100%;
 }
 
-/*Imagen para el login (MÓVIL: cabecera fija)*/
+/*Image for the login (MOBILE: fixed header)*/
 .cover-image{
-    order: -1;                /* sube arriba aunque en el HTML esté al final */
+    order: -1;                /* moves to the top even though it is at the end in the HTML */
     width: 80%;
     height: 80%;            
     margin-left: 10%;
     object-fit: cover;
 
-    /*difuminado*/
+    /*blur*/
     --fade: 5%;
     mask-image:
         linear-gradient(to right, transparent, black var(--fade), black calc(100% - var(--fade)), transparent),
@@ -225,7 +225,7 @@ main{
     mask-composite: intersect;
 }
 
-/*contenedor del login*/
+/*login container*/
 .form-login{
     width: 100%;              
     padding: 1rem;
@@ -253,11 +253,11 @@ main{
     #login-password, 
     #login-email{
         font-size: var(--font-size-md);
-        /* el margin-left: 14% desaparece */
+        /* the margin-left: 14% disappears */
     }
 }
 
-/*contenedor de la creación de cuenta*/
+/*account creation container*/
 .form-register{
     width: 100%;              
     padding: 1rem;
@@ -293,7 +293,7 @@ main{
     }
 }
 
-/* MÓVIL: solo se ve un formulario, el que indique la clase cover-left */
+/* MOBILE: only one form is visible, the one indicated by the cover-left class */
 .forms:has(.cover-left) .form-register{
 
     display: flex;
@@ -304,7 +304,7 @@ main{
     display: none;
 }
 
-/*estilo cristal de los inputs*/
+/*glass style for the inputs*/
 #login-email, 
 #login-password,
 #register-name, 
@@ -320,7 +320,7 @@ main{
     transition: var(--transition-normal);
 }
 
-/*cuando el input está activo (el cursor está escribiendo en él)*/
+/*when the input is active (the cursor is typing in it)*/
 #login-email:focus, 
 #login-password:focus,
 #register-name:focus, 
@@ -335,7 +335,7 @@ main{
         0 0 20px rgb(248 232 229 / 60%);
 }
 
-/*botones de enviar*/
+/*submit buttons*/
 #loginButton, 
 #registerButton{
     background: var(--color-primary);
@@ -356,7 +356,7 @@ main{
     transform: translateY(-2px);
 }
 
-/*botones de arriba (cristal)*/
+/*top buttons (glass)*/
 #button_login, 
 #button_create{
     background: rgba(241, 114, 140, 10%);
@@ -434,12 +434,12 @@ main{
         margin-left: 0%;
     }
 
-    /*clase para la transicion a la izquierda*/
+    /*class for the transition to the left*/
     .cover-left{
         left: 1rem;
     }
 
-    /*los dos formularios vuelven a verse, uno al lado del otro*/
+    /*both forms are visible again, side by side*/
     .form-login,
     .form-register,
     .forms:has(.cover-left) .form-login,

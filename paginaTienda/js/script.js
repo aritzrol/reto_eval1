@@ -1,4 +1,4 @@
-// Aplica el tema guardado y permite cambiarlo desde el icono del navbar.
+// Applies the saved theme and lets you change it from the navbar icon.
 // const darkModeIcon = document.querySelector('nav img[src*="darkMode_icon.png"]');
 const darkModeIcon = document.getElementById("dark-mode-icon");
 const navUserIcon = document.getElementById("user-icon");
@@ -28,14 +28,14 @@ function darkMode(){
     }
 }
 
-// Cambia el icono según el modo actual: dia.svg en modo día, noche.svg en modo noche.
+// Changes the icon depending on the current mode: dia.svg in day mode, noche.svg in night mode.
 function updateDarkModeIcon(){
     if (document.body.classList.contains("dark-mode")) {
         darkModeIcon.src = "IMG/icons/noche.svg";
-        darkModeIcon.alt = "Modo noche";
+        darkModeIcon.alt = "Night mode";
     } else {
         darkModeIcon.src = "IMG/icons/dia.svg";
-        darkModeIcon.alt = "Modo día";
+        darkModeIcon.alt = "Day mode";
     }
 }
 
@@ -57,7 +57,7 @@ function userLogin(){
 
 function cartView(){
     
-    // sin icono en esta página, no hay nada que hacer
+    // no icon on this page, nothing to do
     if(navCartIcon === null) return;
 
     //Check localStorage if any products exists

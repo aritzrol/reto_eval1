@@ -1,43 +1,43 @@
 
 
 /* ================================================
-   1. PALETA DE COLORES OFICIAL
+   1. OFFICIAL COLOUR PALETTE
    ================================================ */
 
 :root {
 
-    /* FONDOS */
+    /* BACKGROUNDS */
     --color-background: #FFFFFF;
     --color-surface: #FFFFFF;
     --color-surface-secondary: #FCF1EF;
     --color-surface-hover: #F8E8E5;
 
 
-    /* COLOR CORPORATIVO */
+    /* BRAND COLOUR */
     --color-primary: #A93632;
     --color-primary-hover: #852824;
     --color-primary-light: #F8E8E5;
 
 
-    /* TEXTOS */
+    /* TEXTS */
     --color-text: #292321;
     --color-text-secondary: #806B66;
     --color-text-inverse: #FFFFFF;
 
 
-    /* BORDES Y SEPARADORES */
+    /* BORDERS AND SEPARATORS */
     --color-border: #F0E5E2;
     --color-border-strong: #DFC9C4;
 
 
-    /* ESTADOS */
+    /* STATES */
     --color-success: #36734A;
     --color-error: #A93632;
     --color-warning: #9A691E;
     --color-info: #426B8C;
 
     /* ================================================
-       2. TIPOGRAFÍA
+       2. TYPOGRAPHY
        ================================================ */
 
     --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -60,7 +60,7 @@
 
 
     /* ================================================
-       3. ESPACIADO
+       3. SPACING
        ================================================ */
 
     --spacing-xs: 4px;
@@ -72,7 +72,7 @@
 
 
     /* ================================================
-       4. ESTRUCTURA GENERAL
+       4. GENERAL STRUCTURE
        ================================================ */
 
     --container-max-width: 1440px;
@@ -82,7 +82,7 @@
 
 
     /* ================================================
-       5. BORDES Y FORMAS
+       5. BORDERS AND SHAPES
        ================================================ */
 
     --border-width: 1px;
@@ -94,7 +94,7 @@
 
 
     /* ================================================
-       6. SOMBRAS
+       6. SHADOWS
        ================================================ */
 
     --shadow-sm: 0 1px 3px rgb(41 35 33 / 5%);
@@ -102,7 +102,7 @@
 
 
     /* ================================================
-       7. TRANSICIONES
+       7. TRANSITIONS
        ================================================ */
 
     --transition-fast: 0.15s ease;
@@ -110,7 +110,7 @@
 
 
     /* ================================================
-       8. CAPAS DE LA INTERFAZ
+       8. INTERFACE LAYERS
        ================================================ */
 
     --z-dropdown: 100;
