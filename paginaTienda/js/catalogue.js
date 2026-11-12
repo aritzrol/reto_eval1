@@ -1,8 +1,3 @@
-//When clicking on the x button, it closes the displayed info card, setting the display to none
-document.querySelector(`.series-info`).querySelector(`button`).addEventListener(`click`, (e) => {
-    e.target.closest(`.series-info`).classList.add(`hidden`);
-});
-
 //When typing on the search bar, all the volumes are cleared and replaced with those whose title contains the searched value
 document.querySelector(`.content`).querySelector(`input`).addEventListener(`keyup`, (e) => {
     document.querySelector(`.products`).innerHTML = "";
@@ -66,6 +61,8 @@ const alertBox = document.getElementById("alert");
 let series = [];
 let volumes = [];
 let appliedFilters = [];
+let serieSeleccionada;
+let volumenSeleccionado;
 
 getSeries();
 getVolumes();
@@ -115,7 +112,7 @@ async function getVolumes() {
 //It creates a new card with the information of the volume and its corresponding series (cover art, title, number, author, ISBN, price)
 //It also adds a button to the card
 //The cards are displayed in the products section
-//When clicked, the card calls to displaySeries in order to show the series information
+//When clicked, the card calls to showProductInfo in order to show the series information
 function displayVolume(v) {
     let s;
 
@@ -155,33 +152,89 @@ function displayVolume(v) {
 
     card.querySelector(`section`).appendChild(btn);
 
-    card.addEventListener(`click`, (e) => {
-        displaySeries(e.target);
-    })
+    card.addEventListener(`click`, function () {
+        showProductInfo(s, v);
+    });
 }
 
-//It overwrites the series-info card with the series information (first volume cover, title, author, synopsis) and displays the card
-function displaySeries(t) {
-    if (t.className != `card`) {
-        t = t.closest(`.card`);
+// Shows the product card
+function showProductInfo(serie, volumen) {
+    serieSeleccionada = serie;
+    volumenSeleccionado = volumen;
+    const ficha = document.querySelector(".series-info");
+    const fondo = document.querySelector(".home-modal-backdrop");
+    ficha.querySelector("img").src = volumen.cover;
+    ficha.querySelector("img").alt = serie.title;
+    ficha.querySelector("h2").textContent = serie.title + " #" + volumen.number;
+    ficha.querySelector(".product-info-author").textContent = serie.author;
+    ficha.querySelector(".product-info-publisher").textContent = serie.publisher;
+    ficha.querySelector(".product-info-price").textContent = Number(volumen.price).toFixed(2) + " €";
+    ficha.querySelector("span").innerHTML = serie.synopsis;
+    ficha.classList.remove(`hidden`);
+    fondo.classList.remove(`hidden`);
+}
+
+// Closes the card on the X
+document.querySelector(".series-info").querySelector("button").addEventListener("click", function () {
+    document.querySelector(".series-info").classList.add(`hidden`);
+    document.querySelector(".home-modal-backdrop").classList.add(`hidden`);
+});
+
+//Add to cart from the product card (same as home)
+document.querySelector(".product-info-cart").addEventListener("click", agregarAlCarro);
+function agregarAlCarro() {
+    const mangaName = serieSeleccionada.title;
+    const mangaNumber = volumenSeleccionado.number;
+    const mangaPrice = volumenSeleccionado.price;
+    const mangaCover = volumenSeleccionado.cover;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let repetido = cart.find((product) => product.name === mangaName && product.number === mangaNumber);
+
+    if (repetido) {
+
+        cart.forEach((product) => {
+            if (product.name === mangaName && product.number === mangaNumber) {
+                product.quantity = product.quantity + 1;
+            }
+        });
+
+    } else {
+
+        const product = {
+            id: cart.length > 0 ? cart[cart.length - 1].id + 1 : 1,
+            name: mangaName,
+            number: mangaNumber,
+            price: mangaPrice,
+            quantity: 1,
+            cover: mangaCover
+        }
+
+        cart.push(product);
+
     }
 
-    const card = document.querySelector(`.series-info`);
-    const id = t.id.split(`-`)[1];
-    const s = series[volumes[id].id_series];
-    const cover = volumes.find((volume) => volume.number == 1 && volume.id_series == s.id).cover;
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-    card.querySelector(`img`).src = cover;
-    card.querySelector(`h2`).innerHTML = s.title;
-    card.querySelector(`p`).innerHTML = s.author;
-    card.querySelector(`span`).innerHTML = s.synopsis;
+    const ficha = document.querySelector(".series-info");
+    const fondo = document.querySelector(".home-modal-backdrop");
+    const boton = ficha.querySelector(".product-info-cart");
 
-    card.classList.remove(`hidden`);
+    boton.classList.add("clicked");
+
+    setTimeout(function () {
+        ficha.classList.add(`hidden`);
+        fondo.classList.add(`hidden`);
+        boton.classList.remove("clicked");
+    }, 250);
+
+    cartView();
 }
 
 //It adds the corresponding volume information to localStorage so it can be shown in the cart
 function addToCart(event, s, v) {
-    //Prevents the card event (call to displaySeries) from affecting the button
+    //Prevents the card event (call to showProductInfo) from affecting the button
     event.stopPropagation();
 
     //Information to add to localStorage
