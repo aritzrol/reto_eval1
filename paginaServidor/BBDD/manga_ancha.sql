@@ -97,11 +97,3 @@ INSERT INTO `pedido` (`id_pedido`, `id_usuario`, `fecha`, `precio_total`, `estad
 	(2, 1, '2026-10-15 09:37:04', 60.00, 'pagado'),
 	(3, 1, '2026-09-10 09:37:34', 70.00, 'enviado'),
 	(4, 3, '2026-05-10 10:12:44', 100.00, 'pendiente');
-
-
-SELECT L.id_linea_pedido, L.id_usuario, L.id_producto, L.cantidad, L.precio_unitario,
-               S.nombre, P.numero
-        FROM linea_pedido L
-        JOIN producto P ON P.id_producto = L.id_producto
-        JOIN serie S ON S.id_serie = P.id_serie
-        WHERE L.id_usuario = ? AND L.estado_pedido = 'carrito';

@@ -385,17 +385,90 @@ nav img {
     vertical-align: middle;
 }
 
-nav .nav-buttons > div {
+.nav-buttons > div {
     display: flex;
     align-items: center;
 }
 
-/* Ajuste para pantallas medianas (antes solo en homeStyle.css) */
-@media (max-width: 800px) {
+/* ===== RESPONSIVE: NAVBAR Y FOOTER ===== */
+
+/* TABLET Y MÓVIL (hasta 900px) */
+@media (max-width: 900px) {
     nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         height: auto;
-        min-height: 65px;
-        padding: 8px 4%;
-        grid-template-columns: 1fr auto;
+        padding: 10px 20px;
+    }
+
+    nav > a:first-child div img {
+        height: 55px;
+    }
+
+    nav > a:first-child div div span {
+        font-size: 24px;
+    }
+
+    nav > a:first-child div div span:last-child {
+        font-size: 11px;
+    }
+
+    /* fila de botones con una línea fina encima */
+    nav .nav-buttons {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    nav .nav-buttons > div:first-child a {
+        margin: 0 4px;
+        padding: 5px 14px;
+    }
+
+    nav .nav-buttons > div:first-child a:hover {
+        border-bottom: none;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* footer en 2 columnas */
+    footer {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 25px 20px;
+        padding: 25px 30px;
+    }
+
+    footer section {
+        width: calc(50% - 20px);
+    }
+}
+
+/* MÓVIL (hasta 500px) */
+@media (max-width: 500px) {
+    nav > a:first-child div img {
+        height: 45px;
+    }
+
+    nav > a:first-child div div span {
+        font-size: 20px;
+    }
+
+    nav .nav-buttons > div:first-child a {
+        padding: 4px 10px;
+        font-size: 14px;
+    }
+
+    /* footer en 1 columna */
+    footer {
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    footer section {
+        width: 100%;
     }
 }
