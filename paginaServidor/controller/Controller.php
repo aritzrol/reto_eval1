@@ -17,6 +17,27 @@ $entity = isset($_GET['entity']) ? $_GET['entity'] : 'login';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
+if ($entity !== 'login' && !isset($_SESSION['id_usuario'])) {
+    header("Location: index.php?entity=login&action=index");
+    exit();
+}
+
+$rol = isset($_SESSION['rol_usuario']) ? $_SESSION['rol_usuario'] : '';
+$soloAdmin = false;
+
+if ($entity === 'usuario' || $entity === 'pedido') {
+    $soloAdmin = true;
+}
+
+if (($entity === 'serie' || $entity === 'producto') && $action !== 'index' && $action !== 'show') {
+    $soloAdmin = true;
+}
+
+if ($soloAdmin && $rol !== 'admin') {
+    header("Location: index.php?entity=serie&action=index");
+    exit();
+}
+
 switch ($entity) {
     case 'usuario':
         switch ($action) {
