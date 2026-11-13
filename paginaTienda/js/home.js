@@ -1,4 +1,7 @@
-const SERIES_URL = "store.json";
+//URLs to the series and volumes in the json server
+const SERIES_URL = `http://localhost:3000/series`;
+const VOLUMES_URL = `http://localhost:3000/volumes`;
+
 const cartIcon = document.getElementById("cart-icon");
 const alertBox = document.getElementById("alert");
 let series = [];
@@ -8,24 +11,48 @@ let volumenSeleccionado;
 
 
 
-// Downloads the series and volumes from the JSON file.
+//Makes a call to the json server and fetches all the series, saving it in a predeclared array
+//If something fails, it shows the corresponding error
 async function getSeries() {
     try {
         const answer = await fetch(SERIES_URL);
+
         if (!answer.ok) {
-            throw new Error("The data could not be loaded");
+            throw new Error(`Error: ${answer.status}`);
         }
 
-        const data = await answer.json();
-        series = data.series;
-        volumes = data.volumes;
-
-        showNewReleases();
-        showBestSellers();
-        showFeaturedBooks();
-    } catch (error) {
+        series = await answer.json();
+    }
+    catch (error) {
         console.error("Error: " + error.message);
     }
+}
+
+//Makes a call to the json server and fetches all the volumes, saving it in a predeclared array
+//If something fails, it shows the corresponding error
+async function getVolumes() {
+    try {
+        const answer = await fetch(VOLUMES_URL);
+
+        if (!answer.ok) {
+            throw new Error(`Error: ${answer.status}`);
+        }
+
+        volumes = await answer.json();
+    }
+    catch (error) {
+        console.error("Error: " + error.message);
+    }
+}
+
+//Waits until both series and volumes are loaded, then shows the home sections
+async function loadHome() {
+    await getSeries();
+    await getVolumes();
+
+    showNewReleases();
+    showBestSellers();
+    showFeaturedBooks();
 }
 
 // Shows the last two volumes of each series.
@@ -216,7 +243,7 @@ document.querySelector(".series-info").querySelector("button").addEventListener(
     document.querySelector(".home-modal-backdrop").classList.add(`hidden`);
 });
 
-getSeries();
+loadHome();
 
 
 //CART LIGHT
