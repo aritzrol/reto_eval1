@@ -26,7 +26,7 @@
     }
   ],
   "pedidos": [
-    {
+        {
       "id": 1,
       "id_usuario": 1,
       "fecha": "2024-06-01",
@@ -508,23 +508,6 @@
           "price": 10,
           "quantity": 1,
           "cover": "IMG/covers/digimon/digimon_7.jpg"
-        }
-      ]
-    },
-    {
-      "id": 22,
-      "id_usuario": 2,
-      "fecha": "2026-11-17",
-      "total": 13.9,
-      "estado": "pendiente de envio",
-      "productos": [
-        {
-          "id": 1,
-          "name": "Card Captor Sakura",
-          "number": 8,
-          "price": 9.95,
-          "quantity": 1,
-          "cover": "IMG/covers/sakura/sakura_8.jpg"
         }
       ]
     }
@@ -2057,7 +2040,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_1.jpg",
       "number": 1,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791387836986
     },
     {
@@ -2065,7 +2048,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_2.jpg",
       "number": 2,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791387836993
     },
     {
@@ -2073,7 +2056,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_3.jpg",
       "number": 3,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791387981570
     },
     {
@@ -2081,7 +2064,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_4.jpg",
       "number": 4,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791388024177
     },
     {
@@ -2089,7 +2072,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_5.jpg",
       "number": 5,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791388104596
     },
     {
@@ -2097,7 +2080,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_6.jpg",
       "number": 6,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791388178863
     },
     {
@@ -2105,7 +2088,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_7.jpg",
       "number": 7,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791388298271
     },
     {
@@ -2113,7 +2096,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_8.jpg",
       "number": 8,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791388450334
     },
     {
@@ -2121,7 +2104,7 @@
       "id_series": 19,
       "cover": "IMG/covers/centuria/centuria_9.jpg",
       "number": 9,
-      "price": 9,
+      "price": 9.00,
       "isbn": 9791388487477
     }
   ]
