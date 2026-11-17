@@ -1,0 +1,121 @@
+
+
+/* ================================================
+   1. OFFICIAL COLOUR PALETTE
+   ================================================ */
+
+:root {
+
+    /* BACKGROUNDS */
+    --color-background: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-surface-secondary: #FCF1EF;
+    --color-surface-hover: #F8E8E5;
+
+
+    /* BRAND COLOUR */
+    --color-primary: #A93632;
+    --color-primary-hover: #852824;
+    --color-primary-light: #F8E8E5;
+
+
+    /* TEXTS */
+    --color-text: #292321;
+    --color-text-secondary: #806B66;
+    --color-text-inverse: #FFFFFF;
+
+
+    /* BORDERS AND SEPARATORS */
+    --color-border: #F0E5E2;
+    --color-border-strong: #DFC9C4;
+
+
+    /* STATES */
+    --color-success: #36734A;
+    --color-error: #A93632;
+    --color-warning: #9A691E;
+    --color-info: #426B8C;
+
+    /* ================================================
+       2. TYPOGRAPHY
+       ================================================ */
+
+    --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 36px;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-base: 1.5;
+    --line-height-heading: 1.25;
+
+
+    /* ================================================
+       3. SPACING
+       ================================================ */
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+
+
+    /* ================================================
+       4. GENERAL STRUCTURE
+       ================================================ */
+
+    --container-max-width: 1440px;
+    --page-padding-desktop: 28px;
+    --page-padding-tablet: 20px;
+    --page-padding-mobile: 14px;
+
+
+    /* ================================================
+       5. BORDERS AND SHAPES
+       ================================================ */
+
+    --border-width: 1px;
+
+    --radius-sm: 3px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --radius-pill: 999px;
+
+
+    /* ================================================
+       6. SHADOWS
+       ================================================ */
+
+    --shadow-sm: 0 1px 3px rgb(41 35 33 / 5%);
+    --shadow-md: 0 4px 12px rgb(41 35 33 / 8%);
+
+
+    /* ================================================
+       7. TRANSITIONS
+       ================================================ */
+
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+
+
+    /* ================================================
+       8. INTERFACE LAYERS
+       ================================================ */
+
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 400;
+
+}

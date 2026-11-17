@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Catalogue | MANGA ANCHA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="referencia.css" rel="stylesheet" type="text/css"/>
+        <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="styles/catalogueStyle.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+
+        <!--BLACK BAR AT THE TOP OF THE PAGE-->
+        <section class="top-bar">
+            <span>Free shipping for orders over €35</span>
+            <span>New products every week</span>
+        </section>
+
+        <!--NAVBAR-->
+        <nav>
+            <!--LOGO AND STORE NAME-->
+            <a href="index.html">
+                <div>
+                    <img src="IMG/icons/logo1.png" alt="store logo"/>
+                    <div>
+                        <span>MANGA ANCHA</span>
+                        <span>SPECIALIZED BOOKSTORE</span>
+                    </div>    
+                </div>
+            </a>
+
+            <!--NAV BUTTONS-->
+            <div class="nav-buttons">
+                <!--LINK BUTTONS-->
+                <div>
+                    <a href="index.html" title="Home">Home</a>
+                    <a href="catalogue.html" title="Catalogue">Catalogue</a>
+                </div>
+
+                <!--VERTICAL LINE-->
+                <div></div>
+
+                <!--ICON BUTTONS-->
+                <div>
+                <a class="nav-icon" href="cart.html">
+                    <img src="IMG/icons/bag_icon.png" alt="cart" id="cart-icon">
+                </a>
+                <a class="nav-icon" href="login.html">
+                    <img src="IMG/icons/user_icon.png" alt="user" id="user-icon">
+                </a>
+                <a href=""><img src="IMG/icons/dia.png" alt="dark mode button" id="dark-mode-icon"/>
+                </a>
+            </div>
+            </div>
+        </nav>
+
+         <!-- ALERTS -->
+        <div id="alert"></div>
+
+        <!--CARD SERIES INFO-->
+        <div class="home-modal-backdrop hidden"></div>
+        <section class="series-info hidden">
+            <button type="button">x</button>
+            <img src="" alt="">
+            <h2>TITLE</h2>
+            <p class="product-info-author">author</p>
+            <small class="product-info-publisher"></small>
+            <p class="product-info-price"></p>
+            <button type="button" class="product-info-cart">Add to cart</button>
+            <h4>SYNOPSIS</h4>
+            <hr>
+            <span>lorem ipsum swagever (like whatever but with swag)</span>
+        </section>
+
+        <!--CONTENT OF THE PAGE: SEARCH OPTIONS, FILTERS AND PRODUCTS-->
+        <section class="content">
+        
+            <h2>MANGA CATALOGUE</h2>
+            
+            <!--SEARCH BAR-->
+            <input type="text" for="title" name="title" placeholder="🔍 Search by title" />
+
+            <!--ORDER SELECTOR-->
+            <select>
+                <option value="new" selected>Order: newest first</option>
+                <option value="old">Order: oldest first</option>
+                <option value="cheap">Order: cheapest first</option>
+                <option value="expensive">Order: most expensive first</option>
+            </select>
+
+            <!--APPLIED FILTERS-->
+            <p><strong>Applied filters:</strong></p>
+            <div class="appliedFilters"></div>
+            
+            <!--FILTERS-->
+            <form class="filters">
+                <h3>FILTERS</h3>
+                
+                <h3>GENRE</h3>
+                <input type="checkbox" name="genre" value="Shōnen" class="shonen">
+                <label for="genre">Shōnen</label><br>
+                <input type="checkbox" name="genre" value="Shōjo"  class="shojo">
+                <label for="genre">Shōjo</label><br>
+                <input type="checkbox" name="genre" value="Seinen" class="seinen">
+                <label for="genre">Seinen</label><br>
+                <input type="checkbox" name="genre" value="Josei"  class="josei">
+                <label for="genre">Josei</label><br>
+                <input type="checkbox" name="genre" value="Magical girl" class="magical-girl">
+                <label for="genre">Magical girl</label><br>
+                <input type="checkbox" name="genre" value="Yaoi" class="yaoi">
+                <label for="genre">Yaoi</label><br>
+                <input type="checkbox" name="genre" value="Yuri" class="yuri">
+                <label for="genre">Yuri</label><br>
+                <input type="checkbox" name="genre" value="Horror" class="horror">
+                <label for="genre">Horror</label><br>
+                <input type="checkbox" name="genre" value="Comedy" class="comedy">
+                <label for="genre">Comedy</label><br><br>
+        
+                <h3>PRICE RANGE</h3>
+                <input type="checkbox" name="price" value="Under €10" class="under10">
+                <label for="price">Under €10.00</label><br>
+                <input type="checkbox" name="price" value="€10.01 - €15" class="under15">
+                <label for="price">€10.01 - €15.00</label><br>
+                <input type="checkbox" name="price" value="Over €15" class="over15">
+                <label for="price">Over €15.00</label><br><br>
+        
+                <h3>PUBLISHER</h3>
+                <input type="checkbox" name="publisher" value="Norma" class="norma">
+                <label for="publisher">Norma</label><br>
+                <input type="checkbox" name="publisher" value="Ivrea" class="ivrea">
+                <label for="publisher">Ivrea</label><br>
+                <input type="checkbox" name="publisher" value="Panini" class="panini">
+                <label for="publisher">Panini</label><br>
+                <input type="checkbox" name="publisher" value="Milky Way" class="milky-way">
+                <label for="publisher">Milky Way</label><br>
+                <input type="checkbox" name="publisher" value="Planeta" class="planeta">
+                <label for="publisher">Planeta</label><br>
+                <input type="checkbox" name="publisher" value="Arechi" class="arechi">
+                <label for="publisher">Arechi</label><br><br>
+            </form>
+
+            <!--EMPTY SECTION FOR PRODUCTS, TO BE FILLED WITH JAVASCRIPT-->
+            <section class="products"></section>
+        </section>
+
+        <!--FOOTER-->
+        <footer>
+
+            <!--STORE INFORMATION-->
+            <section>
+                <header>
+                    MANGA ANCHA
+                </header>
+                <p>
+                    Online bookstore specialized in imported manga. Official distribution authorized.
+                </p>
+            </section>
+
+            <!--LINKS TO CATEGORIES-->
+            <section>
+                <header>
+                    EXPLORE OUR CATALOGUE
+                </header>
+                    <a href="catalogue.html?genre=shonen">Shōnen</a>
+                    <a href="catalogue.html?genero=shojo">Shōjo</a>
+                    <a href="catalogue.html?genero=seinen">Seinen</a>
+                    <a href="catalogue.html?genero=seinen">Josei</a>
+            </section>
+
+            <!--CUSTOMER SUPPORT LINKS-->
+            <section>
+                <header>
+                    ABOUT US
+                </header>
+                    <a href="#">Shipping conditions</a>
+                    <a href="#">Refund policy</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact</a>
+            </section>
+        </footer>
+
+        <script src="js/script.js" type="text/javascript"></script>
+        <script src="js/catalogue.js" type="text/javascript"></script>
+    </body>
+    
+</html>

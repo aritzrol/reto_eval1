@@ -1,0 +1,474 @@
+/*GLOBAL VARIABLES*/
+:root {
+    --primary-color: #C85A53;
+    --secondary-color: #D99382;
+    --tertiary-color: #9E473F;
+    --neutral-color: #2B2423;
+
+    --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --font-family-btn: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*BODY*/
+body {
+    margin: 0;
+    font-family: var(--font-family-base);
+    background-color: #F8E8E5;
+}
+
+/*BLACK BAR AT THE TOP*/
+
+/* MOBILE */
+.top-bar {
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    gap: 2px;
+
+    background-color: var(--neutral-color);
+    color: lightgrey;
+
+    font-size: 12px;
+    text-align: center;
+
+    padding: 6px 16px;
+}
+
+/* TABLET ++*/
+@media (min-width: 768px) {
+    .top-bar {
+        flex-direction: row;
+        justify-content: space-between;
+
+        font-size: 14px;
+        height: 35px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .top-bar {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+}
+
+/*NAVBAR BUTTONS*/
+.nav-buttons a.nav-icon {
+    border-bottom: 3px solid transparent;
+}
+
+/*ADDS A WHITE UNDERLINE WHEN HOVERING*/
+.nav-buttons a.nav-icon:hover {
+    border-bottom-color: white;
+}
+
+/*NAVBAR*/
+nav {
+    z-index: 2;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    align-items: center;
+
+    height: 80px;
+
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+
+    padding-left: 75px;
+    padding-right: 75px;
+
+    /*LOGO AND BOOKSTORE NAME*/
+    div:first-child {
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        /*LOGO*/
+        img {
+            height: 75px;
+        }
+
+        /*BOOKSTORE NAME*/
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            /*NAME*/
+            span {
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 0.9;
+            }
+
+            /*TAG*/
+            span:last-child {
+                font-weight: normal;
+                font-size: 15px;
+            }
+        }
+    }
+
+    /*BUTTONS*/
+    .nav-buttons {
+        grid-column-start: 7;
+        grid-column-start: 12;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        font-family: var(--font-family-btn);
+
+        /*ALL LINKS*/
+        a {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        /*LAST LINK*/
+        a:last-child {
+            margin-right: 0px;
+        }
+
+        /*LINKS WHEN HOVERING*/
+        a:hover {
+            font-weight: bold;
+            
+            border-bottom: 3px solid white;
+        }
+
+        /*SEPARATOR*/
+        div:nth-child(2) {
+            height: 30px;
+            width: 1px;
+
+            background-color: var(--neutral-color);
+        }
+
+        /*ICON BUTTONS*/
+        div:last-child {
+            a {
+                float:left;
+            }
+        }
+
+        /*ICONS*/
+        img {
+            height: 20px;
+        }
+        
+    }
+}
+
+
+/*LINKS (UNDECORATED)*/
+a {
+    text-decoration: none;
+    color: var(--neutral-color);
+}
+
+/*FOOTER*/
+footer {
+    position: static;
+    bottom: 0;
+        
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: start;
+
+    padding-top: 25px;
+    
+    height: 150px;
+
+    background-color: var(--neutral-color);
+
+    padding-left: 100px;
+    padding-right: 100px;
+
+    /*TEXT COLUMNS*/
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+
+        width: 200px;
+
+        line-height: 1.2;
+        font-size: 14px;
+
+        /*SECTION TITLE*/
+        header {
+            margin-bottom: 10px;
+        
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+        }
+
+        /*LINKS*/
+        a {
+            color: lightgrey;
+
+            margin-bottom: 5px;
+
+            font-weight: normal;
+        }
+
+        /*TEXT*/
+        p {
+            color: lightgrey;
+
+            margin: 0px;
+        }
+    }
+}
+
+/* Dark theme shared by the store pages */
+body.dark-mode {
+    --color-background: #1d1a1a;
+    --color-surface: #2b2625;
+    --color-surface-secondary: #352d2b;
+    --color-surface-hover: #403533;
+    --color-primary: #b84a43;
+    --color-primary-hover: #963a35;
+    --color-primary-light: #49302e;
+    --color-text: #f2eaea;
+    --color-text-secondary: #c5b4b0;
+    --color-text-inverse: #ffffff;
+    --color-border: #493e3c;
+    --color-border-strong: #665653;
+    --primary-color: #302827;
+    --secondary-color: #493936;
+    --tertiary-color: #963a35;
+    background: #1d1a1a;
+    background-color: #1d1a1a;
+    color: #f2eaea;
+}
+
+body.dark-mode nav {
+    background-color: #302827;
+    color: #f2eaea;
+}
+
+body.dark-mode footer {
+    background-color: #252120;
+    border-top: 1px solid #493e3c;
+}
+
+body.dark-mode a {
+    color: #e6d9d6;
+}
+
+body.dark-mode .hero,
+body.dark-mode .featured,
+body.dark-mode .product,
+body.dark-mode .genre,
+body.dark-mode .editorial,
+body.dark-mode .series-info,
+body.dark-mode .filters,
+body.dark-mode .card,
+body.dark-mode .products-table,
+body.dark-mode .order-summary,
+body.dark-mode .payment-method,
+body.dark-mode .customer-area,
+body.dark-mode .order-card,
+body.dark-mode #alert {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+body.dark-mode .delivery-option,
+body.dark-mode .gift-message,
+body.dark-mode .button.secondary {
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text);
+}
+
+body.dark-mode .product img,
+body.dark-mode #featured-books .carousel-item img,
+body.dark-mode .series-info > img {
+    background-color: #252120;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .content > input,
+body.dark-mode .content > select,
+body.dark-mode .newsletter input,
+body.dark-mode #login-email,
+body.dark-mode #login-password,
+body.dark-mode #register-name,
+body.dark-mode #register-email,
+body.dark-mode #register-password {
+    background-color: #302b2a;
+    border-color: #665653;
+    color: #f2eaea;
+}
+
+body.dark-mode .content > h2,
+body.dark-mode .content > p,
+body.dark-mode .card h4,
+body.dark-mode .card p,
+body.dark-mode .cart-page,
+body.dark-mode .customer-area,
+body.dark-mode .form-login,
+body.dark-mode .form-register {
+    color: #f2eaea;
+}
+
+/*USER ICON LOGED*/
+.user-icon{
+    background: radial-gradient(circle at center, #8cf504, #10f60459);
+    border-radius: 999px;
+    
+}
+
+.cart-icon{
+    background: radial-gradient(circle at center, #f1e915, #fbfaf973);
+    border-radius: 999px;
+}
+
+#dark-mode-icon{
+    scale: 1.5;
+    transition: filter 0.2s;
+}
+
+/* Dark mode icon hover: no underline, it only gets darker */
+nav .nav-buttons a:has(#dark-mode-icon):hover {
+    border-bottom: none;
+}
+
+#dark-mode-icon:hover {
+    filter: brightness(0.75);
+}
+
+/* NAVBAR AND TOP-BAR CONSISTENT ACROSS ALL PAGES
+   Each page loads different CSS (Bootstrap, box-sizing, body font-size...).
+   We set the values here so the size does not depend on the page. */
+.top-bar,
+.top-bar *,
+nav,
+nav * {
+    box-sizing: border-box;
+}
+
+.top-bar {
+    line-height: 1.5;
+}
+
+nav {
+    height: 80px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+nav img {
+    display: block;
+    vertical-align: middle;
+}
+
+.nav-buttons > div {
+    display: flex;
+    align-items: center;
+}
+
+/* ===== RESPONSIVE: NAVBAR AND FOOTER ===== */
+
+/* TABLET AND MOBILE (up to 900px) */
+@media (max-width: 900px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    nav > a:first-child div img {
+        height: 55px;
+    }
+
+    nav > a:first-child div div span {
+        font-size: 24px;
+    }
+
+    nav > a:first-child div div span:last-child {
+        font-size: 11px;
+    }
+
+    /* row of buttons with a thin line above */
+    nav .nav-buttons {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    nav .nav-buttons > div:first-child a {
+        margin: 0 4px;
+        padding: 5px 14px;
+    }
+
+    nav .nav-buttons > div:first-child a:hover {
+        border-bottom: none;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* footer in 2 columns */
+    footer {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 25px 20px;
+        padding: 25px 30px;
+    }
+
+    footer section {
+        width: calc(50% - 20px);
+    }
+}
+
+/* MOBILE (up to 500px) */
+@media (max-width: 500px) {
+    nav > a:first-child div img {
+        height: 45px;
+    }
+
+    nav > a:first-child div div span {
+        font-size: 20px;
+    }
+
+    nav .nav-buttons > div:first-child a {
+        padding: 4px 10px;
+        font-size: 14px;
+    }
+
+    /* footer in 1 column */
+    footer {
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    footer section {
+        width: 100%;
+    }
+}

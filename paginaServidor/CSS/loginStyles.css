@@ -1,0 +1,382 @@
+:root{
+        /* FONDOS */
+    --color-background: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-surface-secondary: #FCF1EF;
+    --color-surface-hover: #F8E8E5;
+
+
+    /* COLOR CORPORATIVO */
+    --color-primary: #A93632;
+    --color-primary-hover: #852824;
+    --color-primary-light: #F8E8E5;
+
+
+    /* TEXTOS */
+    --color-text: #292321;
+    --color-text-secondary: #806B66;
+    --color-text-inverse: #FFFFFF;
+
+
+    /* BORDES Y SEPARADORES */
+    --color-border: #F0E5E2;
+    --color-border-strong: #DFC9C4;
+
+
+    /* ESTADOS */
+    --color-success: #36734A;
+    --color-error: #A93632;
+    --color-warning: #9A691E;
+    --color-info: #426B8C;
+
+    /* ================================================
+       TRANSICIONES
+    ================================================ */
+    --transition-slow: 0.5s ease;
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+
+    /* ================================================
+       SOMBRAS
+    ================================================ */
+
+    --shadow-sm: 0 1px 3px rgb(41 35 33 / 5%);
+    --shadow-md: 0 4px 12px rgb(41 35 33 / 8%);
+
+    /* ================================================
+       TIPOGRAFÍA
+    ================================================ */
+
+    --font-family-base: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    --font-size-base: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+
+}
+
+/*MOBILE FIRST STYLE*/
+
+/*TABLET STYLE*/
+
+/*DESKTOP STYLE*/
+
+/*hace que el padding y el borde cuenten dentro del ancho y alto de cada caja*/
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    /* background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); */
+    background-color: rgb(237, 237, 237);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+}
+
+main{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*USER ICON LOGED*/
+.user-icon{
+    background: radial-gradient(circle at center, #8cf504, #10f60459);
+    border-radius: 999px;
+    
+}
+
+.cart-icon{
+    background: radial-gradient(circle at center, #fdfefc, #fbfaf973);
+    border-radius: 999px;
+}
+
+/*ALERT CARD*/
+#alert{
+    position: absolute;
+    width: 20rem;
+    height: auto;
+    background: #eef0f4;
+    border-radius: 0.8rem;
+    box-shadow:
+        6px 6px 14px rgba(0, 0, 0, 0.792),
+        -6px -6px 14px rgba(255, 255, 255, 0.9);
+    z-index: 2;
+    top: calc(50% - 1rem);
+    display: none;
+    cursor: pointer;
+}
+
+.textAlert{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+
+    p{
+        position: absolute;
+        left: 5.5rem;
+        margin: 0;
+        color: #6b6f7a;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+        text-transform: uppercase;
+        line-height: 1.4;
+    }
+
+    span{
+        font-size: var(--font-size-xl);
+        font-weight: bolder;
+        color: #fff;
+        text-shadow: var(--shadow-md);
+        background-color: #ee3d3d;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/*area clientes antes de login o crear cuenta*/
+.customer-area{
+    
+    background: rgb(255 255 255 / 20%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-radius: 0.2rem;
+    box-shadow: var(--shadow-md);
+    padding: 1rem;
+    width: 60%;
+    margin-bottom: 0.5rem;
+}
+
+#logoutButton{
+    display: none;
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: 2px outset whitesmoke;
+    border-radius: 0.2rem;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+#logoutButton:hover{
+    background: var(--color-primary-hover);
+    box-shadow:
+        0 0 10px rgb(255 255 255 / 70%),
+        0 0 25px var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.customer-area-loged{
+    min-height: 90vh;
+}
+
+/*contenedor de formularios*/
+.card{
+    
+    background: rgb(255 255 255 / 35%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-radius: 0.2rem;
+    box-shadow: var(--shadow-md);
+    width: 60%;
+    padding: 1rem;
+    color: var(--color-text);
+
+    p{
+        align-self: center;
+    }
+    
+}
+
+/*contenedor de botones*/
+.top-card{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+/*contenedor de los formularios login y create*/
+.forms{
+    position: relative;
+    display: flex;
+    width: 100%;  
+}
+
+/*Imagen para el login*/
+.cover-image{
+    position: absolute;
+    top: 1.5rem;
+    left: calc(50% + 1rem);
+    right: 1rem;
+    width: calc(50% - 2rem);
+    height: calc(100% - 2rem);
+    object-fit: cover;
+    z-index: 1;
+    transition: left var(--transition-slow);
+
+    /*difuminado*/
+    --fade: 5%;
+    mask-image:                                   
+        linear-gradient(to right, transparent, black var(--fade), black calc(100% - var(--fade)), transparent),
+        linear-gradient(to bottom, transparent, black var(--fade), black calc(100% - var(--fade)), transparent);
+    mask-composite: intersect;  
+}
+
+/*clase para la transicion a la izquierda*/
+.cover-left{
+    left: 1rem;
+}
+/*contenedor del login*/
+.form-login{
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        align-self: center;
+        padding-bottom: 1rem;
+    }
+
+    #loginButton{
+        align-self: center;
+        margin-top: 1rem;
+    }
+
+    #login-email, #login-password{
+        margin-bottom: 1rem;
+        width: 70%;
+    }
+
+    label, #login-password, #login-email{
+        font-size: var(--font-size-md);
+        margin-left: 14%;
+    }
+    
+}
+
+/*contenedor de la creación de cuenta*/
+.form-register{
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        align-self: center;
+        padding-bottom: 1rem;
+    }
+
+    #registerButton{
+        align-self: center;
+        margin-top: 1rem;
+    }
+
+    #register-name, #register-email, #register-password{
+        margin-bottom: 1rem;
+        width: 70%;
+    }
+
+    label, #register-name, #register-email, #register-password{
+        font-size: var(--font-size-md);
+        margin-left: 14%;
+    }
+}
+
+/*estilo cristal de los inputs*/
+#login-email, #login-password,
+#register-name, #register-email, #register-password{
+    background: rgb(255 255 255 / 55%);
+    border: 2px solid rgba(243, 132, 132, 90%);
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.4rem;
+    color: var(--color-text);
+    font-family: inherit;
+    transition: var(--transition-normal);
+}
+
+/*cuando el input está activo (el cursor está escribiendo en él)*/
+#login-email:focus, #login-password:focus,
+#register-name:focus, #register-email:focus, #register-password:focus{
+    background: rgb(255 255 255 / 60%);
+    border-color: var(--color-border-strong);
+    outline: none;
+    box-shadow:
+        0 0 8px rgb(255 255 255 / 70%),
+        0 0 20px rgb(248 232 229 / 60%);
+}
+
+/*botones de enviar*/
+#loginButton, #registerButton{
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: 2px outset whitesmoke;
+    border-radius: 0.2rem;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+#loginButton:hover, #registerButton:hover{
+    background: var(--color-primary-hover);
+    box-shadow:
+        0 0 10px rgb(255 255 255 / 70%),
+        0 0 25px var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/*botones de arriba (cristal)*/
+#button_login, #button_create{
+    background: rgba(241, 114, 140, 10%);
+    color: var(--color-text);
+    border: 2px solid rgba(243, 132, 132, 90%);
+    border-radius: 0.2rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+#button_login:hover, #button_create:hover{
+    background: rgb(255 255 255 / 40%);
+    box-shadow:
+        0 0 10px rgba(235, 129, 129, 0.8),
+        0 0 24px rgb(255 255 255 / 40%);
+}
+
+
+/* LOGIN OK */
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.enviado    { background: #2196f3; }
+.pendiente  { background: #ff9800; }
+.entregado  { background: #4caf50; }
+.cancelado  { background: #f44336; }
+
